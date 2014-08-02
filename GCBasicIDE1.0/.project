@@ -3,7 +3,7 @@
 Title=GCBasicIDE
 Startup=FNotepad
 Icon=Cow.jpg
-Version=0.0.163
+Version=0.0.164
 Component=gb.image
 Component=gb.qt4
 Component=gb.form
