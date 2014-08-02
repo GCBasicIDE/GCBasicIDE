@@ -1,0 +1,23 @@
+#include <eracer.h>
+
+'Settings
+#define BackTime 50
+#define SpinTime 25
+
+'Set up robot
+InitPWM
+PWMOn
+
+'Main program
+Main:
+ IF IR_In ON then Forward
+ IF IR_IN OFF then Avoid
+goto Main
+
+'Object avoidance sub
+sub Avoid
+ Reverse
+ Wait BackTime 10ms
+ SpinLeft
+ Wait SpinTime 10ms
+end sub

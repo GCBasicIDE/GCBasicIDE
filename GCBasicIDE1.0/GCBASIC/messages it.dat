@@ -1,0 +1,172 @@
+'Italian messages.dat for Great Cow BASIC
+'Original translation creator Stefano Delfiore
+'Translation last updated 13/1/2006 by Hugh Considine
+
+'Common Messages
+AnyKey = "Premi un tasto per continuare"
+Found = "trovato"
+Found2 = " (Trovato "
+NotFound = "NON TROVATO!"
+Calling = "Sto chiamando "
+
+'Intro Screens
+
+Block NoPrompt
+GCBASIC [/D:direttorio] [/O:output.asm] [/A:nomefile.bat] [/NC] nomefile
+
+Version: %Version%
+
+Great Cow BASIC - Compilatore BASIC per microcontrollori PIC
+
+Per compilare un file, trascinalo e rilascialo sull'icona di questo programma
+
+Oppure, apri una finestra dos, e usa i comandi dati
+
+Opzioni del comando di linea:
+/D:direttorio   Specifica il direttorio dove si trova GCBASIC.EXE
+/O:output.asm   Setta un nome di file di uscita diverso dal default
+/V              Modalita' verbosa
+/L              Mostra la licenza
+/A:nomefile.bat File batch chiamato se la compilazione è riuscita
+/NC             Non pulire lo schermo. Uso nei file batch
+/NP  Non fermarsi se in errore. Da usarsi con gli IDE
+
+Puoi usare - al posto di /, ad esempio -V invece di /V.
+
+Vedi "Getting Started with GCBASIC" per maggiori informazioni
+End Block
+
+Block License
+Great Cow BASIC - A BASIC Compiler for PIC microcontrollers
+Copyright (C) 2006 Hugh Considine
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+Per qualsiasi domanda, scrivi a: hconsidine@bigpond.com
+End Block
+
+Startup = "Great Cow BASIC (%Version%)"
+Compiling = "Sto compilando %Filename% ..."
+NoFile = "%Filename% non trovato !"
+
+'Verbose mode messages
+FindSource = "Sto trovando i file sorgenti:"
+LoadSource = "Sto caricando i file sorgenti ..."
+ChipS = "Settaggi del chip:"
+ChipM = "Modello del chip: "
+ChipC = "Clock MHz:  "
+ChipO = "Oscillatore: "
+
+ChipF = "Famiglia Chip: "
+ChipR = "RAM: "
+
+CompDirs = "Sto leggendo le direttive del compilatore ..."
+RunScripts = "Sto eseguendo gli script del compilatore ..."
+RepDefs = "Sto sostituendo i define con i valori ..."
+SplitLines = "Sto separando le linee con comandi multipli ..."
+FindFreeRAM = "Sto costruendo mappa memoria PIC ..."
+ChipHeader = "Sto trovando e leggendo l'header file del chip ..."
+FindLargeVars = "Sto trovando le variabili non-byte ..."
+TranslateFunctions = "Sto compilando le funzioni ..."
+FindRequiredSubs = "Sto trovando le subroutine richieste ..."
+StringTable = "Sto aggiungendo le stringhe alle lookup tables ..."
+DataTable = "Sto aggiungendo dati alle lookup table ..."
+AddingSubs = "Sto aggiungendo le subroutine richieste ..."
+RemIfDefs = "Sto trovando e compilando le direttive #IFDEF ..."
+CompileFor = "Sto compilando i comandi FOR ..."
+FindArrays = "Sto creando gli array ..."
+SubParams = "Sto settando i parametri delle subroutine ..."
+ProcessArrays = "Sto processando i riferimenti dell'array ..."
+
+AddBits = "sto aggiungendo i nomi delle variabili di sistema ai bit ..."
+
+CompComs = "Sto compilando i comandi:"
+CompileReadTable = "ReadTable ..."
+CompilePot = "POT ..."
+CompileDo = "DO ..."
+CompileDir = "DIR ..."
+CompilePulseOut = "PulseOut ..."
+CompileWait = "WAIT ..."
+CompileSet = "SET ..."
+CompileRotate = "ROTATE ..."
+CompileExitSub = "END, EXIT SUB/FUNCTION ..."
+CompileIF = "IF ..."
+CompileVars = "Comandi settaggi variabile ..."
+CompileGOSUB = "GOSUB/RETURN ..."
+CompileGOTO = "GOTO ..."
+
+CompileRepeat = "Repeat ..."
+CompileSelect = "Select ..."
+
+TidyCode = "Sto riordinando il codice ..."
+CalcConfig = "Sto calcolando CONFIG ..."
+AddBankCommands = "Sto aggiungendo i comandi per il settaggio dei banchi ..."
+
+Add18FBanks = "Sto aggiungendo i bit di accesso RAM ..."
+
+OptimiseIF = "Sto ottimizzando gli IF ..."
+OptimiseVars = "Sto ottimizzando le operazioni con variabili ..."
+FixFunctions = "Sto verificando le funzioni usate in WAIT ..."
+
+WritingASM = "Sto scrivendo l'output in %OutputFile% ..."
+Success = "Programma compilato con successo!"
+CompTime = " (Tempo di compilazione: "
+CompSecs = " secondi)"
+Summary = "Sommario:"
+DataRead = "Letto da GCBASIC: "
+InLines = "Linee in ingresso: "
+Vars = "Variabili: "
+Consts = "Constanti: "
+Subs = "Subroutine: "
+AssemblyWritten = "Linee di programma scritte in Assembler: "
+MakeASM = "Sto assemblando e scaricando il programma ..."
+
+ReadChipData = "Sto leggendo i dati del chip ..."
+BuildMemoryMap = "Sto creando la mappa di memoria ..."
+
+SendToPIC = "Sto scaricando il programma ..."
+
+'Errors
+Error = "Si è verificato un errore:"
+Errors = "Si sono verificati degli errori:"
+BadError = "Si è verificato un grave errore:"
+BadErrors = "Si sono verificati gravi errori:"
+ErrorLogged = "Il messaggio è stato registrato nel file "
+
+ArrayNoDec = "Array/Function %Name% non è stato dichiarato"
+DupDef = "Duplicato, conflitto di definizioni per %var%"
+BadVarName = "Nome di variabile non valido: %var%"
+ArrayTooBig = "L'array %Array% è troppo grande"
+BadParam = "Sintassi dei parametri non corretta: %sub%. La sintassi corretta è %correct%"
+NoNext = "FOR senza il relativo NEXT"
+NoBit = "Bit mancante nel comando SET"
+SynErr = "Errore di sintassi"
+
+'New errors in 0.9.3.0
+ExcessVars = "Eccessivo uso di RAM! Cancellare qualche variabile, ridurre le dimensioni degli array, o passare a un PIC più potente"
+NoBitSet = "Non posso settare individulmente la direzione dei pin di un chip con il core a 12 bit"
+NotIO = "%var% non è un pin o porta valida di I/O"
+NoDelayUnits = "unità di delay non specificata"
+TableNotFound = "Lookup table %Table% non trovata"
+NoThen = "IF senza THEN"
+ExtraENDIF = "END IF senza IF"
+AssemblyFailed = "Assembler fallito a causa dei seguenti errori:"
+ArrayTypeInvalid = "Non posso settare il tipo di un array"
+NoEndRepeat = "REPEAT senza END REPEAT"
+InvalidDelayLength = "Non posso usare una variabile con il delay microsecondo su chip < 20 MHz"
+
+BadConfig = "Settaggio di configurazione non valido: %option%"
+
+'Nota: Altri messaggi di errore saranno aggiunti, al perfezionamento del controllo di errori

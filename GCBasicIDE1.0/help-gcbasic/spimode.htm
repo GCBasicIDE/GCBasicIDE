@@ -1,0 +1,68 @@
+<html><head>
+   <title>SPIMode</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="Keyboard Overview," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  color="#010101"  size="4" ><span style="font-size:14pt" >SPIMode</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="ps2readbyte.htm">Previous</a>&nbsp;&nbsp;<a href="spitransfer.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Syntax:&nbsp;&nbsp;&nbsp;&nbsp;</b></span></font><font color="#010101" ></font></div><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >&nbsp;&nbsp;&nbsp;&nbsp;SPIMode <i>Mode</i></span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Command Availability:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Available on PIC microcontrollers with Synchronous Serial Port (SSP) 
+module.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Explanation:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >&nbsp; SPIMode sets the mode of the SPI module within the PIC chip. These 
+are the possible SPI Modes:</span></font><font color="#010101" ></font></div><table border="1"  width="553"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Mode Name</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Description</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >MasterSlow</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Master mode, SPI clock is 1/64 of the 
+    frequency of the PIC.</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Master</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Master mode, SPI clock is 1/16 of the 
+    frequency of the PIC.</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >MasterFast</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Master mode, SPI clock is 1/4 of the 
+    frequency of the PIC.</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Slave</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Slave mode</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >SlaveSS</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Slave mode, with the Slave Select pin 
+    enabled.</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><br></div><font color="#010101" ><div align="left" ><br></font></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>See Also </b></span></font><a href="spitransfer.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>SPITransfer</u></span></font></a><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div>
+
+</html>

@@ -1,0 +1,146 @@
+<html><head>
+   <title>Variables</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  color="#010101"  size="4" ><span style="font-size:14pt" >Variables</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="subroutines.htm">Previous</a>&nbsp;&nbsp;<a href="adoff.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>About Variables</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A variable is an area of memory on the microcontroller that can be used to 
+store a number or a series of letters. This is useful for many purposes, 
+such as taking a sensor reading and acting on it, or counting the number 
+of times the robot has performed a particular task.</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Each variable must be given a name, such as &quot;MyVariable&quot; or 
+&quot;PieCounter&quot;. Choosing a name for a variable is easy - just don't include 
+spaces or any symbols (other than _), and make sure that the name is at 
+least 2 characters (letters and/or numbers) long.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Variable Types</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >There are several different types of variable, and each type can store a 
+different sort of information. These are the variable types that Great Cow 
+BASIC can currently use:</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><table border="1"  width="570"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="105"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Variable type</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="213"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Information that this 
+    variable can store</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="225"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Example uses for this type of 
+    variable</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="105"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Bit</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="213"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A bit (0 or 1)</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="225"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Flags to track whether or not a 
+    piece of code has run</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="105"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Byte</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="213"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A whole number between 0 
+    and 255</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="225"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >General purpose storage of 
+    data, such as counters</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="105"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Word</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="213"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A whole number between 0 
+    and 65535</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="225"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Storage of extra large numbers</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="105"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Integer</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="213"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A whole number between -
+    32768 and 32767</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="225"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Anything where a negative 
+    number will occur</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="105"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Long</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="213"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A whole number between 0 
+    and 2^32 (4.29 billion)</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="225"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Storing very, very big numbers</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="105"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Array</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="213"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A list of whole numbers 
+    ranging from 0 to 255</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="225"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Logs of sensor readings</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="105"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >String</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="213"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A series of letters, numbers 
+    and symbols.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="225"  style="border: solid #010101 1px;" >
+    <div align="justify" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Messages that are to be shown 
+    on a screen</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial" ><span style="font-size:12pt" ><b>Using Variables</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Byte variables do not need any special commands to set them up - just 
+put the name of the variable in to the command where the variable is 
+needed.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Other types of variable can be used in a very similar way, except that they 
+must be &quot;dimensioned&quot; first. This involves using the DIM command, to tell 
+Great Cow BASIC that it is dealing with something other than a byte 
+variable.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A key feature of variables is that it is possible the have the microcontroller 
+check a variable, and only run a section of code if it is a given value. This 
+can be done with the IF command.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>String Variables</b></span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Strings are defined as follows:</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >'Create buffer variables to store received messages </span></font><font color="#010101" ></font><br><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >Dim Buffer As String</span></font><font color="#010101" ></font><br><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >String variables default to the following rules and the RAM constraints of 
+a specific chip.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><div align="left"  style="margin-left:25mm; margin-right:0mm; text-indent:-6mm; " ><font face="Symbol"  color="#010101" ><span style="font-size:10pt" >&middot;&nbsp;&nbsp;&nbsp;&nbsp;</span></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >10 bytes for chips with less than 16 bytes of RAM. </span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:25mm; margin-right:0mm; text-indent:-6mm; " ><font face="Symbol"  color="#010101" ><span style="font-size:10pt" >&middot;&nbsp;&nbsp;&nbsp;&nbsp;</span></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >20 bytes for chips with 16 to 367 bytes of RAM.&nbsp;&nbsp; </span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:25mm; margin-right:0mm; text-indent:-6mm; " ><font face="Symbol"  color="#010101" ><span style="font-size:10pt" >&middot;&nbsp;&nbsp;&nbsp;&nbsp;</span></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >40 bytes for devices with more RAM than 367 bytes</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:25mm; margin-right:0mm; text-indent:-6mm; " ><font face="Symbol"  color="#010101" ><span style="font-size:10pt" >&middot;&nbsp;&nbsp;&nbsp;&nbsp;</span></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >For chips that have less RAM then required RAM to support 
+the strings will be NOT be allocated.&nbsp; You cannot store a string 20 
+characters long in a chip with 16 bytes of RAM. </span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Defining a length for the string is the best way to limit memory usage.&nbsp; It is 
+good practice if you need a string of a certain size to set the length of a 
+strings, since the default length for a string variable changes depending 
+on the amount of memory in the microcontroller (see above).</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >To set the length see the example below:<br></span></font><font color="#010101" ></font></div><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >'Create buffer variables to store received messages as 16 bytes 
+long</span></font><font color="#010101" ></font><br><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >Dim OutBuffer As String * 16</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ><br></font></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Variable Aliases</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Some variables are aliases, which are used to refer to memory locations 
+used by other variables. These are useful for joining predefined byte 
+variable together to form word variables.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Alias are not like pointers in many languages - they must always refer to 
+the same variable or variables and cannot be changed.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Casting</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Casting changes the type of a variable or value. Placing the type that the 
+value should be converted to in square brackets will tell the compiler to 
+convert it. For example, this will cause two byte variables to be treated as 
+word variables by the addition code:</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >Dim MyWord As Word</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >MyWord = [word]ByteVar + AnotherByteVar</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Why do this? If there are no casts, then GCBASIC will add the two values 
+using the byte addition code, and then convert the result to a word to store 
+in MyWord. Suppose that ByteVar is 150, and AnotherByteVar is 231. 
+When added, this will come to 381 - which will overflow, leaving 125 in the 
+result. However, when the cast is added, GCBASIC will treat ByteVar as if 
+it were a word, and so will use the word addition code. This will cause the 
+correct result to be calculated.</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Often, a cast will be used when calculating an average:</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><div align="left"  style="margin-left:25mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >MyAverage = ([word]Value1 + Value2) / 2</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >It's also possible to cast the second value:</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><div align="left"  style="margin-left:25mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >MyAverage = (Value1 + [word]Value2) / 2</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The result will be exactly the same.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>For more help, see: </b></span></font><a href="dim.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>Declaring variables with DIM</u></span></font></a><font face="Arial" ><span style="font-size:12pt" >, </span></font><a href="settingvariables.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>Setting Variables</u></span></font></a><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Doing things to individual bits of variables see, </span></font><a href="set.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>SET</u></span></font></a><font face="Arial" ><span style="font-size:12pt" >,&nbsp; </span></font><a href="rotate.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>ROTATE</u></span></font></a><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Checking variables and doing different things based on their value, see </span></font><a href="if.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>IF</u></span></font></a><font face="Arial" ><span style="font-size:12pt" >, </span></font><a href="do.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>DO</u></span></font></a><font face="Arial" ><span style="font-size:12pt" >, </span></font><a href="for.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>FOR</u></span></font></a><font face="Arial" ><span style="font-size:12pt" >, </span></font><a href="conditions.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>Conditions</u></span></font></a><font color="#010101" ></font></div>
+
+</html>

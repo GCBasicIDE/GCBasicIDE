@@ -1,0 +1,15 @@
+#include <eracer.h>
+
+MAIN:
+ SET BUZZER ON
+ ToneDelay(DelayTime)
+ Set BUZZER OFF
+ ToneDelay(DelayTime)
+ DelayTime=DelayTime+1
+goto MAIN
+
+sub ToneDelay(time)
+ for temp = 1 to time
+  Wait 20 10us
+ next
+end sub

@@ -1,0 +1,19 @@
+# Gambas Project File 3.0
+# Compiled with Gambas 3.5.3
+Title=GCBasicIDE
+Startup=FNotepad
+Icon=Cow.jpg
+Version=0.0.163
+Component=gb.image
+Component=gb.qt4
+Component=gb.form
+Component=gb.desktop
+Component=gb.form.dialog
+Component=gb.settings
+Component=gb.form.mdi
+Component=gb.qt4.ext
+Component=gb.qt4.webkit
+TabSize=2
+Translate=1
+Language=pt_BR
+Packager=1

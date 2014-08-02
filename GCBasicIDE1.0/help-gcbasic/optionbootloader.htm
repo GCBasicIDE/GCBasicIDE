@@ -1,0 +1,36 @@
+<html><head>
+   <title>#bootloader</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  size="4" ><span style="font-size:14pt" >#option bootloader</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="mem.htm">Previous</a>&nbsp;&nbsp;<a href="assembleroverview.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Syntax:</b>&nbsp;&nbsp;&nbsp;&nbsp;</span></font><font color="#010101" ></font></div><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >&nbsp;&nbsp;&nbsp;&nbsp;#option bootloader address</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Explanation:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >#option bootloader prevents the overwriting of any pre-loaded bootloader 
+code, vectors, etc. below the &lt;address&gt; and have all GCBASIC code start 
+at &quot;address&quot;.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial" ><span style="font-size:12pt" >A bootloader is a program that stays in the microcontroller and 
+communicates with the PC, typically through the serial interface.&nbsp; The 
+bootloader receives a user program from the PC and writes it in the flash 
+memory, then launches this program in execution.&nbsp; Bootloaders can only 
+be used with those microcontrollers that can write their flash memory 
+through software.&nbsp; </span></font><font color="#010101" ></font><br><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial" ><span style="font-size:12pt" >The bootloader itself must be written into the flash memory with an 
+external programmer.&nbsp;&nbsp; </span></font><font color="#010101" ></font><br><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial" ><span style="font-size:12pt" >In order for the bootloader to be launched after each reset, a &quot;goto 
+bootloader&quot; instruction must exist somewhere in the first 4 instructions; 
+There are two types of bootloaders, some that require that the user 
+reallocate the code and others that by themselves reallocate the first 4 
+instructions of the user program to another location and execute them 
+when the bootloader exits.</span></font><font color="#010101" ></font><br><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The diagram below shows the architecture of a bootloader.&nbsp; The left hand 
+is the operation of the instructions without a bootloader.&nbsp; The right hand 
+shows the initial instruction of goto the bootoader, then, when the 
+bootloader has initialised the execution of the start code.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><img src="optionbootloader1.PNG"  width="503"  height="263"  border="0"  alt="graphic" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >See </span></font><a href="https://sourceforge.net/projects/tinypicbootload/files/"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>example bootload software.</u></span></font></a><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font color="#010101" ></font></div><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Example:</b></span></font><font color="#010101" ></font></div><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >&nbsp;&nbsp;&nbsp; #option bootloader 0x800</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ><br></font></div><font color="#010101" ><div align="left" ><br></font></div><font color="#010101" ><div align="left" ></font><font color="#010101" ></font></div>
+
+</html>
