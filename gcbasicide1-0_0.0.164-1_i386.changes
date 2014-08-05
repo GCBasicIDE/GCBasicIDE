@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Tue, 05 Aug 2014 12:00:00 +0000
+Source: gcbasicide1-0
+Binary: gcbasicide1-0
+Architecture: source all
+Version: 0.0.164-1
+Distribution: unstable
+Urgency: low
+Maintainer: Edivaldo Amaral Gonçalves <kito.eag@gmail.com>
+Changed-By: Edivaldo Amaral Gonçalves <kito.eag@gmail.com>
+Description: 
+ gcbasicide1-0 - GCBasicIDE
+Changes: 
+ gcbasicide1-0 (0.0.164-1) unstable; urgency=low
+ .
+   * Liberação inicial
+Checksums-Sha1: 
+ 6de8ff06c8eedca9bf79372ab5294631d702044b 1438 gcbasicide1-0_0.0.164-1.dsc
+ 30baf2a0038965d50b57a495ea8743397bb4329a 4966843 gcbasicide1-0_0.0.164.orig.tar.gz
+ b5119060bf0d0f2aec4b98e8752d01c33961bbaa 1414 gcbasicide1-0_0.0.164-1.diff.gz
+ 547bbbef6892bda2aa137f49d6178ce1157f89b1 1514222 gcbasicide1-0_0.0.164-1_all.deb
+Checksums-Sha256: 
+ bc930f0354d5d08f32bb2c8dbad8ba33851e0bc52432634afbb2af56e75645fa 1438 gcbasicide1-0_0.0.164-1.dsc
+ cf7255cf100d1290404c226fcaa9dd6a8c44c70a390e42c2654f11652554db72 4966843 gcbasicide1-0_0.0.164.orig.tar.gz
+ 8be4df8ea812b89cdd737c59c302b17f260ff804bb356482b201f451f6194c06 1414 gcbasicide1-0_0.0.164-1.diff.gz
+ d2ec94ebf20a20ddf46c5ad265f397fc66f5e2702aa0b863d26b4343ae2376ed 1514222 gcbasicide1-0_0.0.164-1_all.deb
+Files: 
+ 6b294ac2e653ae6e592b76041dd0f5fb 1438 contrib/electronics optional gcbasicide1-0_0.0.164-1.dsc
+ fb1cdcab91b798908412c50bc474edba 4966843 contrib/electronics optional gcbasicide1-0_0.0.164.orig.tar.gz
+ 637f94892db58ecee85dc3ab4f62f29f 1414 contrib/electronics optional gcbasicide1-0_0.0.164-1.diff.gz
+ 44528677e575727c4c913a061fb2d83c 1514222 contrib/electronics optional gcbasicide1-0_0.0.164-1_all.deb

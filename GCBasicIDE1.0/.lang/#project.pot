@@ -18,3 +18,7 @@ msgstr ""
 msgid "GCBasicIDE"
 msgstr ""
 
+#: .project:2
+msgid "Uma interface gráfica para escrever e compilar microcontroladores PIC com códigos escritos para o compilador GCBasic. "
+msgstr ""
+
