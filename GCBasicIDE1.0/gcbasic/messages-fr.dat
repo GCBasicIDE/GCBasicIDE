@@ -1,0 +1,228 @@
+'French messages.dat para Great Cow BASIC
+'Lecréateur original de la traduction espagnole Hugh Considine
+'Traduction traduite en français le 5 octobre 2009 par Pierre Launay per.launay@gmail.com traduction à partir de l'espagnol 
+
+'Messages communs:
+AnyKey = "Appuyez sur une touche pour continuer"
+Found = "trouvé"
+Found2 = " (Trouvé "
+NotFound = "PAS TROUVÉ!"
+Calling = "Appel "
+Success = "Fait"
+
+'Ecrans d' Introduction
+
+Block NoPrompt
+
+Great Cow BASIC - Un compilateur de BASIC pour microcontrôleurs PIC
+Version: %Version%  
+ 
+Paramètres de la ligne de Commande: 
+
+  gcbasic [-O:Sortie.asm] [-A:assembleur] [-P:programmateur]  
+                 [-K:{C|A}] [-V] [-L][-NP] fichier 
+ 
+        -O:sortie.asm  Établit un .asm de sortie distinct de l'original. 
+        -A:assembleur   Script utilisé pour appeler l'assembleur. 
+                         /A:GCASM utilisera l'assembleur interne du GcBasic. 
+        -P:programmeur  Script utilisé pour appeler le programmateur. 
+        -K:{C|A}       Maintenir le code original inséré dans le fichier asm. 
+                         /K:C épargnera les commentaires. 
+                         /K:A préservera tout le code d'entrée.
+        -V             Mode verbeux 
+        -L             Présente la licence
+        -NP            Ne fera pas de pausa pour les erreurs. Utile avec IDEs. 
+        filename       Le fichier à compiler. 
+ 
+Peut utiliser / au lieu de -, par exemple /V au lieu de -V. 
+ 
+End Block 
+ 
+Block License 
+Great Cow BASIC - Un Compilateur en BASIC pour les microcontrôleurs PIC 
+Droits réservés 2006, 2007 Hugh Considine traduction Pierre Launay
+ 
+Ce programme est un Programme libre; Vous pouvez le redistribuer et/ou le modifier
+sous les termes de la LPG Licence Publique Générale ainsi publiée par 
+la fundation du Logiciel Libre; n'importe quelle version 2 de la licence, ou 
+n'importe quelle version actuelle. 
+ 
+Ce programme est distribué dans l'espoir qu'il vous soit util, 
+mais SANS AUCUNE GARANTIE. Voyez la LPG Licencia Publica General 
+pour plus de détails. 
+ 
+Vous devrez recevoir une copie de la 'LPG Licencia Publica General' 
+avec ce programme ; sinon, écrivez a "Free SoftwareFoundation, Inc.",  
+59 Temple Place, Suite 330, Boston, MA 02111-1307 USA" 
+ 
+Si vous avez n'importe quelle question, s'il vous plait envoyez un courriel à per.launay@gmail.com 
+End Block 
+ 
+Startup = "Great Cow BASIC (%Version%)" 
+Compiling = "Compile %Filename% ..." 
+NoFile = "Ne peut pas trouver %Filename%!" 
+ 
+'Verbose mode messages 
+FindSource = "Fichiers source trouvés :" 
+LoadSource = "Charge les fichiers source ..." 
+ChipS = "Mettre les paramètres du PIC:" 'Chip Settings:" 
+ChipM = "Modèle du PIC: " 
+ChipC = "Horloge MHz: " 
+ChipO = "Oscilateur: " 
+ChipF = "Famille de PIC: " 
+ChipR = "RAM: " 
+
+'Conversion messages
+Converting = "Conversion %infile%: "
+NoConverter = "Convertisseur non trouvé"
+ConvertedAlready = "Il a déjà été converti"
+
+ReadChipData = "Lit les données du PIC ..." 
+BuildMemoryMap = "Construire le plan de mémoire ..." 
+ 
+CompDirs = "Lire les directives du compilateur ..." 
+RunScripts = "Exécuter les scripts du compilateur ..." 
+RepDefs = "Remplacer les définitions avec des valeurs ..." 
+SplitLines = "Diviser des lignes avec des commandes multiples ..." 
+FindFreeRAM = "Construire le plan de mémoire du PIC ..." 
+ChipHeader = "Trouver et lire le fichier d'entête du PIC ..." 
+FindLargeVars = "Trouver les variables non 'octets' ..." 
+TranslateFunctions = "Compiler les fonctions ..." 
+FindRequiredSubs = "Trouver les sous-programmes requis ..." 
+StringTable = "Ajouter les chaînes des tables de recherche 'lookup tables' ..." 
+DataTable = "Ajouter les données des tables de recherche ..." 
+AddingSubs = "Ajouter sous-programmes requis ..." 
+RemIfDefs = "Trouver et compiler les directives #IFDEF ..." 
+CompileFor = "Compiler les commandes FOR ..." 
+ 
+AllocateRAM = "Placer les variables en 'RAM' ..." 
+FindArrays = "Créer les tableaux ..." 
+ 
+SubParams = "Mettre des paramètres aux sous programmes ..." 
+ProcessArrays = "Procéder aux référencements des tableaux ..." 
+FindingASM = "Trouver les commandes en assembleur ..." 
+AddBits = "Ajouter des noms de variables de système à 'bits' ..." 
+
+CompSubs = "Compiler Sous-programmes/fonctions:"
+TidyCode = "Compacter le Code ..." 
+CalcConfig = "Calculer CONFIG ..." 
+LocatingSubs = "Localiser les sous-programmes dans la mémoire du programme ..."
+AddBankCommands = "Ajouter les commandes de banque ... " 
+ 
+Add18FBanks = "Ajouter les bits d'accès à la RAM ... " 
+ 
+AddLongCalls = "Calculer les bits de poids forts du Compteur de Programme..."
+ 
+OptimiseIF = "Optimiser IFs ..." 
+OptimiseVars = "Optimiser les opérations de variables ..." 
+FixFunctions = "Vérifier les fonctions utilisées pour WAIT ..." 
+ 
+WritingASM = "Écrire la sortie dans %OutputFile% ..." 
+Success = "Programme compilé avec succès !" 
+ASMSuccess = "Programme assemblé avec succès !" 
+CompTime = " (Temps de compilation: " 
+CompSecs = " secondes)" 
+Summary = "Sommaire :" 
+DataRead = "Lu par GCBASIC:" 
+InLines = "Lignes d'entrée : " 
+Vars = "Variables: " 
+Consts = "Constantes: " 
+Subs = "Sous-programmes : " 
+AssemblyWritten = "Lignes de programme écrites en assembleur : " 
+MakeASM = " programme en assembleur..." 
+ 
+SendToPIC = "Charger le programme ..." 
+ 
+'Errors 
+Error = "Une erreur a été trouvée :" 
+Errors = "Des erreurs ont été trouvées :" 
+BadError = "Une erreur sérieuse a été trouvée :" 
+BadErrors = "De sérieuses erreurs ont été trouvées :" 
+ErrorLogged = "Le message a été écrit dans le fichier " 
+ 
+TypeError = "Erreur" 
+TypeWarning = "Avertissement" 
+Warning = "Un message d'avertissement a été généré :" 
+Warnings = "Des messages d'avertissement ont été générés :" 
+ 
+ArrayNoDec = "Tableau/Fonction %Name% n'a pas été déclaré " 
+DupDef = "en double ou définitions en conflit dans : %var%" 
+BadVarName = "Nom de variable invalide : %var%" 
+ArrayTooBig = "Le tableau %Array% est trop grand" 
+BadParam = "Paramètre de syntaxes incorrect : %sub%. la Syntaxe correcte est %correct%" 
+NoNext = "FOR sans le NEXT correspondant" 
+NoBit = "Il manque le Bit dans la commande SET" 
+SynErr = "Erreur de syntaxe" 
+ 
+'Nouvelles erreurs dans la version ver. 0.9.3.0 
+ExcessVars = "Utilisation excessive de RAM! Effacer quelques variables, reduire la taille des tableaux, ou utiliser un PIC avec des capacités plus grandes" 
+NoBitSet = "On ne peut pas fixer individuellement le type d'E/S des broches des PICs de 12 bit" 
+NotIO = "%var% n'est pas une broche valide d'entrée/sortie ou d'un port" 
+NoDelayUnits = "Les unités de temps n'ont pas été spécifiées" 
+TableNotFound = "Table de recherche %Table% pas trouvé" 
+NoThen = "IF sans THEN" 
+ExtraENDIF = "END IF sans IF" 
+AssemblyFailed = "L'assembleur a échoué du aux erreurs suivantes :" 
+ArrayTypeInvalid = "On ne peut fixer le type d'un tableau" 
+NoEndRepeat = "REPEAT sans END REPEAT" 
+InvalidDelayLength = "On ne peut pas utiliser une variable avec des temporisations de microsecondes avec des PICs dont la  fréquence est plus basse que 20 MHZ." 
+BadConfig = "Configuration  invalide: %option%" 
+ 
+'New errors in 0.9.4.0 
+ASMParamMismatch = "Le nombre de paramètres ne sont pas égales" 
+ValueOutOfRange = "Valeur hors limites : les bits les moins significatifs ont été utilisés" 
+NoChip = "Le modèle du PIC n'a pas été spécifié ! GCBASIC ne peut pas continuer" 
+ChipNotSupported = "On n'a pas trouvé les données du PIC %chipname%" 
+SubTooBig = "Le sous-programme %sub% est trop grand. Réduisez sa taille, o changez pour un pic de la série: 18C/18F" 
+SymbolNotDefined = "Le symbole %symbol% n'a pas été définie" 
+BadBitSet = "On ne peut pas fixer le bit %bit% de %var%" 
+BadBitRead = "On ne peut pas lire le bit %bit% de %var%" 
+NotAVariable = "%value% n'est pas une variable" 
+BadSymbol = "%symbol% n'est pas un symbole valide" 
+BadStringConst = "La constante de la chaîne ne peut pas aller en premier dans la condition"  
+UndeclaredArray = "Le tableau %array% n'a pas été déclaré" 
+BadVarType = "Type de variable non valide : %type%" 
+BadParamCount = "le nombre de paramètres ne correspond pas" 
+MissingOperand = "Opérande manquant, %pos% %operator%" 
+RecursiveDefine = "Définition récursive" 
+ForIndexInUse = "Indice For %index% est actuelment en usage" 
+BadValueType = "On ne peut pas garder %value% dans la variable %type% %var%" 
+BadCommandType = La commande "%command% ne peut pas être utilisé dans les variables de type %type%" 
+BadVarBit = "Variable %var% est de type %type% et n'a pas un bit %bit%" 
+BadConstName = "Nom de constante non valide: %const%" 
+BadBrackets = "Les parenthèses ne sont pas égales" 
+OperandTypeMismatch = "L'opérande %operand% ne peut pas être utilisé avec les variables %type% " 
+OutOfRegSpace = "Hors registres. S'il vous plaît défaites n'importe quel calcul complexe" 
+BadVarAlias = "Variable definie avec de multiples surnoms" 
+BadAliasSize = "La taille du surnom de variable (%size%) n'égale pas le nombre d'emplacements (%locations%)" 
+MissingTarget = "Le sous-programme de destination n'a pas été spécifié"
+BadOnType = "Mauvais mode : Trouvé %found%, erreur inespéré ou interruption" 
+BadIntEvent = "Évènement d'interruption non valide: %event%" 
+HandlerConflict = "Un manipulateur a été défini par l'évènement %event%" 
+MissingCoreFile = "On ne trouve pas le fichier %core%, le quel est requis par le %chip%" 
+BadDirection = "Adresse non valide de la broche, On n'attendait In ou Out *Entrée ou Sortie" 
+BadPWMFreq = "Valeur de Fréquence non valide  de MLI (PWM)" 
+SubParamNotVar = "%value% n'est pas une variable et ne peut pas être utilisée pour le paramètre %param%" 
+AssemblerNotFound = "On ne peut pas démarrer l'assembleur extérieur" 
+NoMatchingSig = "On ne trouve pas de sous-programme avec des paramètres égaux" 
+BadTableLocation = "Mauvaise localisation de la table des données, trouvé %loc%, on n'attendait PROGRAMME ou DONNÉES" 
+BadParamsSet = "Paramètre incorrecte dans Set, attendu : Set variable.bit status"
+BadSetStatus = "État incorrect dans la commande Set: %status%"
+OutOfProgMem = "Le programme est trop long, tous les sous-programmes ne tiennent pas dans la mémoire disponible"
+DuplicateSub = "Nom et paramètres de sous-programme dupliqués: %sub%"
+FirstPageFull = "Première page de mémoire pleine, diminuez la taille du sous-programme principal et/ou les interruptions"
+TooManyErrors = "Trop d'erreurs"
+SubNotFound = "Le sous-programme  %sub% n'a pas été trouvé"
+NoEndIf = "If sans End if qui coïncide"
+
+'Warnings 
+WarningShortName = "Simple lettre comme %type%: %name%" 
+WarningNoIntEnable = "Évènement %event% doit être validé manuellement" 
+WarningNoIntFlag = "Le drapeau pour l' %event% doit être effacé manuellement" 
+WarningUnsafeString = "Ce PIC ne supporte pas proprement des variables de chaînes de caractères et quelques erreurs étranges peuvent arriver" 
+WarningNoEEPROMTable = "Pas de données en EEPROM, la table est sauvée dans la mémoire de programme" 
+WarningLowCommonRam = "Cette puce n'a pas suffisamment de  RAM commune (non-banked)"
+
+'GCASM messages 
+SymbolTable = "Construit la table de symboles ..." 
+MachineCode = "Générer le code machine ..." 

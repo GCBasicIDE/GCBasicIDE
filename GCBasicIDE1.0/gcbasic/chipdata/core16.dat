@@ -1,0 +1,97 @@
+'GCBASIC assembler instruction data
+'Suits 16 bit core chips
+'Last updated 11/2/2007
+
+'Format: command;words;word1;word2
+'Whitespace does not matter in word1/2
+
+'BYTE-ORIENTED FILE REGISTER OPERATIONS
+
+ADDWF f,d,a;	1;	0010 01da ffff ffff
+ADDWFC f,d,a;	1;	0010 00da ffff ffff
+ANDWF f,d,a;	1;	0001 01da ffff ffff
+CLRF f,a;	1;	0110 101a ffff ffff
+COMF f,d,a;	1;	0001 11da ffff ffff
+CPFSEQ f,a;	1;	0110 001a ffff ffff
+CPFSGT f,a;	1;	0110 010a ffff ffff
+CPFSLT f,a;	1;	0110 000a ffff ffff
+DECF f,d,a;	1;	0000 01da ffff ffff
+DECFSZ f,d,a;	1;	0010 11da ffff ffff
+DCFSNZ f,d,a;	1;	0100 11da ffff ffff
+INCF f,d,a;	1;	0010 10da ffff ffff
+INCFSZ f,d,a;	1;	0011 11da ffff ffff
+INFSNZ f,d,a;	1;	0100 10da ffff ffff
+IORWF f,d,a;	1;	0001 00da ffff ffff
+MOVF f,d,a;	1;	0101 00da ffff ffff
+MOVFF s,d;	2;	1100 ssss ssss ssss;	1111 dddd dddd dddd
+MOVWF f,a;	1;	0110 111a ffff ffff
+MULWF f,a;	1;	0000 001a ffff ffff
+NEGF f,a;	1;	0110 110a ffff ffff
+RLCF f,d,a;	1;	0011 01da ffff ffff
+RLF f,d,a;	1;	0011 01da ffff ffff
+RLNCF f,d,a;	1;	0100 01da ffff ffff
+RRCF f,d,a;	1;	0011 00da ffff ffff
+RRF f,d,a;	1;	0011 00da ffff ffff
+RRNCF f,d,a;	1;	0100 00da ffff ffff
+SETF f,a;	1;	0110 100a ffff ffff
+SUBFWB f,d,a;	1;	0101 01da ffff ffff
+SUBWF f,d,a;	1;	0101 11da ffff ffff
+SUBWFB f,d,a;	1;	0101 10da ffff ffff
+SWAPF f,d,a;	1;	0011 10da ffff ffff
+TSTFSZ f,a;	1;	0110 011a ffff ffff
+XORWF f,d,a;	1;	0001 10da ffff ffff
+
+'BIT-ORIENTED FILE REGISTER OPERATIONS
+
+BCF f,b,a;	1;	1001 bbba ffff ffff
+BSF f,b,a;	1;	1000 bbba ffff ffff
+BTFSC f,b,a;	1;	1011 bbba ffff ffff
+BTFSS f,b,a;	1;	1010 bbba ffff ffff
+BTG f,d,a;	1;	0111 bbba ffff ffff
+
+'CONTROL OPERATIONS
+
+BC n;		1;	1110 0010 nnnn nnnn
+BN n;		1;	1110 0110 nnnn nnnn
+BNC n;		1;	1110 0011 nnnn nnnn
+BNN n;		1;	1110 0111 nnnn nnnn
+BNOV n;		1;	1110 0101 nnnn nnnn
+BNZ n;		1;	1110 0001 nnnn nnnn
+BOV n;		1;	1110 0100 nnnn nnnn
+BRA n;		1;	1101 0nnn nnnn nnnn
+BZ n;		1;	1110 0000 nnnn nnnn
+CALL k,s;	2;	1110 110s kkkk kkkk;	1111 kkkk kkkk kkkk
+CLRWDT;		1;	0000 0000 0000 0100
+DAW;		1;	0000 0000 0000 0111
+GOTO k;		2;	1110 1111 kkkk kkkk;	1111 kkkk kkkk kkkk
+NOP;		1;	0000 0000 0000 0000
+POP;		1;	0000 0000 0000 0110
+PUSH;		1;	0000 0000 0000 0101
+RCALL n;	1;	1101 1nnn nnnn nnnn
+RESET;		1;	0000 0000 1111 1111
+RETFIE s;	1;	0000 0000 0001 000s
+RETLW k;	1;	0000 1100 kkkk kkkk
+RETURN s;	1;	0000 0000 0001 001s
+SLEEP;		1;	0000 0000 0000 0011
+
+'LITERAL OPERATIONS
+
+ADDLW k;	1;	0000 1111 kkkk kkkk
+ANDLW k;	1;	0000 1011 kkkk kkkk
+IORLW k;	1;	0000 1001 kkkk kkkk
+LFSR f,k;	2;	1110 1110 00ff kkkk;	1111 0000 kkkk kkkk
+MOVLB k;	1;	0000 0001 0000 kkkk
+MOVLW k;	1;	0000 1110 kkkk kkkk
+MULLW k;	1;	0000 1101 kkkk kkkk
+SUBLW k;	1;	0000 1000 kkkk kkkk
+XORLW k;	1;	0000 1010 kkkk kkkk
+
+'DATA MEMORY <> PROGRAM MEMORY OPERATIONS
+TBLRD*;		1;	0000 0000 0000 1000
+TBLRD*+;	1;	0000 0000 0000 1001
+TBLRD*-;	1;	0000 0000 0000 1010
+TBLRD+*;	1;	0000 0000 0000 1011
+TBLWT*;		1;	0000 0000 0000 1100
+TBLWT*+;	1;	0000 0000 0000 1101
+TBLWT*-;	1;	0000 0000 0000 1110
+TBLWT+*;	1;	0000 0000 0000 1111

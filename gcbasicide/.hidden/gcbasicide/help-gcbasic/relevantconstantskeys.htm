@@ -1,0 +1,230 @@
+<html><head>
+   <title>Keyad Overview</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="Keyad Overview," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  color="#010101"  size="4" ><span style="font-size:14pt" >Overview</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="inton.htm">Previous</a>&nbsp;&nbsp;<a href="keypaddata.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Introduction</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The keypad routines allow for a program to read from a 4 x 4 matrix 
+keypad.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >There are two ways that the keypad routines can be set up. One option 
+is to connect the wires from the keypad in a particular order, and then 
+to set the KeypadPort constant. The other option is to connect the 
+keypad in whatever way is easiest, and then set the KEYPAD_ROW_x 
+and KEYPAD_COL_x constants. The first option (setting KeypadPort) 
+will generate slightly more efficient code.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Configuration using KEYPAD_ROW_x and KEYPAD_COL_x</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These constants must be set:</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><table border="1"  width="576"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Constant Name</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Controls</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Default Value</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >KEYPAD_ROW_1</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The pin on the 
+    microcontroller that 
+    connects to the Row 1 
+    pin on the keypad</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >KEYPAD_ROW_2</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The pin on the 
+    microcontroller that 
+    connects to the Row 2 
+    pin on the keypad</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >KEYPAD_ROW_3</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The pin on the 
+    microcontroller that 
+    connects to the Row 3 
+    pin on the keypad</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >KEYPAD_ROW_4</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The pin on the 
+    microcontroller that 
+    connects to the Row 4 
+    pin on the keypad</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >KEYPAD_COL_1</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The pin on the 
+    microcontroller that 
+    connects to the Col 1 pin 
+    on the keypad</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >KEYPAD_COL_2</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The pin on the 
+    microcontroller that 
+    connects to the Col 2 pin 
+    on the keypad</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >KEYPAD_COL_3</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The pin on the 
+    microcontroller that 
+    connects to the Col 3 pin 
+    on the keypad</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >KEYPAD_COL_4</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The pin on the 
+    microcontroller that 
+    connects to the Col 4 pin 
+    on the keypad</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >If using a 3 x 3 keypad, do not set the KEYPAD_ROW_4 or 
+KEYPAD_COL_4 constants.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Configuration using KeypadPort</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >When setting up the keypad code using the KeypadPort constant, only 
+KeypadPort needs to be set:</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><table border="1"  width="576"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Constant Name</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Controls</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Default Value</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >KeypadPort</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The port on the 
+    microcontroller chip that 
+    the keypad is connected 
+    to.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    <div align="center" ><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><br></div><font color="#010101" ><div align="left" ><br></font></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >For this to work, the keypad must be connected as follows:</span></font><font color="#010101" ></font></div><table border="1"  width="553"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Microcontroller port pin</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Keypad connector</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >0</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Row 1</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >1</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Row 2</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >2</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Row 3</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >3</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Row 4</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >4</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Column 1</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >5</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Column 2</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >6</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Column 3</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >7</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Column 4</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Note: To use a 3 x 3 keypad in this mode, the pins on the 
+microcontroller for any unused columns must be pulled up.</span></font><font color="#010101" ></font></div>
+
+</html>

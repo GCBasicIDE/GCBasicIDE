@@ -1,0 +1,23 @@
+<html><head>
+   <title>PulseOutInv</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  color="#010101"  size="4" ><span style="font-size:14pt" >PulseOutInv</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="pot.htm">Previous</a>&nbsp;&nbsp;<a href="pulseout.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Syntax:</b></span></font><font color="#010101" ></font></div><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >&nbsp;&nbsp;&nbsp;&nbsp;PulseOutInv <i>pin,</i> <i>time units</i></span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Command Availability:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Available on all microcontrollers.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Explanation:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" > The PulseOutInv command will set the specified pin low, wait for the 
+specified amount of time, and then set the pin high. The pin is 
+specified in the same way as it is for the Set command, and the time is 
+the same as for the Wait command.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Example:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >'This program flashes an LED on GPIO.0 using PulseOutInv</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >#chip 12F629, 4</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >#config INTRC_OSC_NOCLKOUT</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >Dir GPIO.0 Out</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >Do</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >&nbsp;&nbsp;&nbsp;&nbsp;PulseOutInv GPIO.0, 1 sec &nbsp;&nbsp;&nbsp;&nbsp;'Turn LED off for 1 sec</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >&nbsp;&nbsp;&nbsp;&nbsp;Wait 1 sec &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Wait 1 sec with LED on</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >Loop</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div>
+
+</html>

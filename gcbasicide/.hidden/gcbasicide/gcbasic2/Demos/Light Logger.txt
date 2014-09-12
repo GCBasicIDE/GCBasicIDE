@@ -1,0 +1,27 @@
+'Light Logger demonstration for GCBASIC
+' (c) Hugh Considine 2006
+
+'By default, this program will take a reading every second from port AN0, and write it
+'to EEPROM. Most programmers have an "Read Chip" option, which can be used to upload the
+'log to a PC.
+
+'Program options
+#define ReadWait 1 s 	'Read every 1 second
+#define ReadSensor AN0	'Read the sensor on port AN0
+
+'Hardware settings
+#chip 16F819, 20 	'PIC 16F819 running at 20 MHz
+#config MCLRE_OFF	'Turn off MCLR. WDT and LVP disabled and HS OSC selected automatically
+#mem 256 		'Chip has 256 bytes of ram
+
+'Initialise
+DataCount = 0		'Set the EEPROM data location to 0
+dir PORTA.0 IN		'Set the pin used for A/D conversion to an input
+
+'Main routine
+do
+ EPWrite(DataCount, ReadAD(ReadSensor))	'Write a sample to the EEPROM
+ if DataCount = 255 then end		'Stop program when EEPROM is full
+ DataCount += 1				'Increment EEPROM location
+ Wait ReadWait				'Wait before taking another reading
+loop

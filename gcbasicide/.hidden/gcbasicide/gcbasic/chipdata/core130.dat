@@ -1,0 +1,123 @@
+'GCBASIC assembler instruction data
+'Suits AVR chips
+'Last updated 22/4/2009
+
+'Format: command;words;word1;word2
+'Whitespace does not matter in word1/2
+
+ADC d,r;	1;	0001 11rd dddd rrrr
+ADD d,r;	1;	0000 11rd dddd rrrr
+ADIW d,r;	1;	1001 0110 kkdd kkkk
+AND d,r;	1;	0010 00rd dddd rrrr
+ANDI d,k;	1;	0111 kkkk dddd kkkk
+ASR d;		1;	1001 010d dddd 0101
+BCLR s;		1;	1001 0100 1sss 1000
+BLD d,b;	1;	1111 100d dddd 0bbb
+BRBC s,k;	1;	1111 01kk kkkk ksss
+BRBS s,k;	1;	1111 00kk kkkk ksss
+BRCC k;		1;	1111 01kk kkkk k000
+BRCS k;		1;	1111 00kk kkkk k000
+BREQ k;		1;	1111 00kk kkkk k001
+BRGE k;		1;	1111 01kk kkkk k100
+BRHC k;		1;	1111 01kk kkkk k101
+BRHS k;		1;	1111 00kk kkkk k101
+BRID k;		1;	1111 01kk kkkk k111
+BRIE k;		1;	1111 00kk kkkk k111
+BRLO k;		1;	1111 00kk kkkk k000
+BRLT k;		1;	1111 00kk kkkk k100
+BRMI k;		1;	1111 00kk kkkk k010
+BRNE k;		1;	1111 01kk kkkk k001
+BRPL k;		1;	1111 01kk kkkk k010
+BRSH k;		1;	1111 01kk kkkk k000
+BRTC k;		1;	1111 01kk kkkk k110
+BRTS k;		1;	1111 00kk kkkk k110
+BRVC k;		1;	1111 01kk kkkk k011
+BRVS k;		1;	1111 00kk kkkk k011
+BREAK;		1;	1001 0101 1001 1000
+BSET s;		1;	1001 0100 0sss 1000
+BST d,b;	1;	1111 101d dddd 0bbb
+CALL k;		2;	1001 010k kkkk 111k;	kkkk kkkk kkkk kkkk
+CBI a,b;	1;	1001 1000 aaaa abbb
+CBR d,k;	1;	0111 _k_k_k_k dddd _k_k_k_k
+CLC;		1;	1001 0100 1000 1000
+CLH;		1;	1001 0100 1101 1000
+CLI;		1;	1001 0100 1111 1000
+CLN;		1;	1001 0100 1010 1000
+CLR d;		1;	0010 01dd dddd dddd
+CLS;		1;	1001 0100 1100 1000
+CLT;		1;	1001 0100 1110 1000
+CLV;		1;	1001 0100 1011 1000
+CLZ;		1;	1001 0100 1001 1000
+COM d;		1;	1001 010d dddd 0000
+CP d,r;		1;	0001 01rd dddd rrrr
+CPC d,r;	1;	0000 01rd dddd rrrr
+CPI d,k;	1;	0011 kkkk dddd kkkk
+CPSE d,r;	1;	0001 00rd dddd rrrr
+DEC d;		1;	1001 010d dddd 1010
+EICALL;		1;	1001 0101 0001 1001
+EIJMP;		1;	1001 0100 0001 1001
+ELPM;		1;	1001 0101 1101 1000
+ELPM d,z;	1;	1001 000d dddd 0110
+ELPM+ d,z;	1;	1001 000d dddd 0111
+EOR d,r;	1;	0010 01rd dddd rrrr
+FMUL d,r;	1;	0000 0011 0ddd 1rrr
+FMULS d,r;	1;	0000 0011 1ddd 0rrr
+FMULSU d,r;	1;	0000 0011 1ddd 1rrr
+ICALL;		1;	1001 0101 0000 1001
+IJMP;		1;	1001 0100 0000 1001
+IN d,a;		1;	1011 0aad dddd aaaa
+INC d;		1;	1001 010d dddd 0011
+JMP k;		2;	1001 010k kkkk 110k;	kkkk kkkk kkkk kkkk
+LD d,s;		1;	100s 000d dddd ssss
+LDI d,k;	1;	1110 kkkk dddd kkkk
+LDS d,k;	2;	1001 000d dddd 0000;	kkkk kkkk kkkk kkkk
+LPM;		1;	1001 0101 1100 1000
+LPM d;		1;	1001 000d dddd 0100
+LPM+ d;		1;	1001 000d dddd 0101
+LSL d;		1;	0000 11dd dddd dddd
+LSR d;		1;	1001 010d dddd 0110
+MOV d,r;	1;	0010 11rd dddd rrrr
+MOVW d,r;	1;	0000 0001 dddd rrrr
+MUL d,r;	1;	1001 11rd dddd rrrr
+MULS d,r;	1;	0000 0010 dddd rrrr
+MULSU d,r;	1;	0000 0011 0ddd 0rrr
+NEG d;		1;	1001 010d dddd 0001
+NOP;		1;	0000 0000 0000 0000
+OR d,r;		1;	0010 10rd dddd rrrr
+ORI d,k;	1;	0110 kkkk dddd kkkk
+OUT a,r;	1;	1011 1aar rrrr aaaa
+POP d;		1;	1001 000d dddd 1111
+PUSH d;		1;	1001 001d dddd 1111
+RCALL k;	1;	1101 kkkk kkkk kkkk
+RET;		1;	1001 0101 0000 1000
+RETI;		1;	1001 0101 0001 1000
+RJMP k;		1;	1100 kkkk kkkk kkkk
+ROL d;		1;	0001 11dd dddd dddd
+ROR d;		1;	1001 010d dddd 0111
+SBC d,r;	1;	0000 10rd dddd rrrr
+SBCI d,k;	1;	0100 kkkk dddd kkkk
+SBI a,b;	1;	1001 1010 aaaa abbb
+SBIC a,b;	1;	1001 1001 aaaa abbb
+SBIS a,b;	1;	1001 1011 aaaa abbb
+SBIW d,k;	1;	1001 0111 kkdd kkkk
+SBR d,k;	1;	0110 kkkk dddd kkkk
+SBRC r,b;	1;	1111 110r rrrr 0bbb
+SBRS r,b;	1;	1111 111r rrrr 0bbb
+SEC;		1;	1001 0100 0000 1000
+SEH;		1;	1001 0100 0101 1000
+SEI;		1;	1001 0100 0111 1000
+SEN;		1;	1001 0100 0010 1000
+SER d;		1;	1110 1111 dddd 1111
+SES;		1;	1001 0100 0100 1000
+SET;		1;	1001 0100 0110 1000
+SEV;		1;	1001 0100 0011 1000
+SEZ;		1;	1001 0100 0001 1000
+SLEEP;		1;	1001 0101 1000 1000
+SPM;		1;	1001 0101 1110 1000
+ST d,r;		1;	100d 001r rrrr dddd
+STS k,d;	2;	1001 001d dddd 0000;	kkkk kkkk kkkk kkkk
+SUB d,r;	1;	0001 10rd dddd rrrr
+SUBI d,k;	1;	0101 kkkk dddd kkkk
+SWAP d;		1;	1001 010d dddd 0010
+TST d;		1;	0010 00dd dddd dddd
+WDR;		1;	1001 0101 1010 1000

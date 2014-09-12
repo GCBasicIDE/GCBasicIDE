@@ -1,0 +1,50 @@
+#include <eracer.h>
+
+#define PWM_Freq 38
+#define PWM_Duty 25
+
+'Initialise
+dim TimeH(76)
+dim TimeL(76)
+dim Event(76)
+
+OldStat = 0
+NewStat = 0
+DataCount = 0
+InitTimer1(Osc, PS1_1/8)
+
+'Wait for trigger
+wait until button pressed
+wait until button released
+
+'Learn code
+wait until IR_IN off
+ClearTimer 1
+StartTimer 1
+set TL_LED on
+
+do while TMR1H <= 250 and DataCount < 77
+ OldStat = NewStat
+ NewStat = 0
+ if IR_IN off then NewStat = 1
+ if NewStat <> OldStat then
+
+  DataCount += 1
+  Temp = TMR1L
+  Temp_H = TMR1H
+  TimeH(DataCount) = Temp_H
+  TimeL(DataCount) = Temp
+  if NewStat = 1 then Event(DataCount) = TRUE
+  if NewStat = 0 then Event(DataCount) = FALSE
+    
+ end if
+loop
+set TL_LED off
+
+'Write to EEPROM
+EPWrite 0, DataCount
+For Temp = 1 to DataCount
+ EPWrite Temp, TimeL(Temp)
+ EPWrite Temp+80, TimeH(Temp)
+ EPWrite Temp+160, Event(Temp)
+next

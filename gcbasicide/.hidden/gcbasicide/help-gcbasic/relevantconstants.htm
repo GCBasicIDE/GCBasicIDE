@@ -1,0 +1,110 @@
+<html><head>
+   <title>Pulse Width Modulation Overview</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="PWM Overview," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  size="4" ><span style="font-size:14pt" >Overview</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="locate.htm">Previous</a>&nbsp;&nbsp;<a href="pwmout.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Introduction:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The routines described in this chapter allow the generation of Pulse Width 
+Modulation signals. These allow for the microcontroller to control the 
+speed of a motor, or the brightness of a light. The routines can also be 
+used to generate the appropriate frequency signal to drive an infrared 
+LED for remote control applications.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The PWMOn, PWMOff and HPWM routines use the PWM generation 
+module on the microcontroller. They will only work on some 
+microcontrollers - see the article on each command for details. PWMOn 
+and HPWM will cause the PWM module on the microcontroller to start 
+generating the PWM signal, which will then continue to be generated until 
+the PWMOff instruction is run.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >PWMOut does not make use of any special hardware. However, a signal 
+is only generated while the PWMOut command is running - when the 
+program moves on to the next command, the signal will stop.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Relevant Constants:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These constants are used to control settings for the Pulse Width 
+Modulation module of the PIC chip. To set them, place a line in the main 
+program file that uses #define to assign a value to the particular constant.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Note that there are two sets of constants: one for Hardware PWM, and 
+one for Software PWM. Hardware PWM requires a CCP module on the 
+PIC chip - Software PWM has no requirements regarding the PIC.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b><i>Hardware PWM</i></b></span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These constants are only required for PWMOn. HPWM and PWMOff do 
+not require any constants to operate.</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><table border="1"  width="576"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Constant Name</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Controls</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Default Value</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >PWM_Freq</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Specifies the output 
+    frequency of the PWM 
+    module in KHz.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >38</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >PWM_Duty</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Sets the duty cycle of the 
+    PWM module output. 
+    Given as percentage.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >50</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Hardware PWM is only available through the &quot;CCP1&quot; or &quot;CCP&quot; pin. This is 
+a hardware limitation of PIC microcontrollers.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b><i>Software PWM</i></b></span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><table border="1"  width="576"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Constant Name</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Controls</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Default Value</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >PWM_Delay</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The PWM Period. The 
+    length of any delay used 
+    will be multiplied by 255.</span></font><font color="#010101" ></font></div>
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >If no value is specified, 
+    no delays will be inserted 
+    into the PWM routine.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Not defined - no delay</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >PWM_Out<i>n</i></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The port physical port on 
+    the PIC that corresponds 
+    to channel <i>n</i>. <i>n</i> can 
+    represent 1, 2, 3 or 4.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Not Defined</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >More than 4 channels are possible, but for this the PWMOut routine in 
+include\lowlevel\stdbasic.h must be altered.</span></font><font color="#010101" ></font></div>
+
+</html>

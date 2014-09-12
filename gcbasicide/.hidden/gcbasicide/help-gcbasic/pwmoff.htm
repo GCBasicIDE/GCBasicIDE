@@ -1,0 +1,22 @@
+<html><head>
+   <title>PWMOff</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="PWM Overview," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  color="#010101"  size="4" ><span style="font-size:14pt" >PWMOff</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="pwmout.htm">Previous</a>&nbsp;&nbsp;<a href="pwmon.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Syntax:&nbsp;&nbsp;&nbsp;&nbsp;</b></span></font><font color="#010101" ></font></div><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >&nbsp;&nbsp;&nbsp;&nbsp;PWMOff</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial" ><span style="font-size:12pt" ><b>Command Availability:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Only available on PIC microcontrollers with Capture/Compare/PWM 
+(CCP) module.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Explanation:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" > This command will disable the output of the PWM module on the PIC 
+chip. </span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Example:</b></span></font><font color="#010101" ></font></div><div align="left" ><font face="Terminal"  color="#010101" ><span style="font-size:10pt" >&nbsp;&nbsp;&nbsp;&nbsp;'This program will enable a 76 Khz PWM signal, with a duty cycle</span></font><font color="#010101" ></font></div><div align="left" ><font face="Terminal"  color="#010101" ><span style="font-size:10pt" >&nbsp;&nbsp;&nbsp;&nbsp;'of 80%. It will emit the signal for 10 seconds, then stop.</span></font><font color="#010101" ></font></div><div align="left" ><font face="Terminal"  color="#010101" ><span style="font-size:10pt" >&nbsp;&nbsp;&nbsp;&nbsp;#define PWM_Freq 76&nbsp;&nbsp;&nbsp;&nbsp;'Set frequency in KHz</span></font><font color="#010101" ></font></div><div align="left" ><font face="Terminal"  color="#010101" ><span style="font-size:10pt" >&nbsp;&nbsp;&nbsp;&nbsp;#define PWM_Duty 80&nbsp;&nbsp;&nbsp;&nbsp;'Set duty cycle to 80 %</span></font><font color="#010101" ></font></div><div align="left" ><font face="Terminal"  color="#010101" ><span style="font-size:10pt" >&nbsp;&nbsp;&nbsp;&nbsp;PWMOn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Turn on the PWM</span></font><font color="#010101" ></font></div><div align="left" ><font face="Terminal"  color="#010101" ><span style="font-size:10pt" >&nbsp;&nbsp;&nbsp;&nbsp;WAIT 10 s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Wait 10 seconds</span></font><font color="#010101" ></font></div><div align="left" ><font face="Terminal"  color="#010101" ><span style="font-size:10pt" >&nbsp;&nbsp;&nbsp;&nbsp;PWMOff&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Turn off the PWM</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>For more help, see </b></span></font><a href="pwmon.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>PWMOn</u></span></font></a><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div>
+
+</html>

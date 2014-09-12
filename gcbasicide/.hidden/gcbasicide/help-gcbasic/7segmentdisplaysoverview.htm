@@ -1,0 +1,183 @@
+<html><head>
+   <title>7 Segment Displays Overview</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="PWM Overview," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  color="#010101"  size="4" ><span style="font-size:14pt" >7 Segment Displays Overview</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="random.htm">Previous</a>&nbsp;&nbsp;<a href="commoncathode.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Introduction</b></span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial" ><span style="font-size:12pt" >The 7 segment display routines make it easier for GCBASIC programs to 
+display numbers and letters on 7 segment LED displays.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial" ><span style="font-size:12pt" >There are two ways that the 7 segment display routines can be set up. 
+One option is to connect the wires from the display/s in a particular order, 
+and then to set the DisplayPort<i>n</i> and DispSelect<i>n</i> constants. The other 
+option is to connect the display/s in whatever way is easiest, and then set 
+the DISP_SEG_x and DISP_SEL_x constants. The first option (setting 
+DisplayPort<i>x</i> and DispSelect<i>n)</i> will generate slightly more efficient code.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial" ><span style="font-size:12pt" >The default for 7 segment displays is to be connected to a common 
+parallel bus with a Common Cathode, see the section </span></font><a href="commoncathode.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>Common Cathode</u></span></font></a><font face="Arial" ><span style="font-size:12pt" > 
+for an example of the GCB code to control this configuration, and, see the 
+section </span></font><a href="commonanode.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>Common Anode</u></span></font></a><font face="Arial" ><span style="font-size:12pt" > for an example of the GCB code to control this 
+configuration.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial" ><span style="font-size:12pt" ><b>Configuration for DISP_SEG_x and DISP_SEL_x</b></span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial" ><span style="font-size:12pt" >The following constants <b>must </b>be set:</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><table border="1"  width="576"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Constant Name</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Controls</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Default Value</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  height="129"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >DISP_SEG_x</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  height="129"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >Controls the output ping 
+    used to control segment x 
+    of the displays. There are 
+    7 of these constants, 
+    named DISP_SEG_A 
+    through DISP_SEG_G. 
+    One must be set for each 
+    segment.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  height="129"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >None - needs to be set</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >DISP_SEG_DOT</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >Specifies the output pin 
+    used to control the 
+    decimal point on the 
+    displays.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >None - needs to be set</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >DISP_SEL_x</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >The command used to 
+    select display <i>n</i>. Used to 
+    control addressing pins 
+    when several displays 
+    are multiplexed.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >None - needs to be set, 
+    see note below.</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial" ><span style="font-size:12pt" ><b>Note</b>: Instead of setting DISP_SEL_x, it is possible to set DispSelectn and 
+use these in conjunction with DISP_SEG_x.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial" ><span style="font-size:12pt" ><b>Configuration using DisplayPort</b><b><i>n</i></b><b> and DispSelect</b><b><i>n</i></b></span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial" ><span style="font-size:12pt" >To set the 7-Segment display routines supplied with GCBASIC using 
+DisplayPortn, it is necessary to set these constants:</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><table border="1"  width="576"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Constant Name</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Controls</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Default Value</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >DisplayPort<i>n</i></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >Controls the output port 
+    used to control display <i>n</i>. 
+    <i>n </i>is A, B, C or D, 
+    corresponding to displays 
+    1, 2, 3 and 4, 
+    respectively.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >DispSelect<i>n</i></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >The command used to 
+    select display <i>n</i>. Used to 
+    control addressing pins 
+    when several displays 
+    are multiplexed.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >nop</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial" ><span style="font-size:12pt" >To set up the routines in this way, the displays must be connected as 
+follows:</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font color="#010101" ></font></div><table border="1"  width="553"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="267"  height="18"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Microcontroller port pin</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  height="18"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Display Segment</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >0</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >1</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >B</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >2</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >C</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >3</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >D</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >4</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >E</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >5</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >F</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >6</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="267"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" >G</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><br></div><font color="#010101" ><div align="left" ><br></font></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Also, see </b></span></font><a href="displaychar.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>DisplayChar</u></span></font></a><font face="Arial" ><span style="font-size:12pt" >, </span></font><a href="displayvalue.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>DisplayValue</u></span></font></a><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font color="#010101" ></font></div>
+
+</html>

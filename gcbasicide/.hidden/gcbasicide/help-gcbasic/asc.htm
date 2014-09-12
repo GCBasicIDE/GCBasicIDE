@@ -1,0 +1,27 @@
+<html><head>
+   <title>Asc</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="Setting Variables," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  size="4" ><span style="font-size:14pt" >Asc</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="swap4.htm">Previous</a>&nbsp;&nbsp;<a href="bytetobin.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Syntax:&nbsp;&nbsp;&nbsp;&nbsp;</b></span></font><font color="#010101" ></font></div><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >&nbsp;&nbsp;&nbsp;&nbsp;byte<i>var </i>= ASC(string, [position] )</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Command Availability:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Available on all microcontrollers</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Only available in GCB I2C.h with release after 1/2014</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Explanation:</b></span></font><font color="#010101" ></font></div><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>&nbsp;&nbsp;&nbsp;&nbsp;</b>Only available in GCB compiler post 1/2014</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Returns the character code of the character at the specified position in a 
+string.</span></font><font color="#010101" ></font></div><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial" ><span style="font-size:12pt" >ASC returns the character code of a particular character in the string.&nbsp; If 
+the string is an ANSI string, the returned value will be in the range of 0 to 
+255. This function DOES NOT support UNICODE.</span></font><font color="#010101" ></font><br><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial" ><span style="font-size:12pt" >The optional position parameter determines which character is to be 
+checked. The first character is one, the second two, etc. If the position 
+parameter is missing, the first character is presumed. </span></font><font color="#010101" ></font><br><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br><br><font color="#010101" ><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial" ><span style="font-size:12pt" >CHR is the natural complement of ASC.&nbsp; CHR produces a one-character 
+string corresponding to its ASCII </span></font><font color="#010101" ></font><br><br><br><font color="#010101" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Restrictions:</b></span></font><font color="#010101" ></font><br><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >If the string passed is null (zero-length) or the position is zero or greater 
+than the length of the string the returned value will be 0.</span></font><font color="#010101" ></font><br><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Example:</b></span></font><font color="#010101" ></font></div><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >charpos = ASC( &quot;ABCD&quot; ): ' Returns 65</span></font><font color="#010101" ></font><br><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >charpos = ASC( &quot;ABCD&quot;, 2 ): ' Returns 66</span></font><font color="#010101" ></font><br><p style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font><br><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>For more help, see </b></span></font><a href="chr.htm"><font face="Arial"  color="#0000ff" ><span style="font-size:12pt" ><u>Chr</u></span></font></a><font color="#010101" ></font><br>
+
+</html>

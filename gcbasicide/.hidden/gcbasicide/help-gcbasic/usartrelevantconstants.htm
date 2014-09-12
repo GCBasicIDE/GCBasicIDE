@@ -1,0 +1,64 @@
+<html><head>
+   <title>RS232 Hardware Overview</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="RS232 Software Overview," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>RS232 Hardware Overview</b></span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="serreceive.htm">Previous</a>&nbsp;&nbsp;<a href="hserprint.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Introduction</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These subroutines allow GCBASIC programs to communicate more easily 
+using RS232.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These hardware-based routines are intended for use on microcontrollers 
+with built in RS232 modules - normally referred to in datasheets as 
+USART or UART modules. To use these, the RS232 data lines must be 
+connected to the pins on the microcontroller used by the serial module. If 
+the RS232 lines are connected elsewhere, or the microcontroller has no 
+RS232 module, then the software based routines must be used.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Relevant Constants</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These constants affect the operation of the hardware RS232 routines:</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font color="#010101" ></font></div><table border="1"  width="576"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Constant Name</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Controls</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Default Value</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >USART_BAUD_RATE</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Baud rate (in bps) for the 
+    routines to operate at.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >N/A</span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="183"  height="187"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >USART_BLOCKING</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="183"  height="187"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >If set, this constant will 
+    cause the USART 
+    routines to delay until 
+    data can be sent or 
+    received. If not set, then 
+    the data will be buffered 
+    and send by the 
+    hardware when possible.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td valign="top"  width="183"  height="187"  style="border: solid #010101 1px;" >
+    <div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Not set</span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><font color="#010101" ></font></div>
+
+</html>

@@ -1,0 +1,26 @@
+<html><head>
+   <title>#chip</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  size="4" ><span style="font-size:14pt" >#chip</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="average.htm">Previous</a>&nbsp;&nbsp;<a href="config.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>Syntax:&nbsp;&nbsp;&nbsp;&nbsp;</b></span></font><font color="#010101" ></font></div><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >&nbsp;&nbsp;&nbsp;&nbsp;#chip <i>model, speed</i></span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Explanation:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The #chip directive is used to specify the chip model and speed that 
+GCBASIC must compile for. <i>model</i> is the model of the microcontroller chip 
+- something along the lines of &quot;16F819&quot;. <i>speed </i>is the speed of the chip in 
+MHz, and is required for the delay and PWM routines.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >If <i>speed</i> is omitted, GCBASIC will use the highest clock speed that the 
+internal oscillator can support. If the chip does not have an internal 
+oscillator, then GCBASIC will assume that the chip is being run at its 
+maximum possible clock speed using an external crystal.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >When using an AVR, there is not need to specify &quot;AT&quot; before the name.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Examples:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >#chip 12F509, 4</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >#chip 18F4550, 48</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >#chip 16F88, 0.125</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >#chip tiny2313, 1</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New" ><span style="font-size:10pt" >#chip mega8, 16</span></font><font color="#010101" ></font></div>
+
+</html>

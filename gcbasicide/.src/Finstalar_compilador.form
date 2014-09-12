@@ -1,0 +1,13 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,56,25)
+  { TextBoxSenhaRoot TextBox
+    MoveScaled(15,15,25,4)
+    Password = True
+  }
+  { Button1 Button
+    MoveScaled(20,20,16,4)
+    Text = ("Button1")
+  }
+}

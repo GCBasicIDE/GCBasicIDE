@@ -1,0 +1,268 @@
+'English messages.dat for Great Cow BASIC
+'Original translation creator Hugh Considine
+'Translation last updated 13/10/2012 by Hugh Considine
+
+'Common Messages
+AnyKey = "Press any key to continue"
+Found = "found"
+Found2 = " (Found "
+NotFound = "NOT FOUND!"
+Calling = "Calling "
+Success = "Done"
+
+'Intro Screens
+
+Block NoPrompt
+Great Cow BASIC - A BASIC compiler for microcontrollers
+Version: %Version%
+
+To compile a file, drag and drop it onto the icon for this program. See
+Getting Started with GCBASIC for more info.
+
+Command line parameters:
+GCBASIC [/O:output.asm] [/A:assembler] [/P:programmer] [/K:{C|A}] [/V] [/L]
+        [/R:format] [/NP] filename
+
+        /O:output.asm   Set an output filename other than the default
+        /A:assembler    Batch file used to call assembler. If /A:GCASM is
+                          given, GCBASIC will use its internal assembler.
+        /P:programmer   Batch file used to call programmer.
+        /K:{C|A}        Keep original code in assembly output. /K:C will
+                          save comments, /K:A will preserve all input code.
+        /R:format       Write a compilation report. Format can be html, text
+		                  or none.
+        /V              Verbose mode
+        /L              Show license
+        /NP             Do not pause on errors. Use with IDEs.
+        filename        The file to compile.
+		
+You may use - in place of /, such as -V instead of /V.
+End Block
+
+Block License
+Great Cow BASIC - A BASIC Compiler for microcontrollers
+Copyright (C) 2006 - 2010 Hugh Considine
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+If you have any questions, please email me: w_cholmondeley@users.sourceforge.net
+End Block
+
+Startup = "Great Cow BASIC (%Version%)"
+Compiling = "Compiling %Filename% ..."
+NoFile = "Cannot find %Filename%!"
+
+'Verbose mode messages
+FindSource = "Finding source files:"
+LoadSource = "Loading source files ..."
+ChipS = "Chip Settings:"
+ChipM = "Chip Model: "
+ChipC = "Clock MHz: "
+ChipO = "Oscillator: "
+ChipF = "Chip Family: "
+ChipR = "RAM: "
+
+'Conversion messages
+Converting = "Converting %infile%: "
+NoConverter = "Converter not found"
+ConvertedAlready = "Already converted"
+
+ReadChipData = "Reading chip data ..."
+AutoClockSpeed = "Automatically setting chip speed to %speed% Mhz"
+BuildMemoryMap = "Building memory map ..."
+
+CompDirs = "Reading compiler directives ..."
+RunScripts = "Running compiler scripts ..."
+RepDefs = "Replacing defines with values ..."
+SplitLines = "Splitting lines with multiple commands ..."
+FindFreeRAM = "Building memory map of chip ..."
+ChipHeader = "Finding and reading chip header file ..."
+FindLargeVars = "Finding non-byte variables ..."
+TranslateFunctions = "Compiling functions ..."
+FindRequiredSubs = "Finding required subroutines ..."
+StringTable = "Adding string lookup tables ..."
+DataTable = "Adding data lookup tables ..."
+AddingSubs = "Adding required subroutines ..."
+RemIfDefs = "Finding and compiling #IFDEF directives ..."
+CompileFor = "Compiling FOR commands ..."
+
+AllocateRAM = "Allocating RAM to variables ..."
+FindArrays = "Creating arrays ..."
+
+SubParams = "Setting subroutine parameters ..."
+ProcessArrays = "Processing array references ..."
+FindingASM = "Finding assembly commands ..."
+AddBits = "Adding system variable names to bits ..."
+
+CompSubs = "Compiling subroutines/functions:"
+TidyCode = "Tidying Code ..."
+CalcConfig = "Calculating CONFIG ..."
+LocatingSubs = "Locating subroutines in program memory ..."
+AddBankCommands = "Adding bank setting commands ..."
+
+Add18FBanks = "Adding RAM access bits ..."
+
+AddLongCalls = "Setting program counter high bits ..."
+
+OptimiseIF = "Optimising IFs ..."
+OptimiseVars = "Optimising variable operations ..."
+FixFunctions = "Verifying functions used in WAIT ..."
+
+WritingASM = "Writing output to %OutputFile% ..."
+Success = "Program compiled successfully!"
+ASMSuccess = "Program assembled successfully!"
+CompTime = " (Compile time: "
+CompSecs = " seconds)"
+Summary = "Summary:"
+DataRead = "Read by GCBASIC:"
+InLines = "Input lines: "
+Vars = "Variables: "
+Consts = "Constants: "
+Subs = "Subroutines: "
+ChipUsage = "Chip resource usage:"
+UsedProgram = "Program Memory: %used%/%total% words"
+UsedRAM = "RAM: %used%/%total% bytes"
+AssemblyWritten = "Assembly program lines written: "
+MakeASM = "Assembling program ..."
+
+SendToPIC = "Downloading program ..."
+
+'Errors
+Error = "An error has been found:"
+Errors = "Errors have been found:"
+BadError = "A serious error has been found:"
+BadErrors = "Serious errors have been found:"
+ErrorLogged = "The message has been logged to the file "
+
+TypeError = "Error"
+TypeWarning = "Warning"
+Warning = "A warning has been generated:"
+Warnings = "Warnings have been generated:"
+
+ArrayNoDec = "Array/Function %Name% has not been declared"
+DupDef = "Duplicate, conflicting definition for %var%"
+BadVarName = "Invalid variable name: %var%"
+ArrayTooBig = "The array %Array% is too large"
+BadParam = "Incorrect parameter syntax: %sub%. Correct syntax is %correct%"
+NoNext = "For without Next"
+NoBit = "Missing bit in Set command"
+SynErr = "Syntax Error"
+
+'New errors in 0.9.3.0
+ExcessVars = "Excessive RAM usage! Delete some variables, reduce the size of arrays, or upgrade to a more powerful chip"
+NoBitSet = "Cannot set direction of individual pins on 12 bit core chips"
+NotIO = "%var% is not a valid I/O pin or port"
+NoDelayUnits = "Delay units not specified"
+TableNotFound = "Lookup table %Table% not found"
+NoThen = "If without Then"
+ExtraENDIF = "End If without If"
+AssemblyFailed = "Assembly failed due to the following errors:"
+ArrayTypeInvalid = "Cannot set the type of an array"
+NoEndRepeat = "Repeat without End Repeat"
+InvalidDelayLength = "Cannot use a variable with the microsecond delay on chips < 20 MHz"
+BadConfig = "Configuration setting not valid: %option%"
+
+'New errors in 0.9.4.0
+ASMParamMismatch = "Number of parameters does not match"
+NoChip = "Chip model not specified! GCBASIC cannot continue"
+ChipNotSupported = "No chip data file found for %chipname%"
+SubTooBig = "Subroutine %sub% is too large. Reduce its size, or switch to a more powerful chip"
+SymbolNotDefined = "Symbol %symbol% has not been defined"
+BadBitSet = "Cannot set bit %bit% of %var%"
+BadBitRead = "Cannot read bit %bit% of %var%"
+NotAVariable = "%value% is not a variable"
+BadSymbol = "%symbol% is not a valid symbol"
+BadStringConst = "String constant cannot be first in condition"
+UndeclaredArray = "Array %array% has not been declared"
+BadVarType = "Invalid variable type: %type%"
+BadParamCount = "Parameter count mismatch"
+MissingOperand = "Missing operand, %pos% %operator%"
+RecursiveDefine = "Recursive define"
+ForIndexInUse = "For index %index% is already in use"
+ForBadStart = "For start value is too big for the counter"
+ForBadEnd = "For end value is too big for the counter"
+BadValueType = "Cannot store %value% in the %type% variable %var%"
+BadCommandType = "%command% command cannot be used on variables of type %type%"
+BadVarBit = "Variable %var% is of type %type% and does not have a bit %bit%"
+BadConstName = "Invalid constant name: %const%"
+BadBrackets = "Brackets do not match up"
+OperandTypeMismatch = "Operand %operand% cannot be used with %type% variables"
+OutOfRegSpace = "Out of registers. Please break up any complex calculations"
+BadVarAlias = "Variable defined with multiple aliases"
+BadAliasSize = "Size of alias variable (%size%) does not match number of locations (%locations%)"
+MissingTarget = "No subroutine specified as a target"
+BadOnType = "Bad mode: Found %found%, expected Error or Interrupt"
+BadIntEvent = "Invalid interrupt event: %event%"
+HandlerConflict = "A handler has already been defined for the event %event%"
+MissingCoreFile = "Cannot find file %core%, which is required for %chip%"
+BadDirection = "Invalid pin direction, expected In or Out"
+BadPWMFreq = "Invalid PWM Frequency value"
+SubParamNotVar = "%value% is not a variable and cannot be used for the parameter %param%"
+AssemblerNotFound = "Could not start the external assembler"
+NoMatchingSig = "No subroutine found with matching parameters"
+BadTableLocation = "Bad data table location, found %loc%, expected PROGRAM or DATA"
+BadParamsSet = "Incorrect parameters in Set, expected: Set variable.bit status"
+BadSetStatus = "Invalid status in Set command: %status%"
+OutOfProgMem = "Program is too large, cannot fit all subroutines into available program memory"
+DuplicateSub = "Duplicate subroutine name and parameters: %sub%"
+FirstPageFull = "First page of program memory is full, please reduce size of Main and Interrupt routines"
+TooManyErrors = "Too many errors"
+SubNotFound = "Subroutine %sub% could not be found"
+NoEndIf = "If without matching End If"
+UsartBaudTooLow = "USART baud rate is too low"
+NoClosingQuote = "Missing closing double quote"
+EndWithoutRepeat = "End Repeat without matching Repeat"
+LoopWithoutDo = "Loop without matching Do"
+ElseWithoutIf = "Else outside of If ... End If block"
+NextWithoutFor = "Next without matching For"
+FloatInDelay = "Found decimal point, but delays can only handle whole numbers"
+RepeatMissingCount = "No value given for Repeat"
+
+'Warnings
+WarningShortName = "Single letter %type% name: %name%"
+WarningNoIntEnable = "Event %event% must be enabled manually"
+WarningNoIntFlag = "Flag for %event% must be cleared manually"
+WarningUnsafeString = "This chip cannot properly support strings, and some strange errors may occur"
+WarningNoEEPROMTable = "No data EEPROM, table stored in program memory"
+WarningLowCommonRam = "Current chip does not have enough common (non-banked) RAM"
+WarningUSDelay = "Inaccurate microsecond delay due to use of variable at the current clock speed"
+WarningCastBadPlace = "Type cast should be written before the value it applies to"
+WarningOverclocked = "The selected chip speed may be too high"
+WarningPinNotInput = "Pin %pin% cannot be used as an input"
+WarningPinNotOutput = "Pin %pin% cannot be used as an output"
+WarningNoAutoPinDir = "Direction of pin %pin% cannot be set automatically"
+WarningFixedLocBad = "Memory location specified for %var% may be invalid"
+WarningNameUsedSystem = "Variable name %name% is used for a system bit on the current chip"
+
+'GCASM messages
+SymbolTable = "Building symbol table ..."
+MachineCode = "Generating machine code ..."
+
+'GCASM errors
+BadORG = "Bad ORG overwriting location %loc%"
+ValueOutOfRange = "Value out of range: Least significant bits used"
+
+'Messages for compilation report
+CRTitle = "Compilation Report"
+CRVersion = "Compiler Version (DD/MM/YYYY)"
+CRSubInfo = "Subroutines"
+CRName = "Name"
+CROriginalSize = "Code Size (lines)"
+CRSize = "Compiled Size (words)"
+CRPage = "Page"
+CRCalls = "Outgoing calls"
+CRRAM = "RAM Allocation"
+CRBank = "Bank"
+CRBankLoc = "Bank Location"

@@ -1,0 +1,37 @@
+<html><head>
+   <title>Defines</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="Configuration(s)," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial"  color="#010101"  size="4" ><span style="font-size:14pt" >Constants</span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="conditions.htm">Previous</a>&nbsp;&nbsp;<a href="functions.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>About Defines</b></span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >A define is a type of directive that tells the compiler to find a given 
+word, and replace it with another word or number. Defines are useful 
+for situations where a routine needs to be easily altered. For example, 
+a define could be used to specify the amount of time to run an alarm 
+for once triggered.</span></font><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >It is also possible to use defines to specify ports - thus defines can be 
+used to aid in the creation of code that can easily be adapted to run on 
+a different PIC with different ports.</span></font><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >GCBASIC makes considerable use of defines internally. For instance, 
+the LCD code uses defines to set the ports that it must use to 
+communicate with the LCD.</span></font><font color="#010101" ></font></div><div align="justify" ><br></div><font color="#010101" ><div align="justify" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Using Defines</b></span></font><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >To create a define is a matter of using the #define directive. Here are 
+some examples of defines:</span></font><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >#define Line 34</span></font><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >#define Light PORTB.0</span></font><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Courier New"  color="#010101" ><span style="font-size:10pt" >#define LightOn Set PORTB.0 on</span></font><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Line is a simple constant - GCBASIC will find &quot;Line&quot; in the program, 
+and replace it with the number 34. This could be used in a line 
+following program, to make it easier to calibrate the program for 
+different lighting conditions.</span></font><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Light is a port - it represents a particular pin on the PIC chip. This 
+would be of use if the program had many lines of code that controlled 
+the light, and there was a possibility that the port the light was attached 
+to would need to change in the future.</span></font><font color="#010101" ></font></div><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="justify"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >LightOn is a define used to make the program more readable. Rather 
+than typing &quot;Set PORTB.0 on&quot; over and over, it would then be made 
+possible to type &quot;LightOn&quot;, and have the compiler do the hard work.</span></font><font color="#010101" ></font></div>
+
+</html>

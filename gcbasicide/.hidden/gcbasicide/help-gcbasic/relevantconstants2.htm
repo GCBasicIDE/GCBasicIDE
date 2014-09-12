@@ -1,0 +1,97 @@
+<html><head>
+   <title>RS232 Software Overview</title>
+   <meta name="generator"  content="HelpMaker.net" >
+   <meta name="keywords"  content="RS232 Software Overview," ></head>
+<body bgcolor="FFFCEA" >
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="C0C0C0" >
+  <tr>
+    <td align="left" >
+      <div align="left" ><font face="Arial" ><span style="font-size:12pt" ><b>RS232 Software Overview</b></span></font><font color="#010101" ></font></div>
+
+    </td>
+    <td align="right" >
+      <font face="Arial"  size="2" >
+        <a href="displayvalue.htm">Previous</a>&nbsp;&nbsp;<a href="initser.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><div align="left" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Introduction:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These routines allow the microcontroller to send and receive RS232 data.</span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><br></div><font color="#010101" ><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" >All functions are implemented using software, so no special hardware is 
+required on the microcontroller. However, if the microcontroller has a 
+hardware serial module (usually referred to as UART or USART), and the 
+serial data lines are connected to the appropriate pins, the hardware 
+routines should be used for smaller code, improved reliability and higher 
+baud rates.</span></font><font color="#010101" ></font></div><div align="left" ><br></div><font color="#010101" ><div align="left" ></font><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>Relevant Constants:</b></span></font><font color="#010101" ></font></div><div align="left"  style="margin-left:13mm; margin-right:0mm; text-indent:0mm; " ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These constants are used to control settings for the RS232 serial 
+communication routines. To set them, place a line in the main program file 
+that uses #define to assign a value to the particular constant.</span></font><font color="#010101" ></font></div><div align="left" ><font color="#010101" ></font></div><table border="1"  width="576"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none" >
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Constant Name/s</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Controls</b></span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial" ><span style="font-size:12pt" ><b>Default Value</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >SendALow, SendBLow, 
+    SendCLow</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These are used to define 
+    the commands used to 
+    send a low (0) bit on 
+    serial channels A, B and 
+    C respectively.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >nop</span></font><font color="#010101" ></font></div>
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>(must be set)</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >SendAHigh, SendBHigh, 
+    SendCHigh</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >These are used to define 
+    the commands used to 
+    send a high (1) bit on 
+    serial channels A, B and 
+    C respectively.</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >nop</span></font><font color="#010101" ></font></div>
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>(must be set)</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >RecALow, RecBLow, 
+    RecCLow</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The condition that is true 
+    when a low bit is being 
+    received</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Sys232Temp.0 OFF</span></font><font color="#010101" ></font></div>
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>(must be set)</b></span></font><font color="#010101" ></font></div>
+    </td></tr>
+    <tr>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >RecAHigh, RecBHigh, 
+    RecCHigh</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >The condition that is true 
+    when a high bit is being 
+    received</span></font><font color="#010101" ></font></div>
+    </td>
+    <td align="center"  valign="top"  width="183"  style="border: solid #010101 1px;" >
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" >Sys232Temp.0 ON</span></font><font color="#010101" ></font></div>
+    <div align="center" ><font face="Arial"  color="#010101" ><span style="font-size:12pt" ><b>(must be set)</b></span></font><font color="#010101" ></font></div>
+    </td></tr></table><div align="left" ><font color="#010101" ></font></div>
+
+</html>

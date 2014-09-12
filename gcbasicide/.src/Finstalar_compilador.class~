@@ -1,0 +1,48 @@
+' Gambas class file
+
+Static Public Sub Run()
+  
+  Dim hForm As Form
+  
+  hForm = New FAbout
+  hForm.ShowModal
+  
+End
+
+
+Public Sub _new()
+  
+  Me.Center
+  
+End
+
+
+
+Public Sub Verificar_compilador()
+  Dim sResposta As String
+  Dim Variavel As String
+  Dim testandosom As String
+  
+  Variavel = "if [ -e /opt/gcbasicide/gcbasic/ ]; then echo 'sim'; else echo 'nao'; fi"   'comando para verificar se um diretorio existe.
+  Shell Variavel To sResposta 'Executa o comando no terminal para verificar se existe o diretório
+  
+  If String.InStr(sResposta, "sim") > 0 Then 'Se existe o diretório, entao faça...
+    Print "SiM"
+   Else
+    Print "NãO"
+    Variavel = TextBoxSenhaRoot.Text
+    Print Variavel
+    'Shell "echo \"" & Variavel & "\" | sudo -S tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz, fi" To sResposta
+   ' Shell "zenity --password | sudo -S tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz, fi" To testandosom
+    Exec ["sudo", "tar", "-C", "/opt/gcbasicide/", "-vzxf", "/tmp/gcbasic.tar.gz", ",", "fi"] To testandosom
+    Print testandosom
+    Print Variavel
+  Endif
+
+End
+
+Public Sub Button1_Click()
+
+  Verificar_compilador()
+
+End

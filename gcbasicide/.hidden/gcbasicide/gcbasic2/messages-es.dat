@@ -1,0 +1,144 @@
+'Spanish messages.dat para Great Cow BASIC
+'El creador original de la traduccion: Hugh Considine
+'Traducción traducida al español el 10 de Febrero de 2007 por Pablo Curvelo S. - electrpablo@hotmail.com
+
+'Mensajes comunes:
+AnyKey = "Presione una tecla para continuar"
+Found = "encontrado"
+Found2 = " (Encontrado "
+NotFound = "NO ENCONTRADO!"
+Calling = "Llamando "
+
+'Pantallas de Introducción
+
+Block NoPrompt
+GCBASIC [/D:directory] [/O:output.asm] [/A:filename.bat] [/NC] filename
+
+Version: %Version%
+
+Great Cow BASIC - Un compilador de BASIC par microntroladores PIC
+
+Para compilar un archivo, Arrastre el icono y sueltelo en el icono de este programa.
+
+Alternativamente, abra un archivo .BAT y use los comandos dados:
+
+Suiches de linea de comando:
+        /D:directorio      Especifica el direcorio donde esta GCBASIC.EXE
+        /O:output.asm   Dispone otro archivo de salida
+        /V                    Verbose mode
+        /L                     Presenta la licencia
+        /A:NombreDeArchivo.bat,  archivo a llamar si la compilacion es exitosa
+        /NC                  No limpiar pantalla. Usado en archivos *.bat. 
+
+Ud. puede usar - en lugar de /, asi como -V en lugar de /V.
+
+Vea "Empezando con GCBASIC" para mas información.
+End Block
+
+Bloque de Licencia:
+Great Cow BASIC - Un compilador de BASIC para microcontroladores PIC
+Copyright (C) 2006 Hugh Considine
+
+Este programa es libre, usted puede redistribuirlo o modificarlo
+bajo los términos de la GNU Licencia Pública General como se publica por
+la Fundación de Software Libre; cualquiera versión 2 de la Licencia, o
+(a su opción) cualquier version posterior.
+
+Este programa es distribuido con la esperanza de que sea útil,
+pero SIN NINGUNA GARANTIA; incluso sin la garantia implicada en su
+MERCANTIBILIDAD o PARA AJUSTARSE A ALGUN PROPOSITO EN PARTICULAR. Vea la
+Licencia Pública General GNU para mas detalles.
+
+Ud deberia haber recibido una copia de la Licencia Pública General GNU,
+adjunta a este programa; si no, escriba a: The Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+Si usted tiene algunas preguntas, por favor envie un email a: hconsidine@bigpond.com
+End Block
+
+Startup = "Great Cow BASIC (%Version%)"
+Compiling = "Compilando %Filename% ..."
+NoFile = "No puedo encontrar %Filename%!"
+
+'mensajes del modo Verbose
+FindSource = "Buscando archivos fuente:"
+LoadSource = "Cargando Archivos fuente ..."
+ChipS = "Fijar valores del Chip:"
+ChipM = "Modelo del Chip: "
+ChipC = "Clock MHz:  "
+ChipO = "Oscilador: "
+
+CompDirs = "Leyendo directivas del compilador ..."
+RunScripts = "Corriendo el guion del compilador ..."
+RepDefs = "Reemplazando definiciones con valores ..."
+SplitLines = "Abriendo lineas con comandos multiples ..."
+FindFreeRAM = "Armando el mapa de memoria del PIC ..."
+ChipHeader = "Encontrando y leeyendo el  archivo "chip header" ..."
+FindLargeVars = "Encontrando variables no byte ..."
+TranslateFunctions = "Compilando funciones ..."
+FindRequiredSubs = "Encontrando subrutinas requeridas ..."
+StringTable = "Añadiendo cadenas de tablas de búsqueda ..."
+DataTable = "Añadiendo data de tablas de búsqueda ..."
+AddingSubs = "Añadiendo subrutinas requeridas ..."
+RemIfDefs = "Encontrando y compilando directivas #IFDEF ..."
+CompileFor = "Compilando comandos FOR ..."
+FindArrays = "Creando arreglos ..."
+SubParams = "Poniendo parametros de subrutina ..."
+ProcessArrays = "Procesando referencias de arreglos ..."
+
+CompComs = "Compilando comandos:"
+CompileReadTable = "ReadTable ..."
+CompilePot = "POT ..."
+CompileDo = "DO ..."
+CompileDir = "DIR ..."
+CompilePulseOut = "PulseOut ..."
+CompileWait = "WAIT ..."
+CompileSet = "SET ..."
+CompileRotate = "ROTATE ..."
+CompileExitSub = "END, EXIT SUB/FUNCTION ..."
+CompileIF = "IF ..."
+CompileVars = "Preparando variables de comandos ..."
+CompileGOSUB = "GOSUB/RETURN ..."
+CompileGOTO = "GOTO ..."
+
+TidyCode = "Ordenando Codigo ..."
+CalcConfig = "Calculando CONFIG ..."
+AddBankCommands = "Añadiendo comandos de bancos de memoria en el PIC ..."
+OptimiseIF = "Optimisando IFs ..."
+OptimiseVars = "Optimisando operaciones de variables ..."
+FixFunctions = "Verificar funciones usadas en WAIT ..."
+
+WritingASM = "Escribiendo Salida a %OutputFile% ..."
+Success = "Programa compilado exitosamente!"
+CompTime = " (Tiempo de compilacion: "
+CompSecs = " segundos)"
+Summary = "Summario:"
+DataRead = "Leido por GCBASIC:"
+InLines = "Lineas de entrada: "
+Vars = "Variables: "
+Consts = "Constantes: "
+Subs = "Subroutinas: "
+AssemblyWritten = "Ensamblando lineas de programa escritas: "
+MakeASM = "Ensamblando y descargando programa ..."
+
+'Errors
+Error = "Un error ha sido encontrado:"
+Errors = "Han sido encontrados errores:"
+BadError = "Un serio error ha sido encontrado:"
+BadErrors = "Serios errores han sido encontrados:"
+ErrorLogged = "El mensaje ha sido registrado en el archivo "
+
+ArrayNoDec = "Arreglo/Funcion %Name% no ha sido declarado"
+DupDef = "Duplicada, en conflicto la definición para %var%"
+BadVarName = "Nombre de variable invalida: %var%"
+ArrayTooBig = "El arreglo %Array% es muy grande"
+BadParam = "Parametro incorrecto sintaxis: %sub%. La sintaxis correcta es %correct%"
+NoNext = "No encontrado NEXT for %for%"
+NoBit = "No encontrado el bit en comendo SET"
+SynErr = "Error de Sintaxis"
+
+ReadChipData = "Leeyendo data de chip ..." 
+BuildMemoryMap = "Armando mapa de memoria ..." 
+BadConfig = "Las asignaciones de configuracion no son validas: %option%" 
+
+'Nota: Mas mensajes de error seran añadidos aqui a la vez que el chequeo de errores sea implementado.

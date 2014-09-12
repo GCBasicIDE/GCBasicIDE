@@ -1,0 +1,167 @@
+<div class="moz-text-flowed" style="font-family: -moz-fixed">'Great Cow BASIC için Türkçe messages.dat
+'Orjinal çeviri iþleyeni : Hugh Considine
+'Çeviri tarihi ve sorumlusu : 15.01.2007, Murat Ýnceer
+
+'Ortak mesajlar
+AnyKey = "Lütfen bir tuþa basýnýz."
+Found = "bulundu"
+Found2 = " (Bulundu "
+NotFound = "BULUNAMADI!"
+Calling = "Çaðrýlýyor "
+
+'Intro Ekranlarý
+
+Block NoPrompt
+GCBASIC [/D:dizin] [/O:dosyaadi.asm] [/A:dosyaadi.bat] [/NC] dosyaadi
+
+Sürüm : %Version%
+
+GCBasic (Great Cow BASIC) - PIC microkontrolörleri için BASIC derleyici.
+
+Bir Dosyayý derlemek için bu programýn ikonuna sürükle - býrak yapýnýz.
+
+Alternatif olarak komut satýrýnýda kullanabilirsiniz.
+
+Komut satýrý anahtarlarý:
+        /D:dizin        GCBASIC.EXE nin bulunduðu dizin
+        /O:dosyaadi.asm Olaðandan deðiþik bir çýkýþ dosyasý adý
+        /V              Detaylý mod
+        /L              Lisansý göster
+        /A:dosyaadi.bat Derleme baþarýlý ise Batch dosyayý çalýþtýr
+        /NC             Ekran Temizlenmesin, Batch dosya içinde 
+kullanabilirsiniz.
+        /NP		Hiçbir hatada durma (IDE kullanarak).
+
+Not: /v komut dizimini -v formatýndada kullanabilirsiniz.
+
+Daha fazla bilgi için gözatýnýz : "GCBASIC e baþlýyorum".
+End Block
+
+Block License
+Great Cow BASIC - PIC mikrokontrolörler için BASIC derleyici,
+Tüm haklarý saklýdýr. (c) 2006, 2007 Hugh Considine.
+
+Bu ücretsiz bir yazýlýmdýr; "GNU General Public License" altýnda
+ekleme/çýkarma ve deðiþiklikler yapabilirsiniz. Yazýlým, ücretsiz
+yazýlým vakfý sürüm 2 ile korunmaktadýr. Yeni geliþtirilecek sürümler
+otomatik olarak geçerlidir.
+
+Bu yazýlým parça parça yada tümüyle daðýtýlabilir. Ancak kullanýmda
+herhangi bir GARANTÝ VERÝLMEMEKTEDÝR. Yayýnlayýcý adlarýný kýsýtlamadan
+ve garanti altýnda olmadan dilediðiniz gibi deðiþiklikler yapýp 
+daðýtabilirsiniz.
+Daha fazla detay için "GNU General Public License" a bakabilirsiniz.
+
+"GNU General Public License" ý internet üzerinden edinebilirsiniz yada posta
+yoluyla talep edebilir, konuyla ilgili yazýþmalar yapabilirsiniz. Free 
+Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+Soru yada sorunlarýnýz için e-mail atýnýz (ingilizce): 
+hconsidine@bigpond.com
+                                             (Türkçe): minceer@hotmail.com
+End Block
+
+Startup = "GCBasic (Great Cow BASIC %Version%)"
+Compiling = "Derleniyor %Filename% ..."
+NoFile = "Bulanamayan dosya: %Filename%!"
+
+'Detaylý mod mesajlarý
+FindSource = "Kaynak dosyalar aranýyor:"
+LoadSource = "Kaynak dosyalar yükleniyor ..."
+ChipS = "Çip Ayarlarý:"
+ChipM = "Çip Modeli: "
+ChipC = "Saat hýzý MHz:  "
+ChipO = "Osilatör: "
+ChipF = "Çip Ailesi: "
+ChipR = "BELLEK: "
+CompDirs = "Derleyici iþleyiþi okunuyor ..."
+RunScripts = "Derleyici scriptleri çalýþýyor ..."
+RepDefs = "Tanýmlamalar deðerlerle birlikte deðiþtiriliyor ..."
+SplitLines = "Çoklu komutlar için satýr üretiliyor ..."
+FindFreeRAM = "PIC in bellek haritasý üretiliyor ..."
+ChipHeader = "Çip giriþ dosyasý bulundu, okunuyor ..."
+FindLargeVars = "Büyük deðiþkenler aranýyor ..."
+TranslateFunctions = "Fonksiyonlar derleniyor ..."
+FindRequiredSubs = "Gerekli altrutinler (sub) aranýyor ..."
+StringTable = "Baðlý tablolar aranýyor ..."
+DataTable = "Baðlý tablolara bilgi ekleniyor ..."
+AddingSubs = "Gerekli altrutinler (sub) ekleniyor ..."
+RemIfDefs = "#IFDEF yönergeleri aranýyor ve derleniyor ..."
+CompileFor = "FOR komutlarý derleniyor ..."
+FindArrays = "Diziler oluþturuluyor ..."
+SubParams = "Altrutin (sub) parametreleri veriliyor ..."
+ProcessArrays = "Diziler iþleniyor ..."
+AddBits = "Sistem deðiþken adlarý bit lere ekleniyor ..."
+CompComs = "Komutlar derleniyor:"
+CompileReadTable = "Komut, ReadTable ..."
+CompilePot = "Komut, POT ..."
+CompileDo = "Komut, DO ..."
+CompileDir = "Komut, DIR ..."
+CompilePulseOut = "Komut, PulseOut ..."
+CompileWait = "Komut, WAIT ..."
+CompileSet = "Komut, SET ..."
+CompileRotate = "Komut, ROTATE ..."
+CompileExitSub = "Komut, END, EXIT SUB/FUNCTION ..."
+CompileIF = "Komut, IF ..."
+CompileVars = "Deðiþken komutlarý ..."
+CompileGOSUB = "Komut, GOSUB/RETURN ..."
+CompileGOTO = "Komut, GOTO ..."
+CompileRepeat = "Komut, Repeat ..."
+CompileSelect = "Komut, Select ..."
+TidyCode = "Kod temizleniyor ..."
+CalcConfig = "Konfigürasyon hesaplanýyor ..."
+AddBankCommands = "Kullanýlan komutlar kümeleniyor ..."
+Add18FBanks = "Belleðe eriþim bitleri ekleniyor..."
+OptimiseIF = " IF komutlarý iyileþtiriliyor ..."
+OptimiseVars = "Deðiþken operatörleri iyileþtiriliyor ..."
+FixFunctions = "Fonksiyon kullanýmý karþýlaþtýrýlýyor ..."
+WritingASM = "Çýkýþ dosyasýna yazýlýyor; %OutputFile% ..."
+Success = "Program Baþarýyla Derlendi!"
+CompTime = " (Derlenme zamaný: "
+CompSecs = " saniye)"
+Summary = "Özet:"
+DataRead = "GCBASIC in okumasý: "
+InLines = "Giriþ satýrý: "
+Vars = "Deðiþkenler: "
+Consts = "Sabitler: "
+Subs = "Alt rutinler: "
+AssemblyWritten = "Assembly program satýrlarý yazýmý: "
+MakeASM = "Program Assembly koda çevriliyor ..."
+SendToPIC = "Program PIC e yazýlýyor ..."
+ReadChipData = "Çip bilgileri okunuyor ..."
+BuildMemoryMap = "Bellek haritasý hazýrlanýyor ..."
+
+'Hatalar
+Error = "Bir hata bulundu:"
+Errors = "Hatalar bulundu:"
+BadError = "Tehlikeli bir hata bulundu:"
+BadErrors = "Tehlikeli hatalar bulundu:"
+ErrorLogged = "Hata mesajlarý dosyaya yazýldý "
+ArrayNoDec = "Dizi/Fonksiyon: %Name% deklare edilmemiþ (tanýmlanmamýþ)"
+DupDef = "Ýki defa yazýlan veya çakýþan: %var%"
+BadVarName = "Geçersiz deðiþken ismi: %var%"
+ArrayTooBig = "Dizi: %Array% çok büyük"
+BadParam = "Geçersiz parametre dizilimi: %sub%. Geçerli dizilim: %correct%"
+NoNext = "Geçersiz NEXT komutu: %for%"
+NoBit = "SET komutunda geçersiz bit"
+SynErr = "Geçersiz dizilim"
+ExcessVars = "Çok fazla bellek kullanýlmak isteniyor! Bazý deðiþkenleri 
+azaltýn,
+kodlarý kýsaltmaya çalýþýn yada daha üst model bir PIC kullanýn"
+NoBitSet = "12 bit çipler için geçersiz bir pin yönlendirmesi istediniz"
+NotIO = "%var% geçerli bir I/O pin yada port deðil"
+NoDelayUnits = "Delay (gecikme) unitesi tanýmsýz"
+TableNotFound = "Tablo: %Table% bulunamadý"
+NoThen = "IF olmadan THEN kullanamassýnýz"
+ExtraENDIF = "IF kullanmadan END IF kullandýnýz"
+AssemblyFailed = "Assembly aþaðýdaki sabit hatalardan dolayý baþarýsýz:"
+ArrayTypeInvalid = "Dizi tipi geçersiz"
+NoEndRepeat = "END REPEAT dan sonra REPEAT kullanamassýnýz"
+InvalidDelayLength = "Bu þekilde mikrosaniyelerde kontrol için 20 Mhz. üzeri 
+bir
+PIC kullanýn"
+BadConfig = "Konfigürasyon ayarý geçersiz: %option%"
+
+'Not: GCBasic sürümleri deðiþtikçe yeni hata ve açýklamalar eklenecektir.
+</div>

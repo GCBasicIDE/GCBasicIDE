@@ -1,0 +1,51 @@
+'GCBASIC assembler instruction data
+'Suits 14 bit core chips
+'Last updated 11/3/2007
+
+'Format: command;words;word1;word2
+'Whitespace does not matter in word1/2
+
+'File register operations
+ADDWF f,d;	1;	00 0111 dfff ffff
+ANDWF f,d;	1;	00 0101 dfff ffff
+CLRF f;		1;	00 0001 1fff ffff
+CLRW;		1;	00 0001 0xxx xxxx
+COMF f,d;	1;	00 1001 dfff ffff
+DECF f,d;	1;	00 0011 dfff ffff
+DECFSZ f,d;	1;	00 1011 dfff ffff
+INCF f,d;	1;	00 1010 dfff ffff
+INCFSZ f,d;	1;	00 1111 dfff ffff
+IORWF f,d;	1;	00 0100 dfff ffff
+MOVF f,d;	1;	00 1000 dfff ffff
+MOVWF f;	1;	00 0000 1fff ffff
+NOP;		1;	00 0000 0xx0 0000
+RLF f,d;	1;	00 1101 dfff ffff
+RRF f,d;	1;	00 1100 dfff ffff
+SUBWF f,d;	1;	00 0010 dfff ffff
+SWAPF f,d;	1;	00 1110 dfff ffff
+XORWF f,d;	1;	00 0110 dfff ffff
+
+'Bit oriented operations
+BCF f,b;	1;	01 00bb bfff ffff
+BSF f,b;	1;	01 01bb bfff ffff
+BTFSC f,b;	1;	01 10bb bfff ffff
+BTFSS f,b;	1;	01 11bb bfff ffff
+
+'Literal operations
+ADDLW k;	1;	11 111x kkkk kkkk
+ANDLW k;	1;	11 1001 kkkk kkkk
+CALL k;		1;	10 0kkk kkkk kkkk
+CLRWDT;		1;	00 0000 0110 0100
+GOTO k;		1;	10 1kkk kkkk kkkk
+IORLW k;	1;	11 1000 kkkk kkkk
+MOVLW k;	1;	11 00xx kkkk kkkk
+RETFIE;		1;	00 0000 0000 1001
+RETLW k;	1;	11 01xx kkkk kkkk
+RETURN;		1;	00 0000 0000 1000
+SLEEP;		1;	00 0000 0110 0011
+SUBLW k;	1;	11 110x kkkk kkkk
+XORLW k;	1;	11 1010 kkkk kkkk
+
+'Long call, goto macros
+LCALL k;	3;	01 0k10 0000 1010;	01 0k01 1000 1010;	10 0kkk kkkk kkkk
+LGOTO k;	3;	01 0k10 0000 1010;	01 0k01 1000 1010;	10 1kkk kkkk kkkk

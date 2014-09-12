@@ -1,0 +1,11 @@
+'Simple line follower program
+
+#include <eracer.h>
+
+SET GREEN ON
+SET RED ON
+
+START:
+ IF LDR_Right LIGHT THEN TurnLeft
+ IF LDR_Right DARK THEN TurnRight
+GOTO START

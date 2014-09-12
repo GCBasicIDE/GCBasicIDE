@@ -1,0 +1,846 @@
+' Gambas class file
+
+'Editor de texto
+Private $sPath As String
+Private $bModify As Boolean
+Private oldpos As Integer
+
+'Console:--------
+Private $hProcess As Process
+Private $sText As String
+Private lineas As New String[]
+'------------------
+'Cores das sintaxes:-------------
+Private hNotepad As Editor
+Private $bIgnore As Boolean
+Public cadena As String
+Public vector_cadena As Array
+Public c As String
+Public cadena_comentario As String
+Public longitud_texto As Integer
+Public comentario As Boolean
+'------------------------------
+
+'Cores das sintaxes:-------------
+Public Sub Form_Open()
+
+  $bIgnore = True
+  VSplit1.Layout = Split("4,1") 'Regula a proporção  da divisão do quadro de texto
+
+  Editor1.Flags[Editor.HighlightBraces] = True
+  Editor1.Styles[Highlight.Operator].Color = Color.DarkGreen
+  Editor1.Styles[Highlight.Comment].Background = Color.Default
+  'Editor1.Styles[Highlight.Operator].Bold = TRUE
+  Editor1.Styles[Highlight.String].Color = Color.Orange
+  Editor1.Flags[Editor.ShowLineNumbers] = True  'Exibe o número de linhas
+  Editor1.Styles[Highlight.Function].Color = Color.Blue
+  Editor1.Styles[Highlight.Function].Bold = True
+
+End
+'------------------------------
+
+Static Public Sub Main()
+
+  Dim hForm As Form
+
+  hForm = New FNotepad
+  hForm.Show
+
+End
+
+
+Public Sub _new()
+
+  Editor1.Text = ""  'Faz com que a caixa de texto inicie sem texto
+  txtConsole.Text = ""  'Faz com que a caixa de texto inicie sem texto
+  $bModify = False
+  RefreshTitle
+  Editor1.SetFocus
+  'Console:--------
+  $hProcess = Exec ["bash", "--noediting"] For Read Write
+  'txtCommand.SetFocus
+  '--------
+End
+
+
+Private Function GetName() As String
+
+  If $sPath Then Return $sPath & " - GCBasicIDE"
+
+  Return "(New document)" & " - GCBasicIDE"
+
+End
+
+
+Private Sub RefreshTitle()
+
+  Dim sTitle As String
+
+  If $bModify Then sTitle = "*"
+  sTitle = sTitle & GetName()
+
+  Me.Title = sTitle
+
+End
+
+
+Private Sub SetPath(sPath As String)
+
+  $sPath = sPath
+  RefreshTitle
+
+End
+
+Private Sub SetModify(bModify As Boolean)
+
+  If $bModify = bModify Then Return
+  $bModify = bModify
+  RefreshTitle
+
+End
+
+
+Private Function CloseDoc() As Boolean
+
+  If $bModify Then
+    Select Case Message.Question(GetName() & "\n\nFile has been modified. Do you want to save it ?", "Yes", "No", "Cancel")
+      Case 1
+        Save
+      Case 3
+        Return True
+    End Select
+  Endif
+
+  $sPath = ""
+  Editor1.Text = ""
+  $bModify = False
+  RefreshTitle
+
+End
+
+
+
+Public Sub LoadFile(sPath As String)
+
+  Dim sData As String
+
+  If CloseDoc() Then Return
+
+  sData = File.Load(sPath)  'sPath contém o caminha do arquivo a ser aberto. E sData contém o texto em si.
+
+  Try Editor1.Text = Conv(sData, System.Charset, Desktop.Charset)
+  If Error Then Editor1.Text = Conv(sData, "ISO_8859-1", Desktop.Charset)
+  $bModify = False
+  SetPath(sPath)
+
+Catch
+
+  Message.Error(sPath & "\nUnable to load file.\n" & Error.Text)
+
+End
+
+
+Public Sub Save(Optional bSaveAs As Boolean)
+  
+  Dialog.Filter = ["*.gcb", "GCBasic Files"]
+  Dialog.AutoExt = True 'Habilita para salvar automaticamente a extenção .gcb
+  If bSaveAs Or Not $sPath Then
+    If Dialog.SaveFile() Then Return
+    SetPath(Dialog.Path)
+  Endif
+  
+  File.Save($sPath, Editor1.Text) 'sPath contém o caminha do arquivo a ser salvo. 
+  
+End
+
+
+Public Sub mnuOpen_Click()
+  
+  Dim sPath As String
+
+  Dialog.Title = "Abrir arquivo..."
+  Dialog.Filter = ["*", "All files", "*.gcb", "GCBasic Files", "*.txt", "Text files"]
+'Dialog.Path = "."
+  If Dialog.OpenFile() Then Return
+  LoadFile(Dialog.Path)
+
+End
+
+
+Public Sub mnuSave_Click()
+  
+  Save
+  $bModify = False 'Marca bModify como falso para não pedir pra salvar o arquivo quando fechar e programa.
+End
+
+
+Public Sub mnuSaveAs_Click()
+  
+  Save(True)
+  $bModify = False 'Marca bModify como falso para não pedir pra salvar o arquivo quando fechar e programa.
+End
+
+
+Public Sub mnuQuit_Click()
+  
+  Me.Close
+  
+End
+
+
+Public Sub Editor1_Change()
+  
+  SetModify(True)
+  
+End
+
+
+Public Sub mnuClose_Click()
+  
+  CloseDoc
+  
+End
+
+
+Public Sub Form_Close()
+  
+  If CloseDoc() Then Stop Event
+  'Console:--------
+  $hProcess.Kill
+  '---------------
+End
+
+'Console:----------------
+Public Sub Process_Read()
+
+  Dim sStr As String
+
+  'WHILE NOT Eof(LAST)
+  
+    Read #Last, sStr, -256
+  
+    $sText = $sText & sStr
+  'WEND
+  
+  UpdateConsole
+
+End
+'-------------------------
+
+'Console:-----------------
+Private Sub UpdateConsole()
+
+  Dim iPos As Integer
+  Dim sStr As String
+  
+  Do
+  
+    iPos = InStr($sText, "\n")
+    If iPos = 0 Then Return
+    
+    sStr = Normalize(Left$($sText, iPos))
+    $sText = Mid$($sText, iPos + 1)
+    
+    txtConsole.Pos = txtConsole.Length
+    txtConsole.Insert(sStr)
+  
+  Loop
+  
+End
+'-------------------------
+
+
+'Console:'-------------------------------------------------
+Static Private Function Normalize(sStr As String) As String
+
+  Dim sNorm As String
+  Dim iInd As Integer
+  Dim iCar As Integer
+  Dim bEsc As Boolean
+
+  For iInd = 1 To Len(sStr)
+
+    iCar = Asc(sStr, iInd)
+
+    If iCar = 27 Then
+      bEsc = True
+      Continue
+    Endif
+
+    If bEsc Then
+      If iCar < 32 Then bEsc = False
+      Continue
+    Endif
+
+    If iCar < 32 And iCar <> 10 Then iCar = 32
+
+    sNorm = sNorm & Chr$(iCar)
+
+  Next
+  
+  Return Conv$(sNorm, System.Charset, Desktop.Charset)
+  
+End
+'------------------------------------------------------
+
+
+Public Sub mnuAbout_Click()
+
+  'Inc Application.Busy
+  FAbout.Show
+  'Dec Application.Busy
+  
+End
+
+
+Public Sub mnuCopy_Click()
+  
+  Editor1.Copy
+  
+End
+
+
+Public Sub mnuPaste_Click()
+  
+  Editor1.Paste
+  
+End
+
+
+Public Sub mnuCut_Click()
+  
+  Editor1.Cut
+  
+End
+
+
+Public Sub mnuUndo_Click()
+  
+  Editor1.Undo
+  
+End
+
+
+Public Sub mnuRedo_Click()
+  
+  Editor1.Redo
+  
+End
+
+
+Public Sub mnuFont_Click()
+  
+  Dialog.Font = Editor1.Font
+  If Dialog.SelectFont() Then Return
+  Editor1.Font = Dialog.Font
+  
+End
+
+
+' PUBLIC SUB Form_Open()
+' 
+'   
+' 
+' END
+
+' PUBLIC SUB Editor1_KeyPress()
+' 
+'   
+' 
+' END
+
+' PUBLIC SUB ToolButton1_Click()
+' 
+'   
+' 
+' END
+
+Public Sub HBox0_MouseDown()
+
+  
+
+End
+
+Public Sub Novo_Click()
+
+  CloseDoc
+
+End
+
+Public Sub Abrir_Click()
+
+  mnuOpen_Click()
+
+End
+
+Public Sub Salvar_Click()
+
+  Save
+  $bModify = False
+End
+
+Public Sub SalvarComo_Click()
+
+  mnuSaveAs_Click()
+
+End
+
+Public Sub Desfazer_Click()
+
+  mnuUndo_Click()
+
+End
+
+Public Sub Refazer_Click()
+
+  mnuRedo_Click()
+
+End
+
+Public Sub Verificar_compilador()
+  Dim sResposta As String
+  Dim Variavel As String
+  
+  Variavel = "if [ -e /opt/google/ ]; then echo 'sim'; else echo 'nao'; fi"   'comando para verificar se um diretorio existe.
+  Shell Variavel To sResposta 'Executa o comando no terminal para verificar se existe o diretório
+  If String.InStr(sResposta, "sim") > 0 Then 'Se existe o diretório, entao faça...
+    'Print "SiM"
+    'Shell "echo \"keiatgo\" | sudo -S mkdir /opt/testando" 'Fonte:http://www.gambas-es.org/viewtopic.php?p=11658#p11658
+   
+   Finstalar_compilador.Show
+  Else
+    Print "NaO"
+  Endif
+
+End
+
+
+Public Sub Compilar_Click()
+
+ Dim sLig As String 
+ Dim sOutput As String
+ Dim LoopCounterOut As Byte
+ Verificar_compilador()
+  If Editor1.Text = Null Then Return 'Testa pra ver se existe texto para ser compilado. Se não tiver texto, sai da rotina.
+  Compilar.Enabled = False 'Desabilita o botao Compilar
+  Editor1.SetFocus
+  Save 'Primeiro, salva o código para depois compila-lo
+  $bModify = False 'Marca bModify como falso para não pedir pra salvar o arquivo quando fechar e programa.
+  sOutput = sOutput & "/usr/share/gcbasicide/gcbasic/./gcbasic /O: /V: /R:text /NP "
+  sLig = Null 'Limpar a variavel
+  
+  For LoopCounterOut = 1 To 10 'Repete a compilação até compilar corretamente (motivo: as vezes gera erros na primeira compilação)
+  Wait 0.5
+  Shell sOutput & "'" & $sPath & "'" & " &" To sLig 'COMPILA O ARQUIVO; $sPath contém o endereço do arquivo
+  
+ 
+   'txtConsole.Pos = txtConsole.Length 'Rolagem automática
+   'ObtenerLineas()
+   'txtConsole.Line = lineas.max 'Cursor para última linha
+   'txtConsole.Insert(gb.NewLine & gb.NewLine)
+'    Wait 3
+'    
+      If String.InStr(sLig, "successfully") > 0 Then 'Verifica se a compilação foi bem sucedida.
+         txtConsole.Background = &BFFFBF 'Muda a cor de fundo para verde.
+         txtConsole.Pos = txtConsole.Length 'Rolagem automática
+         txtConsole.Insert(gb.NewLine & "Compilando: " & sLig)
+         Report()
+         txtConsole.Pos = txtConsole.Length 'Rolagem automática
+         txtConsole.Insert(gb.NewLine & "_______________________________________________________________________ [ OK ]")
+         LoopCounterOut = 11 'Insere o número 11 na variável para sair do For
+         Else
+           If String.InStr(sLig, "Error") > 0 Then 'Procura se há o texto na linha
+             txtConsole.Background = &FFBF7F 'Muda a cor de fundo para laranja
+             sLig = Left(sLig, - 54) 'Remove os ultimos caracter, que neste case são duas linhas...
+             txtConsole.Pos = txtConsole.Length 'Rolagem automática
+             txtConsole.Insert(gb.NewLine & "Compilando: " & sLig & "_______________________________________________________________________ [ ERROR ]")
+             LoopCounterOut = 11 'Insere o número 11 na variável para sair do For
+           Else
+             txtConsole.Background = &DFDFDF
+             txtConsole.Pos = txtConsole.Length 'Rolagem automática
+             txtConsole.Insert(gb.NewLine & "Compilando: " & sLig) 'Mostra a mensagem eventual do 
+
+           Endif
+      Endif
+  Next
+  txtConsole.Pos = txtConsole.Length 'Rolagem automática
+
+Compilar.Enabled = True 'Hsabilita o botao Compilar
+  ' sLig = Conv$(sLig, Desktop.Charset, System.Charset)
+End
+
+Public Sub Report() 'Rotina para reportar o resultado da compilação do arquivo *.report.txt
+  
+  Dim Caminho As String 
+  Dim NomeDoArquivo As String
+  Dim ArquivosDoDiretorio As String
+  Dim ArquivoReport As String
+  'File.Dir(Dialog.Path) 'Diretorio onde se encontra o arquivo do código aberto que esta sendo compilando
+  
+  NomeDoArquivo = File.Name(Dialog.Path) 'Copia o nome do arquivo para variável "NomeDoArquivo"
+  If InStr(NomeDoArquivo, ".gcb") > 0 Then NomeDoArquivo = Left(NomeDoArquivo, - 4) 'Se existe extensão, entao, remove os 4 ultimo caracteres, que neste case corresponde a extensão .gcb
+  Caminho = File.Dir(Dialog.Path) & "/" & NomeDoArquivo & ".report.txt" 'Arquivo contendo os resultados da compilação"
+
+  Shell "dir " & "'" & File.Dir(Dialog.Path) & "'" & " &" To ArquivosDoDiretorio 'Copia os nomes do diretório onde se encontra o arquivo
+  ArquivoReport = NomeDoArquivo & ".report.txt" 
+  If String.InStr(ArquivosDoDiretorio, ArquivoReport) = 0 Then Return 'Verifica se o arquivo *.report.txt exite. Caso não exitir, encerra a rotina.
+
+  Editor2.Text = File.Load(Caminho) 'Carrega o texto do arquivo codigo.report.txt no Editor2
+  txtConsole.Pos = txtConsole.Length 'Rolagem automática
+  txtConsole.Insert(gb.NewLine & Editor2.Lines[6].text & gb.NewLine & Editor2.Lines[7].text & gb.NewLine & Editor2.Lines[8].text) 'Copia a linha 6,7 e 8 e insere no final no txtConsole
+  
+
+End
+
+Public Sub ObtenerLineas()
+'Rotina obtida em: http://www.gambas-es.org/viewtopic.php?f=1&t=3542&highlight=textarea1
+Dim a As Integer
+'Dim lineas As New String[]
+
+lineas = Split(txtConsole.Text, gb.CrLf)
+
+'ahora el array lineas, continen las lineas 
+
+'escribo la primera linea
+Print lineas.max
+
+'For a = 0 To lineas.max
+'escribo en consola todas las lineas
+'Print lineas[a]
+'Next
+End
+
+'------------------CORES DAS SINTAXES---------------------------------------------------------
+Public Sub Editor1_Highlight()
+'Fonte: Adaptação da dica retirada do site: http://www.gambas-es.org/viewtopic.php?f=4&t=171
+' LE indicamos al lenguaje que utilizaremos el indentado Por ahora vastante incomodo porque indenta todo.
+'*TODO: Lograr un indentado inteligente que dependiendo la palabra clave lo haga de una Forma u otra*
+'Editor1.Indent
+
+'calculamos la longitud total del texto contenido en el editor
+
+longitud_texto = Editor1.Length
+  ' convertimos el texto que deseamos colorear a Mayúsculas
+  ' de esta forma evitamos de exigir al usuario que lo ingrese de cierta forma
+  'o de extender más el código.
+cadena = UCase$(Highlight.Text)
+
+' dividimos cada palabra reservada y la ponemos en un Array.
+vector_cadena = Split(cadena, " ")
+' Recorremos el Array
+
+For Each c In vector_cadena
+
+ ' preguntamos si el texto es un comentario, en este caso se trata de forma especial, debido
+ ' a que debemos marcar todo el renglón del mismo texto
+ ' en cadena comentario guardamos las primeras dos letras (que serian las //) para que si el texto se escribe junto a estas
+ ' nos señale como comentario.
+
+ cadena_comentario = Left$(c, 1)
+  If cadena_comentario = "'" Then
+ 'pintamos el texto con el color correspondiente al comentario, pintamos la longitud total del renglón
+   Highlight.Add(Highlight.Comment, Len(cadena))
+  Else
+ 'sino pintamos la palabra reservada que encontró en la función diccionario(c)
+    Highlight.Add(diccionarios(c), Len(c))
+    Highlight.ShowLimit = False
+    Highlight.Add(Highlight.Normal, 1)
+    Highlight.ShowLimit = False
+  Endif
+  
+'***********************************************************************************************************************
+'************ En esta sección nos fijamos si se pone una palabra que deba llevar END al final y lo pone automaticamente
+'***********************************************************************************************************************
+ '   IF c = "IF" OR c = "PROCEDURE" THEN
+ '    Editor1.Insert("END", Editor1.Line + 2, 0)
+ '  ENDIF
+ '  
+ '   IF c = "/*" THEN
+ '    Editor1.Insert("*/", Editor1.Line + 2, 0)
+ ' ENDIF
+  
+Next
+
+End
+
+
+'***************función que maneja el diccionario de palabras reservadas de Bennu
+Public Function diccionarios(cadena As String) As Integer
+
+ Select Case cadena
+ '[KEYWORDS0:GLOBAL]
+  Case "IF"
+   Return Highlight.Function
+   Case "THEN"
+   Return Highlight.Function
+   Case "ELSE"
+   Return Highlight.Function
+  Case "END"
+    Return Highlight.Function
+  Case "GOTO"
+    Return Highlight.Function
+  Case "EXIT"
+   Return Highlight.Function
+  Case "SUB"
+   Return Highlight.Function
+  Case "WAIT"
+    Return Highlight.Function
+  Case "WHILE"
+    Return Highlight.Function
+  Case "UNTIL"
+    Return Highlight.Function
+  Case "DO"
+    Return Highlight.Function
+  Case "LOOP"
+    Return Highlight.Function
+  Case "FOR"
+    Return Highlight.Function
+  Case "NEXT"
+    Return Highlight.Function
+  Case "STEP"
+    Return Highlight.Function
+  Case "DIM"
+    Return Highlight.Function
+  Case "FUNCTION"
+    Return Highlight.Function
+  Case "SELECT"
+    Return Highlight.Function
+  Case "CASE"
+    Return Highlight.Function
+  Case "REPEAT"
+    Return Highlight.Function
+    
+ '[KEYWORDS1:GLOBAL]
+  Case "#INCLUDE"
+    Return Highlight.Operator
+  Case "#DEFINE"
+    Return Highlight.Operator
+  Case "#CHIP"
+    Return Highlight.Operator
+  Case "OSC"
+    Return Highlight.Operator
+  Case "#CONFIG"
+    Return Highlight.Operator
+  Case "#IFDEF"
+    Return Highlight.Operator
+  Case "#ENDIF"
+    Return Highlight.Operator
+  Case "#SCRIPT"
+    Return Highlight.Operator
+  Case "#ENDSCRIPT"
+    Return Highlight.Operator
+  Case "#STARTUP"
+    Return Highlight.Operator
+  Case "INT"
+    Return Highlight.Operator
+ '[KEYWORDS2:GLOBAL]
+  Case "INITSER"
+    Return Highlight.Keyword
+  Case "SERSEND"
+    Return Highlight.Keyword
+  Case "SERRECEIVE"
+    Return Highlight.Keyword
+  Case "READAD"
+    Return Highlight.Keyword
+  Case "CONVERTAD"
+    Return Highlight.Keyword
+  Case "ADON"
+    Return Highlight.Keyword
+  Case "ADPORT"
+    Return Highlight.Keyword
+  Case "ADFORMAT"
+    Return Highlight.Keyword
+  Case "ADOFF"
+    Return Highlight.Keyword
+  Case "INIT_PWM"
+    Return Highlight.Keyword
+  Case "PWMON"
+    Return Highlight.Keyword
+  Case "PWMOFF"
+    Return Highlight.Keyword
+  Case "EPWRITE"
+    Return Highlight.Keyword
+  Case "EPREAD"
+    Return Highlight.Keyword
+  Case "SET"
+    Return Highlight.Keyword
+  Case "DIR"
+    Return Highlight.Keyword
+  Case "ROTATE"
+    Return Highlight.Keyword
+  Case "FORWARD"
+    Return Highlight.Keyword
+  Case "REVERSE"
+    Return Highlight.Keyword
+  Case "SPINLEFT"
+    Return Highlight.Keyword
+  Case "SPINRIGHT"
+    Return Highlight.Keyword
+  Case "TURNLEFT"
+    Return Highlight.Keyword
+  Case "TURNRIGHT"
+    Return Highlight.Keyword
+  Case "DISPLAYVALUE"
+    Return Highlight.Keyword
+  Case "DISPLAYCHAR"
+    Return Highlight.Keyword
+  Case "LCDINT"
+    Return Highlight.Keyword
+  Case "PRINT"
+    Return Highlight.Keyword
+  Case "LOCATE"
+    Return Highlight.Keyword
+  Case "GET"
+    Return Highlight.Keyword
+  Case "PUT"
+    Return Highlight.Keyword
+  Case "CLS"
+    Return Highlight.Keyword
+  Case "KEYPADDATA"
+    Return Highlight.Keyword
+  Case "KEYPADRAW"
+    Return Highlight.Keyword
+    
+ '[KEYWORDs3:GLOBAL]
+  Case "FORMAT_LEFT"
+    Return Highlight.String
+  Case "FORMAT_RIGHT"
+    Return Highlight.String
+  Case "ON"
+    Return Highlight.String
+  Case "FLASH"
+    Return Highlight.String
+  Case "OFF"
+    Return Highlight.String
+  Case "IN"
+    Return Highlight.String
+  Case "OUT"
+    Return Highlight.String
+  Case "LIGHT"
+    Return Highlight.String
+  Case "DARK"
+    Return Highlight.String
+  Case "PRESSED"
+    Return Highlight.String
+  Case "RELEASED"
+    Return Highlight.String
+  Case "LEFT"
+    Return Highlight.String
+  Case "RIGHT"
+    Return Highlight.String
+  Case "US"
+    Return Highlight.String
+  Case "MS"
+    Return Highlight.String
+  Case "S"
+    Return Highlight.String
+  Case "M"
+    Return Highlight.String
+  Case "BIT"
+    Return Highlight.String
+  Case "WORD"
+    Return Highlight.String
+  Case "BYTE"
+    Return Highlight.String
+  Case Else
+    Return Highlight.Normal
+ End Select
+  
+End
+
+
+
+
+Public Sub Separator3_MouseDown()
+
+  
+
+End
+
+Public Sub btnFind_Click()
+
+  Dim hView As String
+ 
+  oldpos = 0
+  panFind.Visible = btnFind.Value
+ 
+End
+
+Public Sub txtFind_KeyPress()
+
+    If Key.Code = Key.Enter Or Key.Code = Key.Return Then
+       btnNext_Click()
+    Endif
+
+End
+
+Public Sub btnNext_Click()
+
+  DoFind
+
+End
+
+Public Sub btnPrevious_Click()
+
+   Dim desde As Integer
+   Dim donde As Integer
+   
+   desde = Max(oldpos - 1, 0)
+   donde = String.rInStr(String.Left(Editor1.text, oldpos - 1), txtFind.text,, gb.IgnoreCase)
+  '  donde = String.RInStr(Editor1.Text, TextBox1.Text, oldpos - 1, gb.IgnoreCase)
+   If donde > 0 Then
+        Editor1.pos = donde
+        Editor1.EnsureVisible
+        Editor1.Select(donde - 1, String.Len(txtFind.Text))
+        oldpos = donde
+   Endif
+
+End
+
+Public Sub Form_KeyPress()
+   If Key.Control And If Key.Code = Key["F"] Then 
+    btnFind.Value = True
+  Else If Key.Code = Key.Escape Then
+    btnFind.Value = False
+  Else If Key.Code = Key.F3 Then
+    
+  Endif
+
+End
+
+Private Sub DoFind(Optional bBackward As Boolean)
+  
+  Dim hView As String
+  Dim sText As String
+  
+  sText = Trim(txtFind.Text)
+  
+  ' If sText And If hView.FindText(sText, bBackward) Then
+  '   panFind.Background = &HFFDFDF
+  ' Else
+  '   panFind.Background = Color.Default
+  '   If Not sText Then hView.FindText("")
+  ' Endif
+  
+End
+
+Public Sub Fechar_Busca_Click()
+
+  btnFind.Value = False
+
+End
+
+
+
+Public Sub Help_Click()
+
+ FHelp.Show
+
+End
+
+
+Public Sub Menu5_Click()
+
+   FHelp.Show
+
+End

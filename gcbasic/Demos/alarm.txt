@@ -1,0 +1,16 @@
+#include <eracer.h>
+#include <srf04.h>
+
+#define US1Ping PORTB.4
+#define US1Echo PORTB.7
+
+#define AlarmDistance 50 'cm
+
+DIR B7 IN
+
+Main:
+ Temp = USDistance(1)
+ wait 10 ms
+ if Temp < AlarmDistance then set green on
+ if Temp >= AlarmDistance then set green off
+goto Main

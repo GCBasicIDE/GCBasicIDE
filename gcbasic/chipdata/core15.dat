@@ -1,0 +1,71 @@
+'GCBASIC assembler instruction data
+'Suits enhanced midrange chips (12F1xxx and 16F1xxx)
+'Last updated 17/10/2009
+
+'Format: command;words;word1;word2
+'Whitespace does not matter in word1/2
+
+
+'File register operations
+ADDWF f,d;	1;	00 0111 dfff ffff
+ADDWFC f,d;	1;	11 1101 dfff ffff
+ANDWF f,d;	1;	00 0101 dfff ffff
+ASRF f,d;	1;	11 0111 dfff ffff
+LSLF f,d;	1;	11 0101 dfff ffff
+LSRF f,d;	1;	11 0110 dfff ffff
+CLRF f;	1;	00 0001 1fff ffff
+CLRW;	1;	00 0001 0000 0000
+COMF f,d;	1;	00 1001 dfff ffff
+DECF f,d;	1;	00 0011 dfff ffff
+INCF f,d;	1;	00 1010 dfff ffff
+IORWF f,d;	1;	00 0100 dfff ffff
+MOVF f,d;	1;	00 1000 dfff ffff
+MOVWF f;	1;	00 0000 1fff ffff
+RLF f,d;	1;	00 1101 dfff ffff
+RRF f,d;	1;	00 1100 dfff ffff
+SUBWF f,d;	1;	00 0010 dfff ffff
+SUBWFB f,d;	1;	11 1011 dfff ffff
+SWAPF f,d;	1;	00 1110 dfff ffff
+XORWF f,d;	1;	00 0110 dfff ffff
+
+DECFSZ f,d;	1;	00 1011 dfff ffff
+INCFSZ f,d;	1;	00 1111 dfff ffff
+
+'Bit oriented operations
+BCF f,b;	1;	01 00bb bfff ffff
+BSF f,b;	1;	01 01bb bfff ffff
+BTFSC f,b;	1;	01 10bb bfff ffff
+BTFSS f,b;	1;	01 11bb bfff ffff
+
+'Literal operations
+ADDLW k;	1;	11 1110 kkkk kkkk
+ANDLW k;	1;	11 1001 kkkk kkkk
+IORLW k;	1;	11 1000 kkkk kkkk
+MOVLB k;	1;	00 0000 001k kkkk
+MOVLP k;	1;	11 0001 1kkk kkkk
+MOVLW k;	1;	11 0000 kkkk kkkk
+SUBLW k;	1;	11 1100 kkkk kkkk
+XORLW k;	1;	11 1010 kkkk kkkk
+
+'Control operations
+BRA k;	1;	11 001k kkkk kkkk
+BRW;	1;	00 0000 0000 1011
+CALL k;		1;	10 0kkk kkkk kkkk
+CALLW;	1;	00 0000 0000 1010
+GOTO k;		1;	10 1kkk kkkk kkkk
+RETFIE;		1;	00 0000 0000 1001
+RETLW k;	1;	11 0100 kkkk kkkk
+RETURN;		1;	00 0000 0000 1000
+
+'Inherent operations
+CLRWDT;		1;	00 0000 0110 0100
+NOP;		1;	00 0000 0000 0000
+OPTION;	1;	00 0000 0110 0010
+RESET;	1;	00 0000 0000 0001
+SLEEP;		1;	00 0000 0110 0011
+TRIS f;	1;	00 0000 0110 01ff
+
+'C compiler instructions
+ADDFSR n,k; 1;	11 0001 0nkk kkkk
+MOVIW m;	1;	00 0000 0001 0mmm
+MOVWI m;	1;	00 0000 0001 1mmm

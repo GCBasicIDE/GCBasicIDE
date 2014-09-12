@@ -1,0 +1,223 @@
+'Deutsches 'messages.dat' fuer Great Cow Basic
+'Original Uebersetzer Hugh Considine
+'Letztes Update 13/4/2008 von Hugh Considine
+
+'Allgemeine Nachrichten
+AnyKey = "Zum Weitermachen irgendeine Taste druecken"
+Found = "Gefunden"
+Found2 = " (Gefunden "
+NotFound = "NICHT VORHANDEN!"
+Calling = "Rufe "
+
+'Einfuehrungs Meldung
+
+Block NoPrompt
+Great Cow BASIC - Ein BASIC Compiler fuer PIC Mikrokontroller
+Version: %Version%
+
+Zum kompilieren eines Files dieses auf die Ikone dieses Programmes ziehen. Siehe 'Getting Started with GCBASIC' fuer weitere Informationen
+
+Eingabe fuer die Befehlszeile:
+GCBASIC [/O:output.asm] [/A:assembler] [/P:programmer] [/K:{C|A}] [/V] [/L]
+        [/NP] filename
+
+        /O:output.asm   Erteile einen File Ausgabe Namen anders als der
+ 			 vorgegebene
+        /A:assembler    Batch File um Assembler aufzurufen. Falls
+			 /A:GCASM gegeben ist, wird GCBasic den internen 
+			 Assembler aufrufen.
+        /P:programmer   Batch file, um Programmierer aufzurufen
+        /K:{C|A}        Halte original Kode in der Assembler Ausgabe 
+			 fest. /K:C speichert Kommentare,
+                        /K:A speichert den ganzen Eingabe Kode
+        /V              Umfangreicher Textmodus
+        /L              Zeige Lizenz
+        /NP             Keine Pause bei Fehlern. Verwendung mit IDEs.
+        filename        File zu kompilieren
+		
+Anstelle von / kann auch - verwendet werden. Z. Bsp -V anstatt /V.
+End Block
+
+Block License
+Great Cow BASIC - A BASIC Compiler fuer PIC Mikrokontroller
+Copyright (C) 2006, 2007 Hugh Considine
+
+Dieses Programm ist 'freie Software'. Es kann weitergegeben und/oder verndert werden unter Einhaltung der Bedingungen, die im 'GNU General Public License' Vertrag der  Free Software Foundation niedergelegt sind. Dies betrifft die Version 2 der Lizenz oder aber nach Ihrer Wahl auch jede nachfolgende Version
+
+Dieses Programm wurde in der Hoffnung zur Verfuegung gestellt, dass es brauchbar ist, aber OHNE JEDE GARANTIE; auch OHNE stillschweigende GARANTIE fuer kommerzielle Verwendung oder EIGNUNG FUER BESTIMMTE ANDERE ZWECKE. Fuer weitere Einzelheiten siehe die GNU General Public Lizenz
+Zusammen mit diesem programm sollten sie eine GNU General Public Lizenz
+Erhalten haben; wenn nicht schreiben Sie an die Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+Falls Sie irgendwelche fragen haben, schreiben Sie mir bitte per e-mail an hconsidine@bigpond.com
+End Block
+
+Startup = "Great Cow BASIC (%Version%)"
+Compiling = "Kompiliere %Filename% ..."
+NoFile = "Finde nicht %Filename%!"
+
+'Verbose mode messages
+FindSource = "Finde Ursprungs File:"
+LoadSource = "Lade Ursprungs Files  . . ."
+ChipS = "PIC Eigenschaften:"
+ChipM = "PIC Modell: "
+ChipC = "Takt MHz: "
+ChipO = "Oszillator: "
+ChipF = "PIC Familie: "
+ChipR = "RAM: "
+
+ReadChipData = "Lese PIC Daten ..."
+BuildMemoryMap = "Erstelle Speicher Eintraege ..."
+
+CompDirs = "Lese Compiler Anweisungen ..."
+RunScripts = "Compiler Scripts laufen ..."
+RepDefs = "Ersetze Definitionen mit Werten ..."
+SplitLines = "Teile Zeilen mit mehrfachen Befehlen auf ..."
+FindFreeRAM = " Erstelle PIC Speicher Eintraege ..."
+ChipHeader = "Finde und lese PIC Kopf-Files ..."
+FindLargeVars = "Finde Nicht-Byte Variabeln ..."
+TranslateFunctions = "Compiler Funktionen ..."
+FindRequiredSubs = "Finde erforderliche Unterroutinen ..."
+StringTable = "Fuege String Lookup Tabellen hinzu ..."
+DataTable = "Fuege Daten Lookup Tabellen hinzu ..."
+AddingSubs = "Fuege erforderliche Unterroutinen hinzu ..."
+RemIfDefs = "Finde und kompiliere #IFDEF Anweisungen ..."
+CompileFor = "Kompiliere FOR Befehle ..."
+
+AllocateRAM = "Weise RAM Variabeln zu ..."
+FindArrays = "Erstelle Arrays ..."
+
+SubParams = "Setze Unteroutinen Parameter ..."
+ProcessArrays = "Bearbeite Array Referenzen ..."
+FindingASM = "Finde Assembler Befehle ..."
+AddBits = "Fuege System Variabeln Bits zu ..."
+
+CompComs = "Kmpilier Befehle:"
+CompileReadTable = "ReadTable ..."
+CompilePot = "POT ..."
+CompileDo = "DO ..."
+CompileDir = "DIR ..."
+CompilePulseOut = "PulseOut ..."
+CompileWait = "WAIT ..."
+CompileSet = "SET ..."
+CompileRotate = "ROTATE ..."
+CompileExitSub = "END, EXIT SUB/FUNCTION ..."
+CompileIF = "IF ..."
+CompileVars = "Variable setting commands ..."
+CompileGOSUB = "GOSUB/RETURN ..."
+CompileGOTO = "GOTO ..."
+
+CompileRepeat = "Repeat ..."
+CompileSelect = "Select ..."
+CompileOn = "On ..."
+
+DelUnusedSysCode = "Entferne unbenutzte System Routinen ..."
+
+TidyCode = "Ordne den Kode ..."
+CalcConfig = "Berechne CONFIG ..."
+AddBankCommands = "Fuege Bank Einrichtungsbefehle hinzu ..."
+
+Add18FBanks = "Fuege RAM Zugriffs Bits hinzu ..."
+
+AddLongCalls = "Setze Programm Zaehler hohe Bits ..."
+
+OptimiseIF = "Optimiere IFs ..."
+OptimiseVars = "Optimiere Variabeln Operationen ..."
+FixFunctions = "Pruefe Funktionen in WAIT Anweisungen ..."
+
+WritingASM = "Schreibe Ausgabe in %OutputFile% ..."
+Success = "Programm wurde erfolgreich kompiliert!"
+ASMSuccess = "Programm wurde erfolgreich assmbliert!"
+CompTime = " (Kompilierungszeit: "
+CompSecs = " Sekunden)"
+Summary = "Zusammenfassung:"
+DataRead = "Von GCBASIC gelesen:"
+InLines = "Eingabe Zeilen: "
+Vars = "Variableh: "
+Consts = "Konstanten: "
+Subs = "Unterroutinen: "
+AssemblyWritten = "Assembler Programm Zeilen geschrieben: "
+MakeASM = "Assembliere Programm ..."
+
+SendToPIC = "Lade Programm runter zum PIC ..."
+
+'Errors
+Error = "Es wurde ein Fehler gefunden:"
+Errors = "Es wurden Fehler gefunden:"
+BadError = "Ein schwerwiegender Fehler wurde gefunden:"
+BadErrors = "Schwerwiegende Fehler wurden gefunden:"
+ErrorLogged = "Die Meldung wurde ins File geschrieben" 
+TypeError = "Fehler"
+TypeWarning = "Warnung"
+Warning = "Es wurde eine Warnung erzeugt:"
+Warnings = "Es wurden Warnungen erzeugt:"
+
+ArrayNoDec = "Array/Funktion %Name% wurde nicht deklariert"
+DupDef = "Doppelte,unvertraegliche Definition fuer die Variabel: %var%"
+BadVarName = "Ungueltiger Variabel Name: %var%"
+ArrayTooBig = "Array %Array% ist zu gross"
+BadParam = "Ungenaue Parameter Schreibweise: %sub%. Korrekt ist %correct%"
+NoNext = "FOR ohne dazugehoeriges NEXT"
+NoBit = "Fehlendes Bit im SET Befehl"
+SynErr = "Schreibfehler"
+
+'New errors in 0.9.3.0
+ExcessVars = "Es wird zuviel RAM Benoetigt. Entferne einige Variabeln, Verkleinere Arrays oder verwende einen leistungsfaehigeren PIC"
+NoBitSet = "Kann die Richtung einzelner PINS eines 12er PICs nicht"
+NotIO = "%var% ist kein gueltiger EIN/AUSGABE Pin oder "
+NoDelayUnits = "Keine Verzoegerungseinheiten angegeben"
+TableNotFound = "Lookup Tabelle %Table% nicht gefunden"
+NoThen = "IF ohne THEN"
+ExtraENDIF = "END IF ohne IF"
+AssemblyFailed = "Assemblierung wegen folgender Fehler nicht moeglich:"
+ArrayTypeInvalid = "Kann nicht den Typ eines Arrays bestimmen"
+NoEndRepeat = "REPEAT ohne END REPEAT"
+InvalidDelayLength = "Kann die Mikro-Sekunden Verzoegerung nicht fuer einen PIC <20MHz verwenden"
+BadConfig = "Konfigurationseinstellung nicht gueltig: %option%"
+
+'New errors in 0.9.4.0
+ASMParamMismatch = "Anzahl der Parameter stimmt nicht ueberein"
+ValueOutOfRange = "Wert ausserhalb des Bereiches. Letztes signifikante Bit benutzt"
+NoChip = "PIC Modell nicht angegeben! GCBASIC kann nicht weitermachen"
+ChipNotSupported = "Kein PIC Datenfile fuer den PIC Namen %chipname% gefunden "
+SubTooBig = "Unterroutine %sub% is zu gross. Verkleinern oder benutze 18C/18F PICs"
+SymbolNotDefined = "Symbol %symbol% wurde nicht definiert"
+BadBitSet = "Kann Bit %bit% nicht setzen von %var%"
+BadBitRead = "Kann Bit %bit% nicht lesen %var%"
+NotAVariable = "%value% ist keine Variabel "
+BadSymbol = "%symbol% ist kein gueltiges Symbol"
+BadStringConst = "String Konstante kann nicht die erste in der Kondition sein"
+UndeclaredArray = "Array %array% wurde nicht deklariert"
+BadVarType = "Ungueltiger variabel Typ: %type%"
+BadParamCount = "Parameter Wirrwar"
+MissingOperand = "Fehlender Operant, %pos% %operator%"
+RecursiveDefine = "Wiederholte Definition"
+ForIndexInUse = "Weil Index %index% schon benutzt wurde"
+BadValueType = "Kann nicht %value% speichern in %type% Variabel "
+BadCommandType = "%command% Befehl kann nicht fuer Variabeln des Typs %type% benutzt werden." 
+BadVarBit = "Variabel %var% gehoert zum Typ %type% und hat kein Bit %bit%"
+BadConstName = "Ungueltiger Konstanten Name: %const%"
+BadBrackets = "Klammern stimmen nicht"
+OperandTypeMismatch = "Operant %operand% kann nicht mit dem Typ %type% Variabeln benutzt werden"
+OutOfRegSpace = "Nicht mehr im Register. Bitte unterteile komplexe Berechnungen"
+BadVarAlias = "Variabel mit mehrfachen Ersatznamen definiert"
+BadAliasSize = "Groesse von Alias Variabel stimmt nicht mit der Anzahl von Plaetzen (%locations%)ueberein" 
+MissingTarget = "Keine Unterroutine als Ziel "
+BadOnType = "Schlechter Modus: Gefunden %found%, erwarteter Fehler oder Interrupt"
+BadIntEvent = "Ungueltiges Interrupt Ereignis: %event%"
+HandlerConflict = "Eine Massnahme wurde bereits fuer das Ereignis %event% definiert "
+MissingCoreFile = "Finde File %core% nicht, welches fuer %chip% erforderlich ist" 
+BadDirection = "Ungueltige Pin Richtung, erwarte In oder Out"
+BadPWMFreq = "Ungueltige PWM Frequenz"
+SubParamNotVar = "%value% ist keine Variabel und kann nicht als Parameter %param% benutzt werden"
+AssemblerNotFound = "Kann den externen Assembler nicht starten"
+NoMatchingSig = "Keine Unterroutine mit uebereinstimmenden Parametern gefunden"
+
+'Warnings
+WarningShortName = "Einzelbuchstabe %type% Name: %name%"
+WarningNoIntEnable = "Ereignis %event% muss manuell aktiviert werden"
+WarningNoIntFlag = "Flag fuer %event% muss manuell zurueckgesetzt werden"
+WarningUnsafeString = "Dieser PIC kann keine Strings richtig unterstuetzen. Deshalb koennen einige absonderliche Fehler auftreten "
+
+'GCASM messages
+SymbolTable = "Erstelle Symbol Tabelle ..."

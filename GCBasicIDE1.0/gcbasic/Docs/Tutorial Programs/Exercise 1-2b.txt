@@ -1,0 +1,6 @@
+'This is a program to make the robot drive forwards
+'Refer to Tutorial 1, Exercise 2 for more details
+
+#include <eracer.h>
+
+Forward

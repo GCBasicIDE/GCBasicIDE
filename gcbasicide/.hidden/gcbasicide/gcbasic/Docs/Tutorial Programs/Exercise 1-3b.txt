@@ -1,0 +1,22 @@
+'This is a burglar alarm program
+'Refer to Tutorial 1, Exercise 3 for more details
+
+#include <eracer.h>
+
+'Wait for the burglar to show up
+Wait Until LDR_Left Light
+
+'Scare the burglar
+set buzzer on
+set red on
+wait 50 10ms
+set buzzer off
+set red off
+
+set green on
+SpinLeft
+Wait 1 sec
+SpinRight
+wait 1 sec
+set green off
+Stop

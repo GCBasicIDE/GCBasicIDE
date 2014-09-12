@@ -1,0 +1,11 @@
+Release Notes for Great Cow Basic Alpha 0.8.5.0 17/6/2006
+_____________________________________________________________________________________
+
+-	This version of GCBASIC is not yet complete, and as such several features are 
+	missing/do not function correctly.
+
+-	QBASIC source is included. Provided some minor changes are made, it will also
+	compile with FreeBASIC.
+
+-	To use this program, you will need to install gputils into the GCBASIC directory,
+	as GCBASIC makes use of the .inc files supplied with gputils.
