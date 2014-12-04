@@ -1,8 +1,0 @@
-'This is a program to turn on the green LED of the robot for two seconds
-'Refer to Tutorial 1, Exercise 3 for more details
-
-#include <eracer.h>
-
-Set Green on
-Wait 2 s
-Set Green off

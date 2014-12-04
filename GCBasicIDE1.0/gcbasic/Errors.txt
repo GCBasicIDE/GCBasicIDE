@@ -1,1 +1,0 @@
-/home/edivaldo/codigo/codigo.gcb (8): Error: LED is not a valid I/O pin or port

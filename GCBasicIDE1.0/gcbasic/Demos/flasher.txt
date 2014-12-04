@@ -1,8 +1,0 @@
-#include <eracer.h>
-
-MAIN:
- SET GREEN ON
- Wait 1 s
- SET GREEN OFF
- Wait 1 s
-goto MAIN

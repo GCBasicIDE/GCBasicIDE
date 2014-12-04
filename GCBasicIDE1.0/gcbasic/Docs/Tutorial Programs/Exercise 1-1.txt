@@ -1,6 +1,0 @@
-'This is a program to turn on the green LED of the robot
-'Refer to Tutorial 1, Exercise 1 for more details
-
-#include <eracer.h>
-
-Set Green On
