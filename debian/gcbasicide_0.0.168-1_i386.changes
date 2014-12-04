@@ -13,16 +13,16 @@ Description:
 Changes: 
  gcbasicide (0.0.168-1) unstable; urgency=low
  .
-   * Melhoria no processo de instalação do compilador.
+   * Mudando o ppa
 Checksums-Sha1: 
- 64664fdcba5dab1a33332f7ec9bfa5529030f311 1440 gcbasicide_0.0.168-1.dsc
- d87675b9037f1348a8bc5d1059472993279d5ff9 1530 gcbasicide_0.0.168-1.diff.gz
- d72a81359de9fd18fd29bcbf2c3cf43baa849889 32242 gcbasicide_0.0.168-1_all.deb
+ 37ecae333ed700d9ca8c63e8bab0e9848098d2f9 1440 gcbasicide_0.0.168-1.dsc
+ eea039fa75380346e671884465d904e99a6dad5b 1856 gcbasicide_0.0.168-1.diff.gz
+ e57f0437274c76c09bda26fa829af74c976b7192 32256 gcbasicide_0.0.168-1_all.deb
 Checksums-Sha256: 
- 9e848a9ef6b7196816ecef62d3e69ca5b1a491004d71d55cc3c6b7a892ed0ab2 1440 gcbasicide_0.0.168-1.dsc
- e0f0be4ded1be89ff3c16497f5d30dc99a274c8e85b5fa5552047bb4adf0e90c 1530 gcbasicide_0.0.168-1.diff.gz
- 4d10928e0bb18421a1e97516c6fbda0b234a23ac193a753c2a93b8153bd4fc88 32242 gcbasicide_0.0.168-1_all.deb
+ a442058f7794cf770fbc85514fb136053950a5c7eac7a31e5a08ebaf6463e8ca 1440 gcbasicide_0.0.168-1.dsc
+ 308640425f4877aa06310e11e5e7559d5515720bf25902665aae338850abbe75 1856 gcbasicide_0.0.168-1.diff.gz
+ 28e0fa311fad1515afe538ae8de122cf8014332bf583a2352fc15bdd7c15b2ec 32256 gcbasicide_0.0.168-1_all.deb
 Files: 
- 6005c4ee70461d58f32ab133b78f7c14 1440 contrib/electronics optional gcbasicide_0.0.168-1.dsc
- 6c6584cbf40ae91720008730faa93e85 1530 contrib/electronics optional gcbasicide_0.0.168-1.diff.gz
- 09de7017adcc70614fd89ba70043c97e 32242 contrib/electronics optional gcbasicide_0.0.168-1_all.deb
+ 7229048fd554dad91334616ceef15669 1440 contrib/electronics optional gcbasicide_0.0.168-1.dsc
+ 9b2976abed33674207be9df51ff43fe6 1856 contrib/electronics optional gcbasicide_0.0.168-1.diff.gz
+ 79aa1f40e07f886ff3467929afb40610 32256 contrib/electronics optional gcbasicide_0.0.168-1_all.deb

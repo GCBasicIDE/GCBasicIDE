@@ -19,6 +19,6 @@ msgid "GCBasicIDE"
 msgstr ""
 
 #: .project:2
-msgid "Uma interface gráfica para escrever e compilar microcontroladores PIC com códigos escritos para o compilador GCBasic. \n\nDependências: sudo add-apt-repository ppa:nemh/gambas3\n\n_________________________________________________________\n\n\n\n"
+msgid "Uma interface gráfica para escrever e compilar microcontroladores PIC com códigos escritos para o compilador GCBasic. \n\nDependências: sudo add-apt-repository ppa:gambas-team/gambas3\n\n\n\n"
 msgstr ""
 
