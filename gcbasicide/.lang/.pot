@@ -92,41 +92,41 @@ msgstr ""
 msgid "Case sensitive"
 msgstr ""
 
-#: FInstalar_manualmente.form:21 Instalar_manualmente.form:21
+#: FInstalar_manualmente.form:21
 msgid "Instalando o compilador manualmente. "
 msgstr ""
 
-#: FInstalar_manualmente.form:26 Instalar_manualmente.form:26
+#: FInstalar_manualmente.form:26
 msgid ""
 "wget -c https://raw.githubusercontent.com/GCBasicIDE/GCBasicIDE/master/"
 "gcbasic.tar.gz"
 msgstr ""
 
-#: FInstalar_manualmente.form:31 Instalar_manualmente.form:31
+#: FInstalar_manualmente.form:31
 msgid "Fazer download do compilador:"
 msgstr ""
 
-#: FInstalar_manualmente.form:36 Instalar_manualmente.form:36
+#: FInstalar_manualmente.form:36
 msgid "cd /tmp/"
 msgstr ""
 
-#: FInstalar_manualmente.form:41 Instalar_manualmente.form:41
+#: FInstalar_manualmente.form:41
 msgid "Mudar para o diretorio /tmp/"
 msgstr ""
 
-#: FInstalar_manualmente.form:46 Instalar_manualmente.form:46
+#: FInstalar_manualmente.form:46
 msgid "pkexec tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz"
 msgstr ""
 
-#: FInstalar_manualmente.form:51 Instalar_manualmente.form:51
+#: FInstalar_manualmente.form:51
 msgid "Descompactando o compilador no diretório  /opt/gcbasicide/gcbasic"
 msgstr ""
 
-#: FInstalar_manualmente.form:56 Instalar_manualmente.form:56
+#: FInstalar_manualmente.form:56
 msgid "Abra o terminal e digite os comandos abaixo:"
 msgstr ""
 
-#: FInstalar_manualmente.form:61 Instalar_manualmente.form:61
+#: FInstalar_manualmente.form:61
 msgid "Fechar"
 msgstr ""
 

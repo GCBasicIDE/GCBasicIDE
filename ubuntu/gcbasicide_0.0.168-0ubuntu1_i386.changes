@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Thu, 04 Dec 2014 12:00:00 +0000
+Source: gcbasicide
+Binary: gcbasicide
+Architecture: source all
+Version: 0.0.168-0ubuntu1
+Distribution: unstable
+Urgency: low
+Maintainer: Edivaldo Amaral Gonçalves <kito.eag@gmail.com>
+Changed-By: Edivaldo Amaral Gonçalves <kito.eag@gmail.com>
+Description: 
+ gcbasicide - GCBasicIDE
+Changes: 
+ gcbasicide (0.0.168-0ubuntu1) unstable; urgency=low
+ .
+   * Melhoria no processo de instalação do compilador.
+Checksums-Sha1: 
+ a2ecb86dec5c4b0f4edfff3c32345a145d279cc3 1468 gcbasicide_0.0.168-0ubuntu1.dsc
+ d4731be95708d65efeae9a192da45a47dcc5f9d9 1536 gcbasicide_0.0.168-0ubuntu1.diff.gz
+ b0837425aae2d2436574bb8377cb0d80c63edcdd 32252 gcbasicide_0.0.168-0ubuntu1_all.deb
+Checksums-Sha256: 
+ 1537a2de3a4f0755e69c36c3ddff231025f23683bfab4618159d2fc937360e60 1468 gcbasicide_0.0.168-0ubuntu1.dsc
+ 9368160fdca2606437a477efa874ad761a90c82d158cbac88537c8639ffb79ec 1536 gcbasicide_0.0.168-0ubuntu1.diff.gz
+ 0136e74462fb1939f5cafda73d514cb2dcdb71db9208fba88615493b0b40ac36 32252 gcbasicide_0.0.168-0ubuntu1_all.deb
+Files: 
+ baefdb5bcb9021c7357600607155dc3f 1468 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.dsc
+ 4393c03e5cb2e87ea486f2bfa0455602 1536 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.diff.gz
+ 22f7f328c1e29fd5a265d082886aee0c 32252 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1_all.deb

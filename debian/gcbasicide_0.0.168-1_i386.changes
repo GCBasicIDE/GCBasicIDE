@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Thu, 04 Dec 2014 12:00:00 +0000
+Source: gcbasicide
+Binary: gcbasicide
+Architecture: source all
+Version: 0.0.168-1
+Distribution: unstable
+Urgency: low
+Maintainer: Edivaldo Amaral Gonçalves <kito.eag@gmail.com>
+Changed-By: Edivaldo Amaral Gonçalves <kito.eag@gmail.com>
+Description: 
+ gcbasicide - GCBasicIDE
+Changes: 
+ gcbasicide (0.0.168-1) unstable; urgency=low
+ .
+   * Melhoria no processo de instalação do compilador.
+Checksums-Sha1: 
+ 64664fdcba5dab1a33332f7ec9bfa5529030f311 1440 gcbasicide_0.0.168-1.dsc
+ d87675b9037f1348a8bc5d1059472993279d5ff9 1530 gcbasicide_0.0.168-1.diff.gz
+ d72a81359de9fd18fd29bcbf2c3cf43baa849889 32242 gcbasicide_0.0.168-1_all.deb
+Checksums-Sha256: 
+ 9e848a9ef6b7196816ecef62d3e69ca5b1a491004d71d55cc3c6b7a892ed0ab2 1440 gcbasicide_0.0.168-1.dsc
+ e0f0be4ded1be89ff3c16497f5d30dc99a274c8e85b5fa5552047bb4adf0e90c 1530 gcbasicide_0.0.168-1.diff.gz
+ 4d10928e0bb18421a1e97516c6fbda0b234a23ac193a753c2a93b8153bd4fc88 32242 gcbasicide_0.0.168-1_all.deb
+Files: 
+ 6005c4ee70461d58f32ab133b78f7c14 1440 contrib/electronics optional gcbasicide_0.0.168-1.dsc
+ 6c6584cbf40ae91720008730faa93e85 1530 contrib/electronics optional gcbasicide_0.0.168-1.diff.gz
+ 09de7017adcc70614fd89ba70043c97e 32242 contrib/electronics optional gcbasicide_0.0.168-1_all.deb
