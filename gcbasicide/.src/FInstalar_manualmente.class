@@ -1,0 +1,10 @@
+' Gambas class file
+
+
+
+
+Public Sub Fechar_Click()
+
+  Me.Close
+
+End

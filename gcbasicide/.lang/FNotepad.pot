@@ -14,91 +14,95 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FNotepad.form:54
+#: FNotepad.form:56
 msgid "GCBasicIDE"
 msgstr ""
 
-#: FNotepad.form:59
+#: FNotepad.form:61
 msgid "&File"
 msgstr ""
 
-#: FNotepad.form:62
+#: FNotepad.form:64
 msgid "&Open..."
 msgstr ""
 
-#: FNotepad.form:67
+#: FNotepad.form:69
 msgid "Close"
 msgstr ""
 
-#: FNotepad.form:75
+#: FNotepad.form:77
 msgid "&Save"
 msgstr ""
 
-#: FNotepad.form:80
+#: FNotepad.form:82
 msgid "S&ave As..."
 msgstr ""
 
-#: FNotepad.form:88
+#: FNotepad.form:90
 msgid "&Quit"
 msgstr ""
 
-#: FNotepad.form:94
+#: FNotepad.form:96
 msgid "&Edit"
 msgstr ""
 
-#: FNotepad.form:97
+#: FNotepad.form:99
 msgid "&Copy"
 msgstr ""
 
-#: FNotepad.form:102
+#: FNotepad.form:104
 msgid "C&ut"
 msgstr ""
 
-#: FNotepad.form:107
+#: FNotepad.form:109
 msgid "&Paste"
 msgstr ""
 
-#: FNotepad.form:115
+#: FNotepad.form:117
 msgid "&Undo"
 msgstr ""
 
-#: FNotepad.form:120
+#: FNotepad.form:122
 msgid "&Redo"
 msgstr ""
 
-#: FNotepad.form:128
+#: FNotepad.form:130
 msgid "Choose &Font..."
 msgstr ""
 
-#: FNotepad.form:133
+#: FNotepad.form:135
 msgid "&?"
 msgstr ""
 
-#: FNotepad.form:136
+#: FNotepad.form:138
 msgid "&Help"
 msgstr ""
 
-#: FNotepad.form:144
+#: FNotepad.form:146
+msgid "&Instalar Compilador"
+msgstr ""
+
+#: FNotepad.form:153
 msgid "&About..."
 msgstr ""
 
-#: FNotepad.form:222
+#: FNotepad.form:231
 msgid "Help"
 msgstr ""
 
-#: FNotepad.form:233
+#: FNotepad.form:242
 msgid "Buscar Texto"
 msgstr ""
 
-#: FNotepad.form:242
+#: FNotepad.form:251
 msgid "Buscar siguiente"
 msgstr ""
 
-#: FNotepad.form:248
+#: FNotepad.form:257
 msgid "Buscar anterior"
 msgstr ""
 
-#: FNotepad.form:275
+#: FNotepad.form:284
 msgid "txtConsole"
 msgstr ""
 

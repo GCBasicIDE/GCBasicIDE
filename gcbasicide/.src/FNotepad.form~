@@ -70,11 +70,6 @@
     }
     { Menu6 Menu
     }
-    { mnuInstalar_compilador Menu
-      Text = ("&Instalar Compilador")
-    }
-    { Menu7 Menu
-    }
     { mnuAbout Menu
       Text = ("&About...")
     }

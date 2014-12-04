@@ -397,21 +397,42 @@ Public Sub Refazer_Click()
 
 End
 
+Public Sub Verificar_compilador() As Boolean
+  Dim sResposta As String
+  Dim Variavel As String
+  Dim Mensagem As Integer
+  
+  Variavel = "if [ -e /opt/gcbasicide/gcbasic/ ]; then echo 'sim'; else echo 'nao'; fi"   'comando para verificar se um diretorio existe.
+  Shell Variavel To sResposta 'Executa o comando no terminal para verificar se existe o diretório
+  
+  If String.InStr(sResposta, "sim") > 0 Then 'Se existe o diretório, entao faça...
+    'SiM
+    Return True
+    
+  Endif
 
+End
 
 Public Sub Compilar_Click()
 
  Dim sLig As String 
  Dim sOutput As String
  Dim LoopCounterOut As Byte
- Finstalar_compilador.Show
+ Dim Mensagem As Integer
+
+  Verificar_compilador()
+    If Verificar_compilador() = False
+      Mensagem = Message.Error("O compilador não está instalado.", "OK")
+      If Mensagem = 1 Then Finstalar_compilador.Show
+    Endif
+
  
   If Editor1.Text = Null Then Return 'Testa pra ver se existe texto para ser compilado. Se não tiver texto, sai da rotina.
   Compilar.Enabled = False 'Desabilita o botao Compilar
   Editor1.SetFocus
   Save 'Primeiro, salva o código para depois compila-lo
   $bModify = False 'Marca bModify como falso para não pedir pra salvar o arquivo quando fechar e programa.
-  sOutput = sOutput & "/usr/share/gcbasicide/gcbasic/./gcbasic /O: /V: /R:text /NP "
+  sOutput = sOutput & "/opt/gcbasicide/gcbasic/./gcbasic /O: /V: /R:text /NP "
   sLig = Null 'Limpar a variavel
   
   For LoopCounterOut = 1 To 10 'Repete a compilação até compilar corretamente (motivo: as vezes gera erros na primeira compilação)
@@ -827,5 +848,11 @@ End
 Public Sub Menu5_Click()
 
    FHelp.Show
+
+End
+
+Public Sub mnuInstalar_compilador_Click()
+
+  Finstalar_compilador.Show
 
 End

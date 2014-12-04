@@ -1,0 +1,44 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,86,50)
+  Background = &HDFDFDF&
+  { !TextLabel1 TextLabel
+    MoveScaled(3,2,49,4)
+    #Public = True
+    Font = Font["Bold,+1"]
+    Text = ("Instalando o compilador manualmente. ")
+  }
+  { TextBox1 TextBox
+    MoveScaled(3,25,79,4)
+    Text = ("wget -c https://raw.githubusercontent.com/GCBasicIDE/GCBasicIDE/master/gcbasic.tar.gz")
+  }
+  { Label1 Label
+    MoveScaled(3,21,31,4)
+    Text = ("Fazer download do compilador:")
+  }
+  { TextBox2 TextBox
+    MoveScaled(3,15,79,4)
+    Text = ("cd /tmp/")
+  }
+  { Label2 Label
+    MoveScaled(3,11,25,4)
+    Text = ("Mudar para o diretorio /tmp/")
+  }
+  { TextBox3 TextBox
+    MoveScaled(3,36,79,4)
+    Text = ("pkexec tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz")
+  }
+  { Label3 Label
+    MoveScaled(3,32,63,4)
+    Text = ("Descompactando o compilador no diretório  /opt/gcbasicide/gcbasic")
+  }
+  { Label4 Label
+    MoveScaled(3,6,43,4)
+    Text = ("Abra o terminal e digite os comandos abaixo:")
+  }
+  { Fechar Button
+    MoveScaled(35,44,16,4)
+    Text = ("Fechar")
+  }
+}

@@ -14,7 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Finstalar_compilador.form:17
-msgid "Button1"
+#: Finstalar_compilador.form:15
+msgid "Instalar Compilador"
+msgstr ""
+
+#: Finstalar_compilador.form:28
+msgid "Cancelar"
+msgstr ""
+
+#: Finstalar_compilador.form:34
+msgid "Instalar o compilador GCBasic."
+msgstr ""
+
+#: Finstalar_compilador.form:41
+msgid "OK"
 msgstr ""
 

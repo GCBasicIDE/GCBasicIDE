@@ -1,5 +1,11 @@
 ' Gambas class file
 
+Private $hProcess As Process
+Private $sText As String
+Public sLig As String
+Public palavra As String
+Public sText As String
+Public RespostaDoConsole As String
 Static Public Sub Run()
   
   Dim hForm As Form
@@ -13,36 +19,338 @@ End
 Public Sub _new()
   
   Me.Center
+  $hProcess = Exec ["bash", "--noediting"] For Input Output As "Process"
+  
+End
+
+Public Sub Form_Close()
+
+  $hProcess.Kill
+  Finstalar_compilador.Delete
+  While True
+    Wait 1
+  Wend
+  
+  End
+
+Public Sub Process_Read()
+
+  Dim sStr As String 
+
+  'Debug Eof(Last);; Lof(Last);;
+  'While Not sStr
+  Read #$hProcess, sStr, -256
+  'Wend
+  'Error sStr
+  $sText = $sText & sStr
+  'sText = $sText
+  'Debug Quote(sStr)
+  UpdateConsole
+
+End
+
+Public Sub Process_Error(sStr As String)
+  
+  $sText = $sText & sStr
+  sText = $sText
+  UpdateConsole
+  
+End
+
+Private Sub UpdateConsole()
+  Dim iPos As Integer
+  Dim sStr As String
+
+  While Len($sText)
+    iPos = InStr($sText, "\n")
+    If iPos = 0 Then iPos = Len($sText)
+    
+    sStr = Normalize(Left$($sText, iPos))
+    'Debug sStr
+    $sText = Mid$($sText, iPos + 1)
+    
+    txtConsole.Pos = txtConsole.Length
+    txtConsole.Insert(sStr)
+    RespostaDoConsole = RespostaDoConsole & sStr
+    
+    If String.InStr(sStr, "comando_ok") > 0 Then palavra = "comando_ok"
+    If String.InStr(sStr, "comando_erro") > 0 Then palavra = "comando_erro"
+  Wend
+End
+
+Private Sub Verifica_se_existe_na_resposta_do_shell()
+  Dim iPos As Integer
+  Dim sStr As String
+  Print sText
+  While Len(sText)
+    iPos = InStr(sText, "\n")
+    If iPos = 0 Then iPos = Len(sText)
+    
+    sStr = Normalize(Left$(sText, iPos))
+    'Debug sStr
+    sText = Mid$(sText, iPos + 1)
+
+    If String.InStr(sStr, palavra) > 0 Then
+      palavra = 1
+      Return
+    Endif
+  Wend
+  palavra = 0
+End
+
+Public Sub Process_Kill()
+  
+  'hProcess = NULL
+  Try Me.Close
+  'Return
+End
+
+
+Static Private Function Normalize(sStr As String) As String
+
+  Dim sNorm As String
+  Dim iInd As Integer
+  Dim iCar As Integer
+  Dim bEsc As Boolean
+
+  sNorm = sStr
+  
+  If System.Charset = Desktop.Charset Then 
+    Return sNorm
+  Else
+    Return Conv$(sNorm, System.Charset, Desktop.Charset) 
+  Endif
   
 End
 
 
 
-Public Sub Verificar_compilador()
+
+Public Sub Dialogu()
+Dim asdfg As Integer
+
+asdfg = Message.Question("O compilador já está instalado. O que deseja fazer?", "Reinstalar", " Instalar manualmente ", " Cancelar ")
+    If asdfg = 2 Then Print asdfg
+    If asdfg = 3 Then Print asdfg
+End
+
+
+
+
+Public Sub Verificar_compilador() As Boolean
   Dim sResposta As String
   Dim Variavel As String
-  Dim testandosom As String
+  Dim Mensagem As Integer
+  
   
   Variavel = "if [ -e /opt/gcbasicide/gcbasic/ ]; then echo 'sim'; else echo 'nao'; fi"   'comando para verificar se um diretorio existe.
   Shell Variavel To sResposta 'Executa o comando no terminal para verificar se existe o diretório
   
   If String.InStr(sResposta, "sim") > 0 Then 'Se existe o diretório, entao faça...
-    Print "SiM"
-   Else
-    Print "NãO"
-    Variavel = TextBoxSenhaRoot.Text
-    Print Variavel
-    'Shell "echo \"" & Variavel & "\" | sudo -S tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz, fi" To sResposta
-   ' Shell "zenity --password | sudo -S tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz, fi" To testandosom
-    Exec ["sudo", "tar", "-C", "/opt/gcbasicide/", "-vzxf", "/tmp/gcbasic.tar.gz", ",", "fi"] To testandosom
-    Print testandosom
-    Print Variavel
+    'SiM
+    Return True
+    
   Endif
 
 End
 
+Public Sub Aguarda_resposta_do_shell() As Boolean
+Dim contador As Integer
+Dim Mensagem As Integer
+contador = 0
+palavra = 0
+ While palavra <> "comando_ok" 'Aguarda a resposta do terminal
+  Wait 1
+  contador = contador + 1
+  Print contador
+  Print palavra
+  
+  If contador = 8000 Then Return False
+  If palavra = "comando_erro" Then Return False
+  'txtConsole.Insert(".") 'Insere pontos "..." para mostrar progresso do processo
+  
+     If contador = 250 Then 'Se o processo esta demorando muito, entao...
+      Mensagem = Message.Question("O processo está muito demorado.", "Continuar", "Encerrar", "Instalar manualmente ")
+      If Mensagem = 2 Then
+          Finstalar_compilador.Close
+      Endif
+      If Mensagem = 3 Then 
+          FInstalar_manualmente.Show
+          Finstalar_compilador.Close
+      Endif
+     Endif
+  
+ Wend
+ 
+ Return True
+ 
+End
+
+
 Public Sub Button1_Click()
+Dim Mensagem As Integer
+Dim Variavel As String
+Button1.Enabled = False
+txtConsole.Visible = True
+
+Mensagem = 1
+
+  $sText = "Aguarde..." & gb.NewLine 
 
   Verificar_compilador()
+    If Verificar_compilador() = True
+      Mensagem = Message.Question("O compilador já está instalado. O que deseja fazer?", "Reinstalar", " Instalar manualmente ", " Cancelar ")
+      If Mensagem = 2 Then 
+        Finstalar_compilador.Close
+        FInstalar_manualmente.Show
+        Return
+      Endif
+      If Mensagem = 3 Then
+        'Finstalar_compilador.Close
+        Button1.Enabled = True
+        Return
+      Endif
+    Endif
+ 
+  sLig = "echo ' Mudando para o diretorio /tmp/' " & gb.NewLine 
+  Enviar_para_terminal
+  sLig = "if ! cd /tmp/ ; then echo 'comando_erro'; else echo 'comando_ok'; fi" & gb.NewLine 'Muda para o diretorio /tmp/
+  Enviar_para_terminal
+  Aguarda_resposta_do_shell
+Print "Teste1"
+
+' While Mensagem = 1
+'   
+'   sLig = "wget --spider https://raw.githubusercontent.com/GCBasicIDE/GCBasicIDE/master/gcbasic.tar.gz" & gb.NewLine
+'   Enviar_para_terminal
+'   Wait 2 
+'   sLig = "echo 'Aguarde...'" & gb.NewLine 
+'   Enviar_para_terminal
+'   
+'   Print "lalala"
+' 
+'   palavra = "200 OK"
+'   Verifica_se_existe_na_resposta_do_shell
+' 
+'   If palavra = 1 Then
+'     'Continua
+'     Print "lalala1"
+'     Mensagem = 0
+'   Else
+'     Print "lalala2"
+'     Mensagem = Message.Question("Não foi possível acessar o servidor. O que deseja fazer?", "Tentar novamente", " Instalar manualmente ", " Cancelar ")
+'     If Mensagem = 2 Then 
+'       FInstalar_manualmente.Show
+'       Finstalar_compilador.Close
+'     Endif
+'     If Mensagem = 3 Then
+'     Finstalar_compilador.Close
+'     Endif
+'   Endif
+' Wend
+  
+              '   While Mensagem = 1 
+              '   Variavel = "if ! ping -c 7 www.google.com ; then echo 'sem_conexao'; else echo 'servidor_ok'; fi"  'Verificando a conexao com o servidor"
+              '   Shell Variavel To sLig
+              ' Print sLig
+              '   If String.InStr(sLig, "sem_conexao") > 0 Then 'Se existe a palavra sem_conexao, entao o servidor nao está ativo... 
+              '     Mensagem = Message.Question("Não foi possível acessar o servidor. O que deseja fazer?", "Tentar novamente", " Instalar manualmente ", " Cancelar ")
+              '     If Mensagem = 2 Then 
+              '       FInstalar_manualmente.Show
+              '       Finstalar_compilador.Close
+              '     Endif
+              '     If Mensagem = 3 Then
+              '     Finstalar_compilador.Close
+              '     Endif
+              '   Else
+              '     Mensagem = 0
+              '   Endif
+              '   
+              '   Wend
+  
+  sLig = "echo 'Fazendo download do compilador...' " & gb.NewLine 
+  Enviar_para_terminal
+  sLig = "if ! wget -c https://raw.githubusercontent.com/GCBasicIDE/GCBasicIDE/master/gcbasic.tar.gz ; then echo 'comando_erro'; else echo 'comando_ok'; fi" & gb.NewLine 'Faz download do compilador
+  Enviar_para_terminal
+  Aguarda_resposta_do_shell
+  Print "teste_aqui"
+  Print palavra
+    If palavra = "comando_erro" Then
+       Mensagem = Message.Question("Erro ao fazer download do compilador. O que deseja fazer?", " Instalar manualmente ", " Cancelar ")
+       If Mensagem = 1 Then 
+           FInstalar_manualmente.Show
+           Finstalar_compilador.Close
+           Return
+       Endif
+       If Mensagem = 2 Then
+           'Finstalar_compilador.Close
+           Button1.Enabled = True
+           Return
+       Endif
+    Endif
+
+  
+  Print "Etapa2"
+   
+  sLig = "echo 'Descompactando o compilador no diretório  /opt/gcbasicide/gcbasic' " & gb.NewLine 
+  Enviar_para_terminal
+  sLig = "if ! pkexec tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz ; then echo 'comando_erro'; else echo 'comando_ok'; fi" & gb.NewLine 'Descompacta o compilador no diretório /opt/gcbasicide/gcbasic
+  Enviar_para_terminal
+ Aguarda_resposta_do_shell
+   If palavra = "comando_erro" Then 'Se existe erros na extracao do arquivo, entao faça...
+      Mensagem = Message.Question("Não foi possível extrair compilador!", "Tentar novamente", " Instalar manualmente ", " Cancelar ")
+      If Mensagem = 1 Then
+          sLig = "rm /tmp/gcbasic.tar.gz" & gb.NewLine
+          Enviar_para_terminal
+          Button1_Click
+      Endif
+      If Mensagem = 2 Then 
+          FInstalar_manualmente.Show
+          Finstalar_compilador.Close
+          Return
+      Endif
+   Endif
+   
+   Print "Teste3"
+   
+  If palavra = "comando_ok" Then 
+    txtConsole.Insert(gb.NewLine & "O compilador foi instalado com sucesso!")
+    txtConsole.Pos = txtConsole.Length 'Rolagem automatica
+    Mensagem = Message.Info("O compilador foi instalado com sucesso!", "OK")
+    ButtonOK.Visible = True
+    Button1.Visible = False
+    Cancelar.Visible = False
+  Endif
+   '  Variavel = TextBoxSenhaRoot.Text
+   '  Print Variavel
+   '  Shell "cd /tmp/ && wget -c https://raw.githubusercontent.com/GCBasicIDE/GCBasicIDE/master/gcbasic.tar.gz" To testandosom  'Faz download do compilador
+   '  'Shell "echo \"" & Variavel & "\" | sudo -S tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz, fi" To sResposta
+   ' ' Shell "zenity --password | sudo -S tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz, fi" To testandosom
+   '  Exec ["zenity", "--password", "|", "sudo", "-S", "tar", "-C", "/opt/gcbasicide/", "-vzxf", "/tmp/gcbasic.tar.gz", ",", "fi"] To testandosom
+   '  Print testandosom
+   '  Print Variavel
+Button1.Enabled = True
+
+End
+
+Public Sub Enviar_para_terminal()
+  
+  sLig = Conv$(sLig, Desktop.Charset, System.Charset)
+  Print #$hProcess, sLig;
+  UpdateConsole
+End
+
+
+Public Sub Cancelar_Click()
+  Form_Close()
+  Finstalar_compilador.Close
+
+End
+
+
+
+Public Sub ButtonOK_Click()
+
+  Finstalar_compilador.Close
 
 End

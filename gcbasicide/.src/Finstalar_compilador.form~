@@ -1,14 +1,31 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,56,25)
-  { TextBoxSenhaRoot TextBox
-    MoveScaled(15,15,25,4)
-    Text = ("TextBox1")
-    Password = True
-  }
+  MoveScaled(0,0,88,26)
   { Button1 Button
-    MoveScaled(20,20,16,4)
-    Text = ("Button1")
+    MoveScaled(25,10,19,4)
+    Text = ("Instalar Compilador")
+  }
+  { txtConsole TextArea
+    MoveScaled(1,14,86,11)
+    Visible = False
+    Font = Font["Monospace,10"]
+    Expand = True
+    ReadOnly = True
+  }
+  { Cancelar Button
+    MoveScaled(46,10,16,4)
+    Text = ("Cancelar")
+  }
+  { Label1 Label
+    MoveScaled(3,2,83,6)
+    Font = Font["+3"]
+    Text = ("Instalar o compilador GCBasic.")
+    Alignment = Align.Center
+  }
+  { ButtonOK Button
+    MoveScaled(36,10,16,4)
+    Visible = False
+    Text = ("OK")
   }
 }
