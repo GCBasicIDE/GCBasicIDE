@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Thu, 04 Dec 2014 12:00:00 +0000
+Date: Fri, 05 Dec 2014 12:00:00 +0000
 Source: gcbasicide
 Binary: gcbasicide
 Architecture: source all
@@ -13,16 +13,16 @@ Description:
 Changes: 
  gcbasicide (0.0.168-1) unstable; urgency=low
  .
-   * Melhorando as dependencias do DEB.
+   * Especificando as dependências do DEB.
 Checksums-Sha1: 
- 52c579be9fb220452a26698436387ca249cbf249 1414 gcbasicide_0.0.168-1.dsc
- e15fc06f4d94b3a336922254bbe87f7a972df888 1997 gcbasicide_0.0.168-1.diff.gz
- d4b8e668f134e1e9a0ec67d0eac954306c4d4672 32308 gcbasicide_0.0.168-1_all.deb
+ 7e5997e44880a755577019b91fb997b7f3f4267d 1469 gcbasicide_0.0.168-1.dsc
+ c875062b4fa69cce988efa1475b4689fc271d440 2181 gcbasicide_0.0.168-1.diff.gz
+ d8eb21d9952514c3997acd391bc7980e13567f6b 32452 gcbasicide_0.0.168-1_all.deb
 Checksums-Sha256: 
- c1e7b6477f77f3e47616ee295f272e67c07c0703c5e108f166f5dd92f40fc3e6 1414 gcbasicide_0.0.168-1.dsc
- 4b84f4e184fc5944679d32c798ce077ece9faac2ab14b78ff401e369f93f0a2a 1997 gcbasicide_0.0.168-1.diff.gz
- b97bac2c552c0fd2db9f7b8fb0c7d6e0718bc84bbc6bb0af4dd035a66838ae1b 32308 gcbasicide_0.0.168-1_all.deb
+ 7874590af279d82aba34a5f92ddbf71dbbb7ec6b63c9110848c9dda390de69a6 1469 gcbasicide_0.0.168-1.dsc
+ 279b4dd2127020e6c644cadc1d20a9170cc1e46d24bd615884658780b2905c52 2181 gcbasicide_0.0.168-1.diff.gz
+ 672d98489eb1bc94fac2fd28395605c09d2ce11580402e4323573b2f24673160 32452 gcbasicide_0.0.168-1_all.deb
 Files: 
- 6ff4b220ae2ca6a231eb93616f1b66a9 1414 contrib/electronics optional gcbasicide_0.0.168-1.dsc
- 55036ff91809e1dada6e765615bf0b39 1997 contrib/electronics optional gcbasicide_0.0.168-1.diff.gz
- a39abcf8e96409429d48d637694c9202 32308 contrib/electronics optional gcbasicide_0.0.168-1_all.deb
+ 7a1e3b3c24561bffd646eda28104c262 1469 contrib/electronics optional gcbasicide_0.0.168-1.dsc
+ c8bf29069421666c242e8b3120c7f798 2181 contrib/electronics optional gcbasicide_0.0.168-1.diff.gz
+ e4dfc438de98529e1764ec0597eaa435 32452 contrib/electronics optional gcbasicide_0.0.168-1_all.deb

@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Thu, 04 Dec 2014 12:00:00 +0000
+Date: Fri, 05 Dec 2014 12:00:00 +0000
 Source: gcbasicide
 Binary: gcbasicide
 Architecture: source all
@@ -13,16 +13,16 @@ Description:
 Changes: 
  gcbasicide (0.0.168-0ubuntu1) unstable; urgency=low
  .
-   * Melhorando as dependencias do DEB.
+   * Especificando as dependências do DEB.
 Checksums-Sha1: 
- 546963035f5666b6eb2ef2996bbb6ce67391b375 1442 gcbasicide_0.0.168-0ubuntu1.dsc
- 48d0d8105b4e71deda77ab5289a1c577a5fefe27 2002 gcbasicide_0.0.168-0ubuntu1.diff.gz
- b432db9cfb791a4d5a8f6c308407d53293978465 32326 gcbasicide_0.0.168-0ubuntu1_all.deb
+ 1af1b9ce6edab1c903b4e44afb267581c145361a 1497 gcbasicide_0.0.168-0ubuntu1.dsc
+ 23c7408ffb1656b1d8ab26bfa09afe6481ea1cfc 2147 gcbasicide_0.0.168-0ubuntu1.diff.gz
+ 04190825195e31d865e266084bfd69e15f18b9ee 32466 gcbasicide_0.0.168-0ubuntu1_all.deb
 Checksums-Sha256: 
- acf189f76e37432bb4ec084b38a60bd59e5d368c1d1209f2e8ebe374f19238d7 1442 gcbasicide_0.0.168-0ubuntu1.dsc
- 2100a1db7154814b348c823eeae6b602b9cae8924cf1b7c0a572965991725724 2002 gcbasicide_0.0.168-0ubuntu1.diff.gz
- 3517ce7f8bddd5413db7b22b17131854b7dd3ae27a7a649d7d3f930465d7309e 32326 gcbasicide_0.0.168-0ubuntu1_all.deb
+ 4b3678596f7ebec67a34a90894c81e8035cf6bfa4996c0ed733d49a0904860f2 1497 gcbasicide_0.0.168-0ubuntu1.dsc
+ 760006d75c8cfad86ae23959516b12754fbb9830d7fcc113965d3659de7d9916 2147 gcbasicide_0.0.168-0ubuntu1.diff.gz
+ d1a10d23cec192d46c8f2a62bba3f2434905ba40d72c7a8b7415a7b1fa427060 32466 gcbasicide_0.0.168-0ubuntu1_all.deb
 Files: 
- bf7f172048b2e13b867b39e4dd56b7fb 1442 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.dsc
- 193a3473cf6b16af79e8452087f40b4d 2002 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.diff.gz
- 5d1faddc7668969172838da7515d3796 32326 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1_all.deb
+ 1e232da3320465e3351eb51b126006ff 1497 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.dsc
+ 602d3701438d3ccbf78bab037b83294e 2147 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.diff.gz
+ 3f0346c4d2e4c7d83e8936258c32b85c 32466 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1_all.deb
