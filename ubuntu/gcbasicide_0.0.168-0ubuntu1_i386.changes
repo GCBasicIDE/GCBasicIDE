@@ -13,16 +13,16 @@ Description:
 Changes: 
  gcbasicide (0.0.168-0ubuntu1) unstable; urgency=low
  .
-   * Especificando as dependências do DEB.
+   * New release version
 Checksums-Sha1: 
- 1af1b9ce6edab1c903b4e44afb267581c145361a 1497 gcbasicide_0.0.168-0ubuntu1.dsc
- 23c7408ffb1656b1d8ab26bfa09afe6481ea1cfc 2147 gcbasicide_0.0.168-0ubuntu1.diff.gz
- 04190825195e31d865e266084bfd69e15f18b9ee 32466 gcbasicide_0.0.168-0ubuntu1_all.deb
+ 4b6ca2dc9d7677eff2be8f748b1e78dab4e6f13e 1497 gcbasicide_0.0.168-0ubuntu1.dsc
+ 0c6dc55538ea3f3eaa1e2f3edbf38c116f1aa69c 2399 gcbasicide_0.0.168-0ubuntu1.diff.gz
+ e52ba759373ea4f81756298e2351a55d689126ba 169850 gcbasicide_0.0.168-0ubuntu1_all.deb
 Checksums-Sha256: 
- 4b3678596f7ebec67a34a90894c81e8035cf6bfa4996c0ed733d49a0904860f2 1497 gcbasicide_0.0.168-0ubuntu1.dsc
- 760006d75c8cfad86ae23959516b12754fbb9830d7fcc113965d3659de7d9916 2147 gcbasicide_0.0.168-0ubuntu1.diff.gz
- d1a10d23cec192d46c8f2a62bba3f2434905ba40d72c7a8b7415a7b1fa427060 32466 gcbasicide_0.0.168-0ubuntu1_all.deb
+ 60d2b3f7b1d82744df73e32703163799b030e28e80a896cc7522914dd60f3b46 1497 gcbasicide_0.0.168-0ubuntu1.dsc
+ 6e95c8ff719676acde7aa487e96969be8bce872e257631d478b267f60e777d52 2399 gcbasicide_0.0.168-0ubuntu1.diff.gz
+ 420cc32ca496733ead86f30ee0c4a5fc3f321fc37eb216231fa52723f4b7a947 169850 gcbasicide_0.0.168-0ubuntu1_all.deb
 Files: 
- 1e232da3320465e3351eb51b126006ff 1497 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.dsc
- 602d3701438d3ccbf78bab037b83294e 2147 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.diff.gz
- 3f0346c4d2e4c7d83e8936258c32b85c 32466 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1_all.deb
+ 9851ba15cbf1ebc90e803af8fdcc03fc 1497 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.dsc
+ 16bb591af69bd635aca7d0fc1b46da4d 2399 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1.diff.gz
+ 604a866ad5621d107af0a22c45c5be5c 169850 contrib/electronics optional gcbasicide_0.0.168-0ubuntu1_all.deb

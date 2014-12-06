@@ -1,5 +1,5 @@
 # Gambas Project File 3.0
-# Compiled with Gambas 3.5.3
+# Compiled with Gambas 3.6.2
 Title=GCBasicIDE
 Startup=FNotepad
 Icon=Cow.jpg
@@ -13,11 +13,10 @@ Component=gb.settings
 Component=gb.form.mdi
 Component=gb.qt4.ext
 Component=gb.qt4.webkit
-Description="Uma interface gráfica para escrever e compilar microcontroladores PIC com códigos escritos para o compilador GCBasic. \n\nAntes de instalar o arquivo .deb, adicione o PPA para poder instalar as dependências: sudo add-apt-repository ppa:gambas-team/gambas3\n\n\n:::Feito em Gambas3:::\n\n\n"
+Description="Uma interface gráfica para escrever e compilar microcontroladores PIC com códigos escritos para o compilador GCBasic. \n\nAntes de instalar o arquivo .deb, adicione o PPA para poder instalar as dependências: sudo add-apt-repository ppa:gambas-team/gambas3 .\n\n\n\n\n"
 TabSize=2
 Translate=1
 Language=pt_BR
-ExecPath=/home/edivaldo/Dropbox/ProjetosGit/gcbasicide.gambas
 SourcePath=/home/edivaldo/Dropbox/ProjetosGit
 Maintainer=Edivaldo Amaral Gonçalves
 Address=kito.eag@gmail.com
@@ -34,6 +33,7 @@ Menus=debian:"Applications/Science/Electronics"
 Categories=debian:"Electronics;Science"
 Groups=debian:"electronics"
 ExtraDependencies=debian:"gambas3-runtime\t3.5\t3.99.0\ngambas3-gb-image\t3.5\t3.99.0\ngambas3-gb-form\t3.5\t3.99.0\ngambas3-gb-desktop\t3.5\t3.99.0\ngambas3-gb-form-dialog\t3.5\t3.99.0\ngambas3-gb-settings\t3.5\t3.99.0\ngambas3-gb-form-mdi\t3.5\t3.99.0\ngambas3-gb-qt4-ext\t3.5\t3.99.0\ngambas3-gb-qt4-webkit\t3.5\t3.99.0"
+ExtraFiles=debian:"gcbasicide/help-gcbasic\t/usr/share/gcbasicide/"
 Menus=ubuntu:"Applications/Science/Electronics"
 Categories=ubuntu:"Electronics;Science"
 Groups=ubuntu:"electronics"
