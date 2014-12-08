@@ -10,10 +10,10 @@ Package-List:
  gcbasicide deb contrib/electronics optional
 Checksums-Sha1: 
  34884ab3d8a8266faf536a09eb03f21fff1b3e8f 17044667 gcbasicide_0.0.168.orig.tar.gz
- 80fa7d65fbb49aa6dcdfc3d7d1f25c17066f1c53 2359 gcbasicide_0.0.168-1.diff.gz
+ 08b9d4514848ff2a77b09c5d7b34b1e65cff2d0a 3334 gcbasicide_0.0.168-1.diff.gz
 Checksums-Sha256: 
  762e01bf487317b9cd372bfc61ed4909e68ef5b429c2692278773a684579cbd2 17044667 gcbasicide_0.0.168.orig.tar.gz
- 7385000b61f37a0fe0e428302280c99c2ca03fb827b1913e5ebfa66a1bb59cd9 2359 gcbasicide_0.0.168-1.diff.gz
+ 08525898510278eb84cfa27e91dc2cbee8c10df416bd5087afeebd52f91db63f 3334 gcbasicide_0.0.168-1.diff.gz
 Files: 
  d5cc5491b4a4b53b36f128a405a22910 17044667 gcbasicide_0.0.168.orig.tar.gz
- b65fd192d3979d91af10aa118973a284 2359 gcbasicide_0.0.168-1.diff.gz
+ 7494d92090dd6d3b988942918c3f58aa 3334 gcbasicide_0.0.168-1.diff.gz

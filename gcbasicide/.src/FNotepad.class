@@ -402,7 +402,7 @@ Public Sub Verificar_compilador() As Boolean
   Dim Variavel As String
   Dim Mensagem As Integer
   
-  Variavel = "if [ -e /opt/gcbasicide/gcbasic/ ]; then echo 'sim'; else echo 'nao'; fi"   'comando para verificar se um diretorio existe.
+  Variavel = "if [ -e /opt/gcbasic/ ]; then echo 'sim'; else echo 'nao'; fi"   'comando para verificar se um diretorio existe.
   Shell Variavel To sResposta 'Executa o comando no terminal para verificar se existe o diretório
   
   If String.InStr(sResposta, "sim") > 0 Then 'Se existe o diretório, entao faça...
@@ -432,7 +432,7 @@ Public Sub Compilar_Click()
   Editor1.SetFocus
   Save 'Primeiro, salva o código para depois compila-lo
   $bModify = False 'Marca bModify como falso para não pedir pra salvar o arquivo quando fechar e programa.
-  sOutput = sOutput & "/opt/gcbasicide/gcbasic/./gcbasic /O: /V: /R:text /NP "
+  sOutput = sOutput & "/opt/gcbasic/./gcbasic /O: /V: /R:text /NP "
   sLig = Null 'Limpar a variavel
   
   For LoopCounterOut = 1 To 10 'Repete a compilação até compilar corretamente (motivo: as vezes gera erros na primeira compilação)

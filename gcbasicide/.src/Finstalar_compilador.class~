@@ -217,7 +217,6 @@ Mensagem = 1
   sLig = "if ! cd /tmp/ ; then echo 'comando_erro'; else echo 'comando_ok'; fi" & gb.NewLine 'Muda para o diretorio /tmp/
   Enviar_para_terminal
   Aguarda_resposta_do_shell
-Print "Teste1"
 
 ' While Mensagem = 1
 '   
@@ -273,8 +272,6 @@ Print "Teste1"
   sLig = "if ! wget -c https://raw.githubusercontent.com/GCBasicIDE/GCBasicIDE/master/gcbasic.tar.gz ; then echo 'comando_erro'; else echo 'comando_ok'; fi" & gb.NewLine 'Faz download do compilador
   Enviar_para_terminal
   Aguarda_resposta_do_shell
-  Print "teste_aqui"
-  Print palavra
     If palavra = "comando_erro" Then
        Mensagem = Message.Question("Erro ao fazer download do compilador. O que deseja fazer?", " Instalar manualmente ", " Cancelar ")
        If Mensagem = 1 Then 
@@ -311,7 +308,6 @@ Print "Teste1"
       Endif
    Endif
    
-   Print "Teste3"
    
   If palavra = "comando_ok" Then 
     txtConsole.Insert(gb.NewLine & "O compilador foi instalado com sucesso!")

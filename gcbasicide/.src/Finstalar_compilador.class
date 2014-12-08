@@ -143,7 +143,7 @@ Public Sub Verificar_compilador() As Boolean
   Dim Mensagem As Integer
   
   
-  Variavel = "if [ -e /opt/gcbasicide/gcbasic/ ]; then echo 'sim'; else echo 'nao'; fi"   'comando para verificar se um diretorio existe.
+  Variavel = "if [ -e /opt/gcbasic/ ]; then echo 'sim'; else echo 'nao'; fi"   'comando para verificar se um diretorio existe.
   Shell Variavel To sResposta 'Executa o comando no terminal para verificar se existe o diretório
   
   If String.InStr(sResposta, "sim") > 0 Then 'Se existe o diretório, entao faça...
@@ -289,9 +289,9 @@ Mensagem = 1
   
   Print "Etapa2"
    
-  sLig = "echo 'Descompactando o compilador no diretório  /opt/gcbasicide/gcbasic' " & gb.NewLine 
+  sLig = "echo 'Descompactando o compilador no diretório  /opt/gcbasic' " & gb.NewLine 
   Enviar_para_terminal
-  sLig = "if ! pkexec tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz ; then echo 'comando_erro'; else echo 'comando_ok'; fi" & gb.NewLine 'Descompacta o compilador no diretório /opt/gcbasicide/gcbasic
+  sLig = "if ! pkexec tar -C /opt/ -vzxf /tmp/gcbasic.tar.gz ; then echo 'comando_erro'; else echo 'comando_ok'; fi" & gb.NewLine 'Descompacta o compilador no diretório /opt/gcbasic
   Enviar_para_terminal
  Aguarda_resposta_do_shell
    If palavra = "comando_erro" Then 'Se existe erros na extracao do arquivo, entao faça...
@@ -320,9 +320,9 @@ Mensagem = 1
    '  Variavel = TextBoxSenhaRoot.Text
    '  Print Variavel
    '  Shell "cd /tmp/ && wget -c https://raw.githubusercontent.com/GCBasicIDE/GCBasicIDE/master/gcbasic.tar.gz" To testandosom  'Faz download do compilador
-   '  'Shell "echo \"" & Variavel & "\" | sudo -S tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz, fi" To sResposta
-   ' ' Shell "zenity --password | sudo -S tar -C /opt/gcbasicide/ -vzxf /tmp/gcbasic.tar.gz, fi" To testandosom
-   '  Exec ["zenity", "--password", "|", "sudo", "-S", "tar", "-C", "/opt/gcbasicide/", "-vzxf", "/tmp/gcbasic.tar.gz", ",", "fi"] To testandosom
+   '  'Shell "echo \"" & Variavel & "\" | sudo -S tar -C /opt/ -vzxf /tmp/gcbasic.tar.gz, fi" To sResposta
+   ' ' Shell "zenity --password | sudo -S tar -C /opt/ -vzxf /tmp/gcbasic.tar.gz, fi" To testandosom
+   '  Exec ["zenity", "--password", "|", "sudo", "-S", "tar", "-C", "/opt/", "-vzxf", "/tmp/gcbasic.tar.gz", ",", "fi"] To testandosom
    '  Print testandosom
    '  Print Variavel
 Button1.Enabled = True

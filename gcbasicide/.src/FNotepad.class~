@@ -432,7 +432,7 @@ Public Sub Compilar_Click()
   Editor1.SetFocus
   Save 'Primeiro, salva o código para depois compila-lo
   $bModify = False 'Marca bModify como falso para não pedir pra salvar o arquivo quando fechar e programa.
-  sOutput = sOutput & "/usr/share/gcbasicide/gcbasic/./gcbasic /O: /V: /R:text /NP "
+  sOutput = sOutput & "/opt/gcbasicide/gcbasic/./gcbasic /O: /V: /R:text /NP "
   sLig = Null 'Limpar a variavel
   
   For LoopCounterOut = 1 To 10 'Repete a compilação até compilar corretamente (motivo: as vezes gera erros na primeira compilação)
