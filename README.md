@@ -17,6 +17,6 @@ O GCBasicIDE é uma interface gráfica para programar Microcontroladores PIC usa
 
 * 3 - Faça download do GCBasicIDE para Ubuntu:
 
- *  [Download](https://github.com/GCBasicIDE/GCBasicIDE/raw/master/gcbasicide1-0_0.0.164-0ubuntu1_all.deb “Clique parabaixar o .deb”)
-
+ *  [Download](https://github.com/GCBasicIDE/GCBasicIDE/tree/master/ubuntu “Baixe o arquivo *.deb”)
+  - Baixe o arquivo *.deb
 * 4 - Execute o arquivo que acabou de baixar e pronto (gcbasicide*ubuntu1_all.deb)
