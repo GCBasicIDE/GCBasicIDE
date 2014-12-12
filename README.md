@@ -10,7 +10,7 @@ O GCBasicIDE é uma interface gráfica para programar Microcontroladores PIC usa
 
 
 * 1 - Devemos adicionar primeiramente o repositório para o Gambas:
-<pre><code>sudo add-apt-repository ppa:nemh/gambas3</code></pre>
+<pre><code>sudo add-apt-repository ppa:gambas-team/gambas3</code></pre>
 
 * 2 - Depois atualizamos a source.list:
 <pre><code>sudo apt-get update</code></pre>
