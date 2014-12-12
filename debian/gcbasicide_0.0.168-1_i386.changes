@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Mon, 08 Dec 2014 12:00:00 +0000
+Date: Fri, 12 Dec 2014 12:00:00 +0000
 Source: gcbasicide
 Binary: gcbasicide
 Architecture: source all
@@ -13,16 +13,16 @@ Description:
 Changes: 
  gcbasicide (0.0.168-1) unstable; urgency=low
  .
-   * Alterando o diretório do compilador.
+   * Alterando versao de pacotes necessarios *3.1.1.deb
 Checksums-Sha1: 
- 9520535a489dc576bdffa3e17cfdbf5c0ea42786 1469 gcbasicide_0.0.168-1.dsc
- 08b9d4514848ff2a77b09c5d7b34b1e65cff2d0a 3334 gcbasicide_0.0.168-1.diff.gz
- 58f37353fad5c2f0143ee4b7e215ea7615a7b38b 169880 gcbasicide_0.0.168-1_all.deb
+ 863273f4946b0c880c215bc44d141ffae62a7f54 1471 gcbasicide_0.0.168-1.dsc
+ c7bab656cac86452e202028a02ae6a1309c19d0d 3588 gcbasicide_0.0.168-1.diff.gz
+ 63c25726e679c401d04577625fb6a2e780d3ac15 169932 gcbasicide_0.0.168-1_all.deb
 Checksums-Sha256: 
- 1af3bf9324aac695e863dcbe703bd4f8190e4eabe8d5c84127465253cff5fdc7 1469 gcbasicide_0.0.168-1.dsc
- 08525898510278eb84cfa27e91dc2cbee8c10df416bd5087afeebd52f91db63f 3334 gcbasicide_0.0.168-1.diff.gz
- 23b5548a1bd5b596fe66e79e25480e98882f01f1cc1465f901e11fcdfa724392 169880 gcbasicide_0.0.168-1_all.deb
+ f58b1c2b120a97520580e8b8b9b8249387f785dfe9d9f0352b831e0d55d28389 1471 gcbasicide_0.0.168-1.dsc
+ b226befc4bf1cd20a2263148b46350d8e485e18d86a20d3e81dab243fd7c92e0 3588 gcbasicide_0.0.168-1.diff.gz
+ 5d8dd75689aaf2420f2bf83e988daa811e239cda0736a467a5402e9f939bc520 169932 gcbasicide_0.0.168-1_all.deb
 Files: 
- 15ad4738832d0b57990818abccfb05fe 1469 contrib/electronics optional gcbasicide_0.0.168-1.dsc
- 7494d92090dd6d3b988942918c3f58aa 3334 contrib/electronics optional gcbasicide_0.0.168-1.diff.gz
- 15d4b0ba599b22fa9015907c81d871ed 169880 contrib/electronics optional gcbasicide_0.0.168-1_all.deb
+ 247104dd766315c6dea0b627f3e36639 1471 contrib/electronics optional gcbasicide_0.0.168-1.dsc
+ 438bea52b8a79c171a2f8ec1f74d6ef4 3588 contrib/electronics optional gcbasicide_0.0.168-1.diff.gz
+ 6a06e0a774ebadece9536b744d39f4c7 169932 contrib/electronics optional gcbasicide_0.0.168-1_all.deb

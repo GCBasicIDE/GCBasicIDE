@@ -9,12 +9,12 @@ MakeName=True
 
 [OpenFile]
 File[1]=".src/FNotepad.form"
-File[2]=".src/FNotepad.class:206.31"
+Active=2
+File[2]=".src/FNotepad.class:437.130"
 File[3]=".src/FHelp.form"
 File[4]=".src/FHelp.class:352.27"
 File[5]=".src/Finstalar_compilador.form"
-Active=6
-File[6]=".src/Finstalar_compilador.class:334.3"
+File[6]=".src/Finstalar_compilador.class:327.22"
 File[7]=".src/FInstalar_manualmente.form"
 File[8]=".src/FInstalar_manualmente.class:10.0"
 Count=8
