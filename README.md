@@ -10,12 +10,12 @@ O GCBasicIDE é uma interface gráfica para programar Microcontroladores PIC usa
 
 
 * 1 - Devemos adicionar primeiramente o repositório para o Gambas:
-<pre><code>sudo add-apt-repository ppa:nemh/gambas3</code></pre>
+<pre><code>sudo add-apt-repository ppa:gambas-team/gambas3</code></pre>
 
 * 2 - Depois atualizamos a source.list:
 <pre><code>sudo apt-get update</code></pre>
 
 * 3 - Faça download do GCBasicIDE para Ubuntu:
- * [Download](https://github.com/GCBasicIDE/GCBasicIDE/tree/master/ubuntu) (Baixe o arquivo *.deb)
+ * [Download](https://github.com/GCBasicIDE/GCBasicIDE/raw/master/ubuntu/gcbasicide_0.0.168-0ubuntu1_all.deb)
 
 * 4 - Execute o arquivo que acabou de baixar e pronto (gcbasicide*ubuntu1_all.deb)
