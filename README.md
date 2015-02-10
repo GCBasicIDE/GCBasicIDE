@@ -3,6 +3,8 @@ GCBasicIDE
 
 O GCBasicIDE é uma interface gráfica para programar Microcontroladores PIC usando o compilador GCBASIC (Great Cow BASIC). Site:http://gcbasic.sourceforge.net
 
+Testando em: Ubuntu 12.04 i386, Ubuntu 14.04 64-bit
+
 ![Alt text](https://cloud.githubusercontent.com/assets/8314709/3802606/1dd01828-1c11-11e4-9072-fe39225b0602.png)
 
 
